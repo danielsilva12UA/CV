@@ -1,28 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=6 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
+[ext_resource type="PackedScene" uid="uid://bi1pdh4ukdqwl" path="res://terrain.tscn" id="1_y6eus"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dtrwn"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cku1e"]
+sky_top_color = Color(0.407131, 0.450375, 0.528951, 1)
+sky_horizon_color = Color(0.651783, 0.654844, 0.665488, 1)
+ground_horizon_color = Color(0.651783, 0.654844, 0.665488, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sjuo"]
-albedo_color = Color(0, 0.188235, 0, 1)
+[sub_resource type="Sky" id="Sky_rjfi0"]
+sky_material = SubResource("ProceduralSkyMaterial_cku1e")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_y245i"]
-material = SubResource("StandardMaterial3D_2sjuo")
-size = Vector2(50, 50)
+[sub_resource type="Environment" id="Environment_je2ow"]
+background_mode = 2
+sky = SubResource("Sky_rjfi0")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Main" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_je2ow")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 22.9073, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -0.00289917, 197.015, 0.0324707)
+shadow_enabled = true
 
-[node name="Floor" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("WorldBoundaryShape3D_dtrwn")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("PlaneMesh_y245i")
+[node name="terrain_world" parent="." instance=ExtResource("1_y6eus")]
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803767, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.73106, 81.1667, 98.3866)
