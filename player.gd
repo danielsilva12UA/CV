@@ -23,10 +23,10 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() * SPEED
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x
+		velocity.z = direction.z
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -40,9 +40,10 @@ func _input(event):
 		rotation_angle.y -= event.relative.x / MOUSE_SENSITIVITY
 		rotation_angle.x -= event.relative.y / MOUSE_SENSITIVITY
 		# Handle rotations.
-		global_rotation.x += rotation_angle.x
-		$Head.global_rotation.y += rotation_angle.y
-		if ($Head.global_rotation_degrees.x>=90):
-			$Head.global_rotation_degrees.x = 90
-		elif ($Head.global_rotation_degrees.x<=-90):
-			$Head.global_rotation_degrees.x = -90
+		global_rotation.y += rotation_angle.y
+		if $Head.global_rotation.x + rotation_angle.x >= 90:
+			$Head.global_rotation.x = 90
+		elif $Head.global_rotation.x + rotation_angle.x <= -90:
+			$Head.global_rotation.x = -90
+		else:
+			$Head.global_rotation.x += rotation_angle.x
