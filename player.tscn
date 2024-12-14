@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://player.gd" id="1_ydsig"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n68wo"]
-size = Vector3(0.901367, 0.670227, 0.5)
+size = Vector3(0.901367, 1.46255, 0.5)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ydsig")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0180664, -0.0386131, 0.272323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396164, 0)
 shape = SubResource("BoxShape3D_n68wo")
 
 [node name="Head" type="Node3D" parent="."]
