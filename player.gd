@@ -15,6 +15,16 @@ func _physics_process(delta: float) -> void:
 	global_rotation.x = 0
 	global_rotation.z = 0
 	
+	# Capture mouse.
+	if Input.is_action_just_pressed("mouse_capture"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		mouse_captured = true
+
+	# Stop capturing mouse.
+	if Input.is_action_just_pressed("mouse_capture_exit"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		mouse_captured = false
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
