@@ -6,7 +6,7 @@ uniform sampler2D water_noise_2;
 
 uniform sampler2D depth_texture : hint_depth_texture;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable;
-uniform float depth_distance : hint_range(0.0, 50.0, 0.25) = 1.0;
+uniform float depth_distance : hint_range(0.0, 100.0, 0.25) = 60.0;
 
 uniform float waves_sin_movement : hint_range(0.0, 100.0, 1.0) = 15;
 uniform float waves_cos_movement : hint_range(0.0, 100.0, 1.0) = 5;
@@ -14,11 +14,11 @@ uniform float waves_cos_movement : hint_range(0.0, 100.0, 1.0) = 5;
 uniform float light_sin_movement : hint_range(0.0, 100.0, 1.0) = 25;
 uniform float light_cos_movement : hint_range(0.0, 100.0, 1.0) = 25;
 
-uniform float normal_scale : hint_range(0.0, 1.0, 0.1) = 0.6;
+uniform float normal_scale : hint_range(0.0, 10.0, 0.1) = 0.6;
 uniform float roughness_scale : hint_range(0.0, 1.0, 0.1) = 0.2;
 uniform float time_scale : hint_range(0.0, 10.0, 0.1) = 5.0;
 uniform float water_color_ratio : hint_range(0.0, 1.0, 0.1) = 0.5;
-uniform float uv_scale : hint_range(0.0, 10.0, 0.1) = 2.0;
+uniform float uv_scale : hint_range(0.0, 2.0, 0.01) = 0.5;
 
 uniform float refraction_sin_movement : hint_range(0.0, 0.01, 0.001);
 uniform float refraction_cos_movement : hint_range(0.0, 0.01, 0.001);
@@ -54,7 +54,7 @@ void fragment() {
 	_suv.x += sin((TIME * time_scale) + (_suv.x + _suv.y) * light_sin_movement) * refraction_sin_movement;
 	_suv.y += cos((TIME * time_scale) + (_suv.x - _suv.y) * light_cos_movement) * refraction_cos_movement;
 
-	vec3 blended = soft_light(texture(screen_texture, _suv).rgb, vec3(1.,1.,1.));
+	vec3 blended = soft_light(texture(screen_texture, _suv).rgb, vec3(0.0,0.5,1.));
 	
 	vec3 screen = textureLod(screen_texture, _suv, 0.0).rgb;
 	
@@ -65,8 +65,9 @@ void fragment() {
 	depth_blend = exp(depth_blend*-beers_law);
 	depth_blend = clamp(pow(depth_blend, 3.0), 0.0, 1.0);
 	
-	ALBEDO = mix(screen * depth_blend * blended, water_color, water_color_ratio);
-	NORMAL_MAP = mix(texture(water_noise_1,_uv).rgb, texture(water_noise_2, _uv).rgb, (sin(TIME * time_scale)+1.0) * (cos(TIME / time_scale)));
+	ALBEDO = mix(screen *- depth_blend * blended, water_color, water_color_ratio);
+	NORMAL_MAP = mix(texture(water_noise_1,_uv).rgb, texture(water_noise_2, _uv).rgb, (sin(TIME * (time_scale * 2.1))+1.3));
+	//NORMAL_MAP = texture(water_noise_1, _uv).rgb;
 	NORMAL *= normal_scale;
 	ROUGHNESS *= roughness_scale;
 }
