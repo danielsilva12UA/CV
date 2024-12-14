@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 15.0
+const JUMP_VELOCITY = 15.0
 const MOUSE_SENSITIVITY = 700
 
 var mouse_captured = true
@@ -14,6 +14,20 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	global_rotation.x = 0
 	global_rotation.z = 0
+	
+	# Restart world.
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	
+	# Capture mouse.
+	if Input.is_action_just_pressed("mouse_capture"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		mouse_captured = true
+
+	# Stop capturing mouse.
+	if Input.is_action_just_pressed("mouse_capture_exit"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		mouse_captured = false
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -50,3 +64,5 @@ func _input(event):
 			$Head.global_rotation.x = deg_to_rad(-90)
 		else:
 			$Head.global_rotation.x += rotation_angle.x
+		$Head.global_rotation.z = 0
+		$Head.global_rotation.y = global_rotation.y

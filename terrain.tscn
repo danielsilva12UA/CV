@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=18 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -10,20 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
 [ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
 [ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_diqio"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygyxb"]
-sky_top_color = Color(0.407131, 0.450375, 0.528951, 1)
-sky_horizon_color = Color(0.651783, 0.654844, 0.665488, 1)
-ground_horizon_color = Color(0.651783, 0.654844, 0.665488, 1)
-
-[sub_resource type="Sky" id="Sky_jypf3"]
-sky_material = SubResource("ProceduralSkyMaterial_ygyxb")
-
-[sub_resource type="Environment" id="Environment_sbgqr"]
-background_mode = 2
-sky = SubResource("Sky_jypf3")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 script = ExtResource("2_v6a56")
@@ -90,9 +76,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33459, 13.5026, -15.1219)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -0.00289917, 197.015, 0.0324707)
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_sbgqr")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_3jfls")

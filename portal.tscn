@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbswuphb4dqmd"]
+[gd_scene load_steps=7 format=3 uid="uid://dbswuphb4dqmd"]
 
 [ext_resource type="Script" path="res://portal.gd" id="1_hh8j4"]
-[ext_resource type="Environment" uid="uid://kcs0at4sg7ay" path="res://environment.tres" id="1_tb3hk"]
 [ext_resource type="Shader" path="res://shaders/portal.gdshader" id="1_wq8ol"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_40bml"]
@@ -52,7 +51,6 @@ size = Vector2i(1024, 512)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
 cull_mask = 1048063
-environment = ExtResource("1_tb3hk")
 fov = 80.0
 use_oblique_frustum = true
 
