@@ -9,7 +9,6 @@ size = Vector3(0.901367, 1.46255, 0.5)
 script = ExtResource("1_ydsig")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396164, 0)
 shape = SubResource("BoxShape3D_n68wo")
 
 [node name="Head" type="Node3D" parent="."]
