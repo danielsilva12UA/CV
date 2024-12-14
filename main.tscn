@@ -16,4 +16,4 @@ shadow_enabled = true
 [node name="terrain_world" parent="." instance=ExtResource("1_y6eus")]
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.73106, 81.1667, 98.3866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.731, 76.186, 98.387)
