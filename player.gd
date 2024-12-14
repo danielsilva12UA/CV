@@ -12,6 +12,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
+	global_rotation.x = 0
+	global_rotation.z = 0
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -41,9 +44,9 @@ func _input(event):
 		rotation_angle.x -= event.relative.y / MOUSE_SENSITIVITY
 		# Handle rotations.
 		global_rotation.y += rotation_angle.y
-		if $Head.global_rotation.x + rotation_angle.x >= 90:
-			$Head.global_rotation.x = 90
-		elif $Head.global_rotation.x + rotation_angle.x <= -90:
-			$Head.global_rotation.x = -90
+		if $Head.global_rotation.x + rotation_angle.x >= deg_to_rad(90):
+			$Head.global_rotation.x = deg_to_rad(90)
+		elif $Head.global_rotation.x + rotation_angle.x <= deg_to_rad(-90):
+			$Head.global_rotation.x = deg_to_rad(-90)
 		else:
 			$Head.global_rotation.x += rotation_angle.x
