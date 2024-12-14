@@ -47,7 +47,7 @@ noise = SubResource("FastNoiseLite_r523t")
 render_priority = 0
 shader = ExtResource("10_diqio")
 shader_parameter/water_color = Color(0.352941, 0.537255, 0.658824, 1)
-shader_parameter/depth_distance = 50.0
+shader_parameter/depth_distance = 40.0
 shader_parameter/waves_sin_movement = 45.0
 shader_parameter/waves_cos_movement = 25.0
 shader_parameter/light_sin_movement = 15.0
@@ -61,7 +61,7 @@ shader_parameter/refraction_sin_movement = 0.004
 shader_parameter/refraction_cos_movement = 0.003
 shader_parameter/water_sin_desync = 0.3
 shader_parameter/water_cos_desync = 0.1
-shader_parameter/beers_law = 3.5
+shader_parameter/beers_law = 1.7
 shader_parameter/water_noise_1 = SubResource("NoiseTexture2D_1ewcq")
 shader_parameter/water_noise_2 = SubResource("NoiseTexture2D_k65b8")
 
