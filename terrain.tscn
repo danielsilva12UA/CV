@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=21 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://deucjyscpxqqj" path="res://terrain_textures/Grass/Grass002_2K-PNG_NormalDX.png" id="7_pkumn"]
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
 [ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
-[ext_resource type="Shader" path="res://shaders/water.gdshader" id="11_n5ga8"]
-[ext_resource type="Texture2D" uid="uid://3euk2boqprjc" path="res://shaders/sunhighlight.tres" id="12_reyqw"]
-[ext_resource type="Texture2D" uid="uid://4ygmicuelxr3" path="res://shaders/noisewater.tres" id="13_de3qr"]
+[ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_diqio"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygyxb"]
 sky_top_color = Color(0.407131, 0.450375, 0.528951, 1)
@@ -32,28 +30,46 @@ script = ExtResource("2_v6a56")
 mode = 0
 textures = [[ExtResource("4_uxanv"), ExtResource("5_8ad3b"), ExtResource("6_mprqo")], [ExtResource("7_pkumn"), ExtResource("8_xnlm7"), ExtResource("9_le6dk")]]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m0qbo"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1ewcq"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_m0qbo")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r523t"]
+seed = 6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k65b8"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_r523t")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qg1kf"]
 render_priority = 0
-shader = ExtResource("11_n5ga8")
+shader = ExtResource("10_diqio")
 shader_parameter/water_color = Color(0.352941, 0.537255, 0.658824, 1)
-shader_parameter/uv_scale = 40.0
-shader_parameter/time_scale = 0.0
-shader_parameter/normal = 0.6
-shader_parameter/roughness = 0.5
-shader_parameter/color_ratio = 0.6
-shader_parameter/abberation_r = null
-shader_parameter/abberation_g = null
-shader_parameter/abberation_b = null
-shader_parameter/highlights_time_scale = 0.244
+shader_parameter/depth_distance = 10.0
 shader_parameter/waves_sin_movement = 15.0
 shader_parameter/waves_cos_movement = 5.0
 shader_parameter/light_sin_movement = 25.0
 shader_parameter/light_cos_movement = 25.0
-shader_parameter/water_normal_noise = ExtResource("13_de3qr")
-shader_parameter/sun_highlights = ExtResource("12_reyqw")
+shader_parameter/normal_scale = 0.6
+shader_parameter/roughness_scale = 0.2
+shader_parameter/time_scale = 1.0
+shader_parameter/water_color_ratio = 0.5
+shader_parameter/uv_scale = 4.0
+shader_parameter/refraction_sin_movement = 0.004
+shader_parameter/refraction_cos_movement = 0.003
+shader_parameter/water_sin_desync = 0.3
+shader_parameter/water_cos_desync = 0.1
+shader_parameter/beers_law = 3.0
+shader_parameter/water_noise_1 = SubResource("NoiseTexture2D_1ewcq")
+shader_parameter/water_noise_2 = SubResource("NoiseTexture2D_k65b8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fb2c2"]
 material = SubResource("ShaderMaterial_qg1kf")
+uv2_padding = 0.0
 size = Vector2(500, 500)
 
 [node name="terrain_world" type="Node3D"]
