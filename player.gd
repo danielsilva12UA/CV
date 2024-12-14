@@ -50,4 +50,3 @@ func _input(event):
 			$Head.global_rotation.x = deg_to_rad(-90)
 		else:
 			$Head.global_rotation.x += rotation_angle.x
-		print($Head.global_rotation.x)
