@@ -68,6 +68,10 @@ func _ready() -> void:
 	hitboxArea.body_entered.connect(_on_entry_body_entered)
 	# Delete placeholder
 	portal_placeholder.queue_free()
+	var world_3d = player_camera.get_world_3d()
+	if world_3d:
+		portal_camera.environment = world_3d.environment.duplicate()
+		portal_camera.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
