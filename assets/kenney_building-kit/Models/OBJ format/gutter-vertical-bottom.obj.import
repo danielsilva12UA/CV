@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfj7fjtea7qw"
+path="res://.godot/imported/gutter-vertical-bottom.obj-e561f3a9e1dff0d3489d63c4e00bb9df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gutter-vertical-bottom.obj-e561f3a9e1dff0d3489d63c4e00bb9df.mesh"]
+
+source_file="res://assets/kenney_building-kit/Models/OBJ format/gutter-vertical-bottom.obj"
+dest_files=["res://.godot/imported/gutter-vertical-bottom.obj-e561f3a9e1dff0d3489d63c4e00bb9df.mesh", "res://.godot/imported/gutter-vertical-bottom.obj-e561f3a9e1dff0d3489d63c4e00bb9df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
