@@ -54,7 +54,6 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_u7r0o"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_qb2wp")
-flip_faces = true
 size = Vector2(50, 50)
 orientation = 2
 

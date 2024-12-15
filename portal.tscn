@@ -19,7 +19,6 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_oinb3"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_clo2t")
-flip_faces = true
 orientation = 2
 
 [node name="Portal" type="Node"]
