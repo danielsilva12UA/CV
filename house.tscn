@@ -33,13 +33,16 @@ visible = false
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 8, 4, 11, 0)
 
 [node name="Board10" parent="." instance=ExtResource("1_5b4c4")]
-transform = Transform3D(4, 0, 0, 0, 0.707107, 6.01041, 0, -0.707107, 6.01041, -4, 6.006, 2)
+transform = Transform3D(4, 0, 0, 0, 0.707107, 5.65685, 0, -0.707107, 5.65685, -4, 5.23819, 2.38891)
 
 [node name="Board11" parent="." instance=ExtResource("1_5b4c4")]
-transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 8, 0, 22, 0)
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 8, 0, 20.6041, 0)
 
 [node name="Board12" parent="." instance=ExtResource("1_5b4c4")]
 transform = Transform3D(-2.40413e-07, -1, 0, 5.5, -4.37114e-08, 0, 0, 0, 6, 0, 5.5, 2)
 
 [node name="Board13" parent="." instance=ExtResource("1_5b4c4")]
 transform = Transform3D(-2.40413e-07, -1, 0, 5.5, -4.37114e-08, 0, 0, 0, 6, 0, 16.5, -1.782)
+
+[node name="Board14" parent="." instance=ExtResource("1_5b4c4")]
+transform = Transform3D(-5.5, 8.74228e-08, 0, -4.80825e-07, -1, 0, 0, 0, 6, -2.52844, 10.9106, -1.782)

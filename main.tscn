@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=20 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
 [ext_resource type="PackedScene" uid="uid://bi1pdh4ukdqwl" path="res://terrain.tscn" id="1_y6eus"]
-[ext_resource type="PackedScene" uid="uid://2exnf3fmdxvh" path="res://shaderportal.tscn" id="4_upq52"]
 [ext_resource type="PackedScene" uid="uid://cyej4a711fov2" path="res://house.tscn" id="5_rlg4i"]
 [ext_resource type="PackedScene" uid="uid://cperbxm3voa30" path="res://portal.tscn" id="6_jkaky"]
 
@@ -26,14 +25,25 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_3umk8")
 size = Vector2(100, 50)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_60yhw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6l81"]
 resource_local_to_scene = true
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i0jdl"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_r6l81")
 flip_faces = true
+size = Vector2(7.5, 10.5)
 orientation = 2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_pttnx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc8b5"]
 resource_local_to_scene = true
-flip_faces = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mss02"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_fc8b5")
+size = Vector2(7.5, 10.5)
 orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ineim"]
@@ -152,23 +162,15 @@ skeleton = NodePath("../..")
 [node name="House" parent="." instance=ExtResource("5_rlg4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1431, 73.8385, -24.9908)
 
-[node name="ShaderPortal" parent="House" instance=ExtResource("4_upq52")]
+[node name="Portal" parent="House" instance=ExtResource("6_jkaky")]
 
-[node name="Screen" parent="House/ShaderPortal" index="0"]
-transform = Transform3D(-8.74228e-08, 0, 1, 0, 6, 0, -2, 0, -4.37114e-08, 18.0415, 89.8716, -18.9934)
-mesh = SubResource("PlaneMesh_60yhw")
+[node name="Entry" parent="House/Portal" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.1564, 90.3645, -20.7869)
+mesh = SubResource("PlaneMesh_i0jdl")
 
-[node name="Exit" parent="House/ShaderPortal" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2583, 82.0638, -25.7513)
-
-[node name="ShaderPortal2" parent="House" instance=ExtResource("4_upq52")]
-
-[node name="Screen" parent="House/ShaderPortal2" index="0"]
-transform = Transform3D(-8.74228e-08, 0, 1, 0, 6, 0, -2, 0, -4.37114e-08, 18.1132, 78.9753, -30.8876)
-mesh = SubResource("PlaneMesh_pttnx")
-
-[node name="Exit" parent="House/ShaderPortal2" index="1"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0707, 89.7644, -19.8274)
+[node name="Exit" parent="House/Portal" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1942, 80.6881, -26.7386)
+mesh = SubResource("PlaneMesh_mss02")
 
 [node name="Portal" parent="." instance=ExtResource("6_jkaky")]
 
@@ -180,6 +182,5 @@ mesh = SubResource("PlaneMesh_6i2lf")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.621, 118.227, 21.285)
 mesh = SubResource("PlaneMesh_u7r0o")
 
-[editable path="House/ShaderPortal"]
-[editable path="House/ShaderPortal2"]
+[editable path="House/Portal"]
 [editable path="Portal"]
