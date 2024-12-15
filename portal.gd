@@ -79,17 +79,7 @@ func _on_entry_body_entered(body: Node3D) -> void:
 	dummy_body_exit.set_transform(dummy_body_entry.get_transform())
 	body.set_global_position(dummy_body_exit.get_global_position())
 	body.set_global_rotation(dummy_body_exit.get_global_rotation())
-	
-	#var body_dir = body.velocity.normalized()
-	#var right = portal_entry.global_transform.basis.x.normalized()
-	#var angle_sign = 1.0
-	#if 0 < body_dir.dot(right):
-		#angle_sign = -1.0
-	#var backward = -portal_entry.global_transform.basis.z.normalized()
-	#var velocity_angle = angle_sign * acos(body_dir.dot(backward))
-	#var exit_forward = portal_exit.global_transform.basis.z.normalized()
-	#var exit_up = portal_exit.global_transform.basis.y.normalized()
-	#body.set_velocity(exit_forward.rotated(exit_up, velocity_angle) * body.get_velocity().length())
+
 
 func resize():
 	portal_subviewport.size = get_viewport().size
