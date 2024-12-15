@@ -73,10 +73,6 @@ size = Vector2(1, 1)
 [node name="terrain_world" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33459, 13.5026, -15.1219)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -0.00289917, 197.015, 0.0324707)
-shadow_enabled = true
-
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_3jfls")
 centered = true

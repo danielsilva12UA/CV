@@ -15,6 +15,6 @@ shape = SubResource("BoxShape3D_n68wo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.411449, -0.325582)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-near = 0.001
+fov = 80.0
 
 [node name="Body" type="Node3D" parent="."]

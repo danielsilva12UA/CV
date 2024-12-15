@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj5ppfmcxxrca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avniv"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yssaf"]
+albedo_color = Color(0.321569, 0.14902, 0.113725, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p225w"]
+material = SubResource("StandardMaterial3D_yssaf")
+
+[node name="Board" type="StaticBody3D"]
+
+[node name="Hitbox" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_avniv")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("PlaneMesh_p225w")
+
+[node name="Bottom" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.25, 0)
+mesh = SubResource("PlaneMesh_p225w")
+
+[node name="Size1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.09278e-08, -1, 0, 0.25, -4.37114e-08, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("PlaneMesh_p225w")
+
+[node name="Size2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.77671e-16, 4.37114e-08, 1, 0.25, -4.37114e-08, 0, 1.09278e-08, 1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("PlaneMesh_p225w")
+
+[node name="Size3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.09278e-08, 1, -8.74228e-08, 0.25, -4.37114e-08, 0, -9.55343e-16, -8.74228e-08, -1, 1, 0, 0)
+mesh = SubResource("PlaneMesh_p225w")
+
+[node name="Size4" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.77671e-16, 4.37114e-08, -1, 0.25, -4.37114e-08, 0, -1.09278e-08, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("PlaneMesh_p225w")

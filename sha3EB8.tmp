@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://2exnf3fmdxvh"]
+
+[ext_resource type="Script" path="res://shaderportal.gd" id="1_0jg7c"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nli4v"]
+flip_faces = true
+orientation = 2
+
+[node name="ShaderPortal" type="Node"]
+script = ExtResource("1_0jg7c")
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_nli4v")
+skeleton = NodePath("")
+
+[node name="Entry" type="Area3D" parent="."]
+
+[node name="Exit" type="Node3D" parent="."]
+
+[connection signal="body_entered" from="Entry" to="." method="_on_entry_body_entered"]
