@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=19 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
 [ext_resource type="PackedScene" uid="uid://bi1pdh4ukdqwl" path="res://terrain.tscn" id="1_y6eus"]
 [ext_resource type="PackedScene" uid="uid://2exnf3fmdxvh" path="res://shaderportal.tscn" id="4_upq52"]
 [ext_resource type="PackedScene" uid="uid://cyej4a711fov2" path="res://house.tscn" id="5_rlg4i"]
+[ext_resource type="PackedScene" uid="uid://cperbxm3voa30" path="res://portal.tscn" id="6_jkaky"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgtio"]
 size = Vector3(100, 1, 50)
@@ -25,16 +26,6 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_3umk8")
 size = Vector2(100, 50)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_l4we0"]
-resource_local_to_scene = true
-flip_faces = true
-orientation = 2
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_l0h60"]
-resource_local_to_scene = true
-flip_faces = true
-orientation = 2
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_60yhw"]
 resource_local_to_scene = true
 flip_faces = true
@@ -43,6 +34,28 @@ orientation = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_pttnx"]
 resource_local_to_scene = true
 flip_faces = true
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ineim"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6i2lf"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ineim")
+flip_faces = true
+size = Vector2(50, 50)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qb2wp"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u7r0o"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_qb2wp")
+flip_faces = true
+size = Vector2(50, 50)
 orientation = 2
 
 [node name="Main" type="Node3D"]
@@ -137,24 +150,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3133, 93.8038, 8.74412)
 mesh = SubResource("BoxMesh_eollh")
 skeleton = NodePath("../..")
 
-[node name="ShaderPortal" parent="." instance=ExtResource("4_upq52")]
-
-[node name="Screen" parent="ShaderPortal" index="0"]
-transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, 10, 94.304, -75.597)
-mesh = SubResource("PlaneMesh_l4we0")
-
-[node name="Exit" parent="ShaderPortal" index="1"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 94.304, 21.285)
-
-[node name="ShaderPortal2" parent="." instance=ExtResource("4_upq52")]
-
-[node name="Screen" parent="ShaderPortal2" index="0"]
-transform = Transform3D(-1.09278e-06, 0, -25, 0, 25, 0, 25, 0, -1.09278e-06, -10, 94.304, 21.285)
-mesh = SubResource("PlaneMesh_l0h60")
-
-[node name="Exit" parent="ShaderPortal2" index="1"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 94.304, -75.597)
-
 [node name="House" parent="." instance=ExtResource("5_rlg4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1431, 73.8385, -24.9908)
 
@@ -176,7 +171,16 @@ mesh = SubResource("PlaneMesh_pttnx")
 [node name="Exit" parent="House/ShaderPortal2" index="1"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0707, 89.7644, -19.8274)
 
-[editable path="ShaderPortal"]
-[editable path="ShaderPortal2"]
+[node name="Portal" parent="." instance=ExtResource("6_jkaky")]
+
+[node name="Entry" parent="Portal" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.621, 118.227, -75.5965)
+mesh = SubResource("PlaneMesh_6i2lf")
+
+[node name="Exit" parent="Portal" index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.621, 118.227, 21.285)
+mesh = SubResource("PlaneMesh_u7r0o")
+
 [editable path="House/ShaderPortal"]
 [editable path="House/ShaderPortal2"]
+[editable path="Portal"]

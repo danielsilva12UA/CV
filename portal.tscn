@@ -1,57 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbswuphb4dqmd"]
+[gd_scene load_steps=6 format=3 uid="uid://cperbxm3voa30"]
 
-[ext_resource type="Script" path="res://portal.gd" id="1_hh8j4"]
-[ext_resource type="Shader" path="res://shaders/portal.gdshader" id="1_wq8ol"]
+[ext_resource type="Script" path="res://portal.gd" id="1_dfxr4"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_40bml"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8thj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_veam3"]
 resource_local_to_scene = true
-render_priority = 0
-shader = ExtResource("1_wq8ol")
-shader_parameter/tex = SubResource("ViewportTexture_40bml")
+albedo_color = Color(0, 0, 1, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ekykl"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_2a7qe"]
 resource_local_to_scene = true
-material = SubResource("ShaderMaterial_d8thj")
+material = SubResource("StandardMaterial3D_veam3")
 flip_faces = true
 orientation = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lmbxn"]
-size = Vector3(2, 2, 0.01)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clo2t"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oinb3"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_clo2t")
+flip_faces = true
+orientation = 2
 
 [node name="Portal" type="Node"]
-script = ExtResource("1_hh8j4")
+script = ExtResource("1_dfxr4")
 
-[node name="Entry" type="Node3D" parent="."]
+[node name="Entry" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_2a7qe")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Entry"]
-layers = 512
-mesh = SubResource("PlaneMesh_ekykl")
-
-[node name="Area3D" type="Area3D" parent="Entry"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Entry/Area3D"]
-shape = SubResource("BoxShape3D_lmbxn")
-
-[node name="DummyCamera" type="Node3D" parent="Entry"]
-
-[node name="DummyBody" type="Node3D" parent="Entry"]
-
-[node name="Exit" type="Node3D" parent="."]
-
-[node name="DummyCamera" type="Node3D" parent="Exit"]
-
-[node name="DummyBody" type="Node3D" parent="Exit"]
-
-[node name="SubViewport" type="SubViewport" parent="."]
-mesh_lod_threshold = 0.0
-size = Vector2i(1024, 512)
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-cull_mask = 1048063
-fov = 80.0
-use_oblique_frustum = true
-
-[connection signal="body_entered" from="Entry/Area3D" to="." method="_on_area_3d_body_entered"]
+[node name="Exit" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_oinb3")

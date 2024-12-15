@@ -1,20 +1,67 @@
 extends Node
 
 var player_camera: Camera3D
+var portal_subviewport: SubViewport
 var portal_camera: Camera3D
 var dummy_camera_entry: Node3D
-var dummy_camera_exit: Node3D
 var dummy_body_entry: Node3D
+var dummy_camera_exit: Node3D
 var dummy_body_exit: Node3D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Get existing nodes
+	var portal_entry: MeshInstance3D = $Entry
+	var portal_exit: MeshInstance3D = $Exit
+	
+	# Setup viewport
+	portal_subviewport = SubViewport.new()
+	add_child(portal_subviewport)
+	portal_subviewport.mesh_lod_threshold = 0
+	portal_subviewport.size = get_viewport().size
+	get_tree().get_root().size_changed.connect(resize)
+	
+	# Setup camera
 	player_camera = get_viewport().get_camera_3d()
-	portal_camera = $SubViewport/Camera3D
-	dummy_camera_entry = $Entry/DummyCamera
-	dummy_camera_exit = $Exit/DummyCamera
-	dummy_body_entry = $Entry/DummyBody
-	dummy_body_exit = $Exit/DummyBody
+	portal_camera = Camera3D.new()
+	portal_subviewport.add_child(portal_camera)
+	portal_camera.set_fov(player_camera.get_fov())
+	portal_camera.use_oblique_frustum = true
+	portal_camera.set_oblique_normal(-portal_exit.global_transform.basis.z)
+	portal_camera.set_oblique_position(portal_exit.global_position)
+	var world_3d: World3D = player_camera.get_world_3d()
+	if world_3d:
+		portal_camera.environment = world_3d.environment.duplicate()
+		portal_camera.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
+	
+	# Setup dummies
+	dummy_camera_entry = Node3D.new()
+	portal_entry.add_child(dummy_camera_entry)
+	dummy_camera_exit = Node3D.new()
+	portal_exit.add_child(dummy_camera_exit)
+	dummy_body_entry = Node3D.new()
+	portal_entry.add_child(dummy_body_entry)
+	dummy_body_exit = Node3D.new()
+	portal_exit.add_child(dummy_body_exit)
+	
+	# Setup shader and material
+	var shader: Shader = load("res://shaders/portal.gdshader")
+	var portal_material: ShaderMaterial = ShaderMaterial.new()
+	portal_material.shader = shader
+	portal_material.set_shader_parameter("tex", portal_subviewport.get_texture())
+	portal_entry.get_mesh().surface_set_material(0, portal_material)
+	portal_exit.set_mesh(null)
+	
+	# Set up hitbox
+	var hitboxArea: Area3D = Area3D.new()
+	portal_entry.add_child(hitboxArea)
+	hitboxArea.global_transform = portal_entry.global_transform
+	var hitboxCollision: CollisionShape3D = CollisionShape3D.new()
+	hitboxCollision.shape = BoxShape3D.new()
+	hitboxCollision.shape.size = Vector3(portal_entry.get_mesh().size.x, portal_entry.get_mesh().size.y, 2)
+	hitboxArea.add_child(hitboxCollision)
+	hitboxArea.body_entered.connect(_on_entry_body_entered)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,23 +69,27 @@ func _process(delta: float) -> void:
 	dummy_camera_entry.set_global_transform(player_camera.get_global_transform())
 	dummy_camera_exit.set_transform(dummy_camera_entry.get_transform())
 	portal_camera.set_global_transform(dummy_camera_exit.get_global_transform())
-	portal_camera.set_oblique_normal(-$Exit.global_transform.basis.z)
-	portal_camera.set_oblique_position($Exit.global_position)
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_entry_body_entered(body: Node3D) -> void:
+	if body is not CharacterBody3D:
+		return
+	
 	dummy_body_entry.set_global_transform(body.get_global_transform())
 	dummy_body_exit.set_transform(dummy_body_entry.get_transform())
 	body.set_global_position(dummy_body_exit.get_global_position())
 	body.set_global_rotation(dummy_body_exit.get_global_rotation())
 	
-	var body_dir = body.velocity.normalized()
-	var right = $Entry.global_transform.basis.x.normalized()
-	var angle_sign = 1.0
-	if 0 < body_dir.dot(right):
-		angle_sign = -1.0
-	var backward = -$Entry.global_transform.basis.z.normalized()
-	var velocity_angle = angle_sign * acos(body_dir.dot(backward))
-	var exit_forward = $Exit.global_transform.basis.z.normalized()
-	var exit_up = $Exit.global_transform.basis.y.normalized()
-	body.set_velocity(exit_forward.rotated(exit_up, velocity_angle) * body.get_velocity().length())
+	#var body_dir = body.velocity.normalized()
+	#var right = portal_entry.global_transform.basis.x.normalized()
+	#var angle_sign = 1.0
+	#if 0 < body_dir.dot(right):
+		#angle_sign = -1.0
+	#var backward = -portal_entry.global_transform.basis.z.normalized()
+	#var velocity_angle = angle_sign * acos(body_dir.dot(backward))
+	#var exit_forward = portal_exit.global_transform.basis.z.normalized()
+	#var exit_up = portal_exit.global_transform.basis.y.normalized()
+	#body.set_velocity(exit_forward.rotated(exit_up, velocity_angle) * body.get_velocity().length())
+
+func resize():
+	portal_subviewport.size = get_viewport().size
