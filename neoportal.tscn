@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjm3rl1jrrf5c"]
+
+[ext_resource type="Script" path="res://neoportal.gd" id="1_6v0pf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_chvs0"]
+resource_local_to_scene = true
+flip_faces = true
+orientation = 2
+
+[node name="NeoPortal" type="MeshInstance3D"]
+layers = 512
+mesh = SubResource("PlaneMesh_chvs0")
+script = ExtResource("1_6v0pf")

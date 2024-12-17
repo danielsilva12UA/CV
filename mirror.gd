@@ -22,7 +22,7 @@ func _ready() -> void:
 	mirror_camera = Camera3D.new()
 	mirror_subviewport.add_child(mirror_camera)
 	mirror_camera.set_fov(player_camera.get_fov())
-	mirror_camera.set_cull_mask_value(5, false)
+	mirror_camera.set_cull_mask_value(10, false)
 	mirror_camera.use_oblique_frustum = true
 	mirror_camera.set_oblique_normal(-global_transform.basis.z)
 	mirror_camera.set_oblique_position(global_position)

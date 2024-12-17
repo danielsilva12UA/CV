@@ -102,7 +102,7 @@ transform = Transform3D(483.391, 0, 0, 0, 483.391, 0, 0, 0, 483.391, -0.458889, 
 mesh = SubResource("PlaneMesh_fb2c2")
 
 [node name="hut" parent="." instance=ExtResource("11_5c6fk")]
-transform = Transform3D(0.750734, 0, -0.660605, 0, 1, 0, 0.660605, 0, 0.750734, 178.102, 62.1773, -168.193)
+transform = Transform3D(-4.625, 0, -6.63683, 0, 7.5867, 0, -5.51714, 0, 5.56364, 182.717, 61.0167, -171.973)
 
 [node name="bridge" parent="." instance=ExtResource("12_qntvv")]
-transform = Transform3D(14.1644, 0, 0.488287, 0, 0.908888, 0, -17.2686, 0, 0.400513, 122.338, 60.9724, -100.655)
+transform = Transform3D(14.7302, 0, 3.63506, 0, 0.908888, 0, -17.9584, 0, 2.98163, 122.338, 60.9724, -100.655)
