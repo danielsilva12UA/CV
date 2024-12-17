@@ -18,54 +18,53 @@ script = ExtResource("2_v6a56")
 mode = 0
 textures = [[ExtResource("4_uxanv"), ExtResource("5_8ad3b"), ExtResource("6_mprqo")], [ExtResource("7_pkumn"), ExtResource("8_xnlm7"), ExtResource("9_le6dk")]]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_m0qbo"]
-seed = 6
-frequency = 0.0001
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wne8a"]
+frequency = 0.0125
 fractal_type = 2
-fractal_gain = 2.0
-domain_warp_enabled = true
+fractal_weighted_strength = 1.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1ewcq"]
-seamless = true
-seamless_blend_skirt = 0.8
-as_normal_map = true
-bump_strength = 5.0
-noise = SubResource("FastNoiseLite_m0qbo")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_r523t"]
-seed = 39
-frequency = 0.0001
-fractal_type = 2
-fractal_gain = 2.0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k65b8"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_057hn"]
 invert = true
 seamless = true
-seamless_blend_skirt = 1.0
 as_normal_map = true
-noise = SubResource("FastNoiseLite_r523t")
+noise = SubResource("FastNoiseLite_wne8a")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hb4cu"]
+seed = 12
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_55wgm"]
+seamless = true
+as_normal_map = true
+bump_strength = 5.0
+noise = SubResource("FastNoiseLite_hb4cu")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qg1kf"]
 render_priority = 0
 shader = ExtResource("10_diqio")
 shader_parameter/water_color = Color(0.352941, 0.537255, 0.658824, 1)
 shader_parameter/depth_distance = 40.0
-shader_parameter/waves_sin_movement = 45.0
-shader_parameter/waves_cos_movement = 25.0
-shader_parameter/light_sin_movement = 15.0
-shader_parameter/light_cos_movement = 5.0
-shader_parameter/normal_scale = 0.6
-shader_parameter/roughness_scale = 0.1
-shader_parameter/time_scale = 1.0
+shader_parameter/waves_sin_movement = 20.0
+shader_parameter/waves_cos_movement = 45.0
+shader_parameter/light_sin_movement = 25.0
+shader_parameter/light_cos_movement = 25.0
+shader_parameter/normal_scale = 0.2
+shader_parameter/roughness_scale = 0.2
+shader_parameter/general_time_scale = 1.0
 shader_parameter/water_color_ratio = 0.6
 shader_parameter/uv_scale = 0.03
+shader_parameter/waves_time_scale = 6.0
 shader_parameter/refraction_sin_movement = 0.004
 shader_parameter/refraction_cos_movement = 0.003
-shader_parameter/water_sin_desync = 0.3
+shader_parameter/water_sin_desync = 1.0
 shader_parameter/water_cos_desync = 0.1
 shader_parameter/beers_law = 1.7
-shader_parameter/water_noise_1 = SubResource("NoiseTexture2D_1ewcq")
-shader_parameter/water_noise_2 = SubResource("NoiseTexture2D_k65b8")
+shader_parameter/abberation_r = 1.0
+shader_parameter/abberation_g = 1.0
+shader_parameter/abberation_b = 1.0
+shader_parameter/highlights_time_scale = 0.5
+shader_parameter/waves = SubResource("NoiseTexture2D_55wgm")
+shader_parameter/highlights = SubResource("NoiseTexture2D_057hn")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fb2c2"]
 material = SubResource("ShaderMaterial_qg1kf")
