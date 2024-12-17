@@ -2,7 +2,7 @@ extends MeshInstance3D
 
 @export var other_portal: MeshInstance3D
 
-const thickness = 5
+const thickness = 0.5
 
 var player_camera: Camera3D
 var portal_entry: MeshInstance3D
