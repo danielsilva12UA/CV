@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0rx0dgj20xf"
-path.s3tc="res://.godot/imported/Rock020_2K-JPG_NormalDX.jpg-eae19a327e7e9124b6da0bf0aecd37a0.s3tc.ctex"
+uid="uid://d1cmpwpuitrhq"
+path.s3tc="res://.godot/imported/hut_Material_MetallicSmoothness.png-d66c86b695f637d9213b9de9d1a61902.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg"
-dest_files=["res://.godot/imported/Rock020_2K-JPG_NormalDX.jpg-eae19a327e7e9124b6da0bf0aecd37a0.s3tc.ctex"]
+source_file="res://hut/hut_Material_MetallicSmoothness.png"
+dest_files=["res://.godot/imported/hut_Material_MetallicSmoothness.png-d66c86b695f637d9213b9de9d1a61902.s3tc.ctex"]
 
 [params]
 

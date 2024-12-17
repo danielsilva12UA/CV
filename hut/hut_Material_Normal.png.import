@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0rx0dgj20xf"
-path.s3tc="res://.godot/imported/Rock020_2K-JPG_NormalDX.jpg-eae19a327e7e9124b6da0bf0aecd37a0.s3tc.ctex"
+uid="uid://t3n0t6vkgfcu"
+path.s3tc="res://.godot/imported/hut_Material_Normal.png-55bb1a6fef5e0b773a8015d8bc85ae88.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg"
-dest_files=["res://.godot/imported/Rock020_2K-JPG_NormalDX.jpg-eae19a327e7e9124b6da0bf0aecd37a0.s3tc.ctex"]
+source_file="res://hut/hut_Material_Normal.png"
+dest_files=["res://.godot/imported/hut_Material_Normal.png-55bb1a6fef5e0b773a8015d8bc85ae88.s3tc.ctex"]
 
 [params]
 

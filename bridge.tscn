@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8i67nrlf38op"]
+
+[ext_resource type="PackedScene" uid="uid://b3tavryivookr" path="res://wood_bridge/bridge.fbx" id="1_xh20p"]
+
+[node name="bridge" instance=ExtResource("1_xh20p")]
+
+[node name="bridge" parent="." index="0"]
+transform = Transform3D(99.8885, 0, 0, 0, 0, 99.8885, 0, -99.8885, 0, 1.50225, 0, 0)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfvm1en5qw0v5"]
+
+[ext_resource type="PackedScene" uid="uid://dt4qixqd121iw" path="res://hut/hut.fbx" id="1_onf4k"]
+[ext_resource type="Texture2D" uid="uid://bnafi30qilyi6" path="res://hut/hut_Material_AlbedoTransparency.png" id="2_l2kmk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8uf7"]
+albedo_texture = ExtResource("2_l2kmk")
+
+[node name="hut" instance=ExtResource("1_onf4k")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s8uf7")

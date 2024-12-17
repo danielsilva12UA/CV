@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=20 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
 [ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
 [ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_diqio"]
+[ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
+[ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 script = ExtResource("2_v6a56")
@@ -81,17 +83,26 @@ chunk_size = 32
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
-shader_type = "Classic4Lite"
+shader_type = "Classic4"
 custom_shader = null
 custom_globalmap_shader = null
 texture_set = SubResource("Resource_ij4qg")
 render_layers = 1
 cast_shadow = 1
-shader_params/u_ground_uv_scale = 20
+shader_params/u_ground_uv_scale_per_texture = null
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
+shader_params/u_globalmap_blend_start = null
+shader_params/u_globalmap_blend_distance = null
+shader_params/u_colormap_opacity_per_texture = null
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(483.391, 0, 0, 0, 483.391, 0, 0, 0, 483.391, -0.458889, 59.5, -0.0450134)
 mesh = SubResource("PlaneMesh_fb2c2")
+
+[node name="hut" parent="." instance=ExtResource("11_5c6fk")]
+transform = Transform3D(0.750734, 0, -0.660605, 0, 1, 0, 0.660605, 0, 0.750734, 178.102, 62.1773, -168.193)
+
+[node name="bridge" parent="." instance=ExtResource("12_qntvv")]
+transform = Transform3D(14.1644, 0, 0.488287, 0, 0.908888, 0, -17.2686, 0, 0.400513, 122.338, 60.9724, -100.655)
