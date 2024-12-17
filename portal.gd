@@ -28,7 +28,7 @@ func _ready() -> void:
 	add_child(portal_subviewport)
 	portal_subviewport.mesh_lod_threshold = 0
 	portal_subviewport.size = get_viewport().size
-	portal_subviewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	portal_subviewport.render_target_update_mode = SubViewport.UPDATE_WHEN_VISIBLE
 	get_tree().get_root().size_changed.connect(resize)
 	
 	# Setup camera
@@ -127,14 +127,22 @@ func _ready() -> void:
 	portal_travellers = {}
 
 
+var h_flag = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for body in portal_travellers.keys():
 		if portal_travellers[body]>0 and side_of_portal(body)<=0:
 			teleport(body)
 			portal_travellers.erase(body)
+			call_deferred("heads_up")
 	call_deferred("adjust_camera")
-	#adjust_camera()
+	if h_flag:
+		portal_subviewport.render_target_update_mode = SubViewport.UPDATE_WHEN_VISIBLE
+
+
+func heads_up():
+	other_portal.portal_subviewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	other_portal.h_flag = true
 
 
 func adjust_camera() -> void:
