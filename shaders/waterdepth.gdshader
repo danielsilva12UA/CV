@@ -54,7 +54,7 @@ float back_and_forth(float x, float y){
 
 void vertex() {
 	// Called for every vertex the material is visible on.
-	world_uv = MODEL_MATRIX * vec4(VERTEX, 1.0);
+	world_uv = MODEL_MATRIX * vec4(VERTEX, 10000.0);
 }
 
 void fragment() {
@@ -88,8 +88,7 @@ void fragment() {
 
 	ALBEDO = mix(screen * depth_blend * blended, water_color, water_color_ratio);
 	NORMAL_MAP = texture(waves,_uv).rgb;
-	//mix(texture(water_noise_1,_uv).rgb, texture(water_noise_2, _uv).rgb, (sin(TIME * (general_time_scale * 2.1))+1.3));
-	//NORMAL_MAP = texture(water_noise_1, _uv).rgb;
+	
 	NORMAL *= normal_scale;
 	ROUGHNESS *= roughness_scale;
 }
