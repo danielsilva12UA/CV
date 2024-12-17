@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxavntt82we8v"]
+
+[ext_resource type="Shader" path="res://shaders/portal.gdshader" id="1_7vy5i"]
+[ext_resource type="Script" path="res://mirror.gd" id="2_11cq2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubtgq"]
+render_priority = 0
+shader = ExtResource("1_7vy5i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_25xvr"]
+material = SubResource("ShaderMaterial_ubtgq")
+flip_faces = true
+orientation = 2
+
+[node name="Mirror" type="MeshInstance3D"]
+layers = 512
+mesh = SubResource("PlaneMesh_25xvr")
+script = ExtResource("2_11cq2")

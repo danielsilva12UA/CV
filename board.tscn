@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj5ppfmcxxrca"]
+[gd_scene load_steps=5 format=3 uid="uid://bj5ppfmcxxrca"]
+
+[ext_resource type="Texture2D" uid="uid://dc0la161vbyk2" path="res://assets/house.jpg" id="1_t087x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_avniv"]
 size = Vector3(2, 0.5, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yssaf"]
 albedo_color = Color(0.321569, 0.14902, 0.113725, 1)
+albedo_texture = ExtResource("1_t087x")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p225w"]
 material = SubResource("StandardMaterial3D_yssaf")
