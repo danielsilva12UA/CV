@@ -200,7 +200,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3624, 75.4526, 110.375)
 
 [node name="Mirror" parent="Building" instance=ExtResource("6_7yv4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183659, 3.18147, 0.991249)
-layers = 4
 mesh = SubResource("PlaneMesh_bywuo")
 
 [node name="PortalBlue" parent="." node_paths=PackedStringArray("other_portal") instance=ExtResource("6_jkaky")]
