@@ -20,7 +20,7 @@ uniform float normal_scale : hint_range(0.0, 10.0, 0.1) = 0.6;
 uniform float roughness_scale : hint_range(0.0, 1.0, 0.1) = 0.1;
 uniform float general_time_scale : hint_range(0.0, 10.0, 0.1) = 1.0;
 uniform float water_color_ratio : hint_range(0.0, 1.0, 0.1) = 0.6;
-uniform float uv_scale : hint_range(0.0, 2.0, 0.01) = 0.03;
+uniform float uv_scale : hint_range(0.0, 1.0, 0.001) = 0.014;
 uniform float waves_time_scale : hint_range(0.0, 10.0, 0.1) = 7.0;
 
 uniform float refraction_sin_movement : hint_range(0.0, 0.01, 0.001) = 0.004;
@@ -71,9 +71,9 @@ void fragment() {
 	_suv.y += cos((TIME * general_time_scale) + (_suv.x - _suv.y) * light_cos_movement) * refraction_cos_movement;
 
 
-	float r = texture(highlights, _uv + abberation_r + TIME * highlights_time_scale).r;
-	float g = texture(highlights, _uv + abberation_g + TIME * highlights_time_scale).g;
-	float b = texture(highlights, _uv + abberation_b + TIME * highlights_time_scale).b;
+	float r = texture(highlights, _uv + abberation_r + sin(TIME * highlights_time_scale)).r;
+	float g = texture(highlights, _uv + abberation_g + cos(TIME * highlights_time_scale)).g;
+	float b = texture(highlights, _uv + abberation_b - sin(TIME * highlights_time_scale)).b;
 
 	vec3 blended = soft_light(texture(highlights, _uv).rgb, texture(screen_texture, _suv).rgb);
 
