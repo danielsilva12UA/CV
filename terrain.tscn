@@ -97,7 +97,11 @@ shader_params/u_globalmap_blend_distance = null
 shader_params/u_colormap_opacity_per_texture = null
 
 [node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(483.391, 0, 0, 0, 483.391, 0, 0, 0, 483.391, -0.458889, 59.5, -0.0450134)
+transform = Transform3D(2351, 0, 0, 0, 2351, 0, 0, 0, 2351, -0.458889, 59.5, -0.0450134)
+mesh = SubResource("PlaneMesh_fb2c2")
+
+[node name="BelowWater" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2351, -2.58502, 0, 2.58502, -2351, 0, 0, 0, 2351, -0.458889, 59.5, -0.0450134)
 mesh = SubResource("PlaneMesh_fb2c2")
 
 [node name="hut" parent="." instance=ExtResource("11_5c6fk")]

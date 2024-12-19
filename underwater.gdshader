@@ -5,15 +5,13 @@ uniform vec4 color : source_color = vec4(0.35294117647,  0.53725490196, 0.658823
 uniform sampler2D fast_noise : repeat_enable;
 uniform sampler2D screen_content : hint_screen_texture;
 
-uniform float wave_strength = 5.0;
-
 void fragment() {
 	// Called for every pixel the material is visible on.
-	vec2 uv = UV + TIME * 0.4;
-	vec2 noise = texture(fast_noise, uv).rg;
-	
-	COLOR = vec4(color.r, color.g, color.b, 1) +  vec4(noise.x, noise.y, 1, 1);
-	COLOR *= texture(screen_content, SCREEN_UV + noise * (wave_strength / 100.0));
+	vec2 uv = UV + TIME * 0.2;
+
+	COLOR = vec4(color.r, color.g, color.b, 1);
+	COLOR *= texture(screen_content, UV);
+
 }
 
 //void light() {
