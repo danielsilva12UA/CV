@@ -37,9 +37,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.411449, -0.325582)
 near = 0.001
 
 [node name="GlobalAlbedo" type="Sprite2D" parent="Head/Camera3D"]
+visible = false
 material = SubResource("ShaderMaterial_5r6c7")
-position = Vector2(1391, 792.625)
-scale = Vector2(2.81171, 1.5578)
 texture = ExtResource("3_ryuif")
+centered = false
 
 [node name="Body" type="Node3D" parent="."]
