@@ -10,6 +10,9 @@ var input_mouse
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$Head/Camera3D/GlobalAlbedo.visible = false
+	resize()
+	get_tree().get_root().size_changed.connect(resize)
 
 func _physics_process(delta: float) -> void:
 	global_rotation.x = 0
@@ -68,11 +71,16 @@ func _input(event):
 		$Head.global_rotation.y = global_rotation.y
 
 
+func resize() -> void:
+	$Head/Camera3D/GlobalAlbedo.scale.x = get_viewport().size.x / 1025.0
+	$Head/Camera3D/GlobalAlbedo.scale.y = get_viewport().size.y / 1025.0
+
+
 func _on_water_hitbox_body_entered(body: Node3D) -> void:
 	print("ENTERED WATER")
-	pass # Replace with function body.
+	$Head/Camera3D/GlobalAlbedo.visible = true
 
 
 func _on_water_hitbox_body_exited(body: Node3D) -> void:
 	print("EXITED WATER")
-	pass # Replace with function body.
+	$Head/Camera3D/GlobalAlbedo.visible = false
