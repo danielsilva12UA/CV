@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=24 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="6_0ushw"]
 [ext_resource type="PackedScene" uid="uid://dxavntt82we8v" path="res://mirror.tscn" id="6_7yv4p"]
 [ext_resource type="Shader" path="res://shaders/portal.gdshader" id="7_6psad"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4xfyt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgtio"]
 size = Vector3(100, 1, 50)
@@ -76,6 +78,12 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="terrain_world" parent="." instance=ExtResource("1_y6eus")]
+
+[node name="waterHitbox" type="Area3D" parent="terrain_world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 58, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain_world/waterHitbox"]
+shape = SubResource("WorldBoundaryShape3D_4xfyt")
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.261, 104.696, -75.5965)
@@ -183,3 +191,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3624, 75.4526, 110.375)
 [node name="Mirror" parent="Building" instance=ExtResource("6_7yv4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183659, 3.18147, 0.991249)
 mesh = SubResource("PlaneMesh_bywuo")
+
+[connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
+[connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]

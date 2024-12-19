@@ -66,3 +66,13 @@ func _input(event):
 			$Head.global_rotation.x += rotation_angle.x
 		$Head.global_rotation.z = 0
 		$Head.global_rotation.y = global_rotation.y
+
+
+func _on_water_hitbox_body_entered(body: Node3D) -> void:
+	print("ENTERED WATER")
+	pass # Replace with function body.
+
+
+func _on_water_hitbox_body_exited(body: Node3D) -> void:
+	print("EXITED WATER")
+	pass # Replace with function body.
