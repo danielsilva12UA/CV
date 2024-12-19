@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://neoportal.tscn" id="4_pe1pw"]
 [ext_resource type="PackedScene" uid="uid://cyej4a711fov2" path="res://house.tscn" id="5_rlg4i"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="6_0ushw"]
-[ext_resource type="PackedScene" uid="uid://dxavntt82we8v" path="res://mirror.tscn" id="6_7yv4p"]
+[ext_resource type="PackedScene" path="res://mirror.tscn" id="6_7yv4p"]
 [ext_resource type="Shader" path="res://shaders/portal.gdshader" id="7_6psad"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4xfyt"]

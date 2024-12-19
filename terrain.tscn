@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
+resource_local_to_scene = true
 script = ExtResource("2_v6a56")
 mode = 0
 textures = [[ExtResource("4_uxanv"), ExtResource("5_8ad3b"), ExtResource("6_mprqo")], [ExtResource("7_pkumn"), ExtResource("8_xnlm7"), ExtResource("9_le6dk")]]
