@@ -39,6 +39,8 @@ uniform float highlights_time_scale : hint_range(0.0, 10.0, 0.1) = 5.0;
 
 varying vec4 world_uv;
 
+uniform float alpha : hint_range(0.9, 1.0, 0.01) = 1.0;
+
 vec3 soft_light(vec3 base, vec3 blend){
 	vec3 limit = step(0.5, blend);
 	return mix(2.0 * base * blend + base * base * (1.0 - 2.0 * blend),
@@ -88,9 +90,9 @@ void fragment() {
 
 	ALBEDO = mix(screen * depth_blend * blended, water_color, water_color_ratio);
 	NORMAL_MAP = texture(waves,_uv).rgb;
-	
 	NORMAL *= normal_scale;
 	ROUGHNESS *= roughness_scale;
+	ALPHA = alpha;
 }
 
 //void light() {

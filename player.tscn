@@ -38,8 +38,8 @@ near = 0.001
 
 [node name="GlobalAlbedo" type="Sprite2D" parent="Head/Camera3D"]
 material = SubResource("ShaderMaterial_5r6c7")
-position = Vector2(568, 330)
-scale = Vector2(1.20585, 0.655122)
+position = Vector2(1391, 792.625)
+scale = Vector2(2.81171, 1.5578)
 texture = ExtResource("3_ryuif")
 
 [node name="Body" type="Node3D" parent="."]
