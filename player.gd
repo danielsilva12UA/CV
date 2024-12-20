@@ -103,7 +103,7 @@ func _on_water_hitbox_body_entered(body: Node3D) -> void:
 	underwater = true
 	print("ENTERED WATER")
 	$Head/Camera3D/WaterVision.visible = true
-	get_world_3d().environment.volumetric_fog_enabled = 1
+	get_world_3d().environment.volumetric_fog_enabled = true
 
 
 func _on_water_hitbox_body_exited(body: Node3D) -> void:
@@ -111,5 +111,5 @@ func _on_water_hitbox_body_exited(body: Node3D) -> void:
 		return
 	underwater = false
 	print("EXITED WATER")
-	get_world_3d().environment.volumetric_fog_enabled = 0
+	get_world_3d().environment.volumetric_fog_enabled = false
 	$Head/Camera3D/WaterVision.visible = false
