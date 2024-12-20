@@ -76,11 +76,10 @@ void fragment() {
 	float g = texture(highlights, _uv + abberation_g + cos(TIME * highlights_time_scale)).g;
 	float b = texture(highlights, _uv + abberation_b - sin(TIME * highlights_time_scale)).b;
 
-	vec3 blended = soft_light(texture(highlights, _uv).rgb, texture(screen_texture, _suv).rgb);
-
+	vec3 blended = soft_light(texture(highlights, _suv).rgb, texture(screen_texture, _suv).rgb);
 	vec3 screen = textureLod(screen_texture, _suv, 0.0).rgb;
 
-	ALBEDO = mix(screen * blended, water_color, water_color_ratio);
+	ALBEDO = mix(screen * blended, water_color * blended, water_color_ratio);
 	NORMAL_MAP = texture(waves,_uv).rgb;
 	NORMAL *= normal_scale;
 	ROUGHNESS *= roughness_scale;

@@ -77,7 +77,7 @@ void fragment() {
 	float g = texture(highlights, _uv + abberation_g + cos(TIME * highlights_time_scale)).g;
 	float b = texture(highlights, _uv + abberation_b - sin(TIME * highlights_time_scale)).b;
 
-	vec3 blended = soft_light(texture(highlights, _uv).rgb, texture(screen_texture, _suv).rgb);
+	vec3 blended = soft_light(texture(highlights, _uv).rgb, vec3(r,g,b));
 
 	vec3 screen = textureLod(screen_texture, _suv, 0.0).rgb;
 
