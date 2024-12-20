@@ -10,7 +10,7 @@ var input_mouse
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$Head/Camera3D/GlobalAlbedo.visible = false
+	$Head/Camera3D/WaterVision.visible = false
 	resize()
 	get_tree().get_root().size_changed.connect(resize)
 
@@ -72,15 +72,19 @@ func _input(event):
 
 
 func resize() -> void:
-	$Head/Camera3D/GlobalAlbedo.scale.x = get_viewport().size.x / 1025.0
-	$Head/Camera3D/GlobalAlbedo.scale.y = get_viewport().size.y / 1025.0
+	$Head/Camera3D/WaterVision.scale.x = get_viewport().size.x / 1025.0
+	$Head/Camera3D/WaterVision.scale.y = get_viewport().size.y / 1025.0
 
 
 func _on_water_hitbox_body_entered(body: Node3D) -> void:
+	if body != self:
+		return
 	print("ENTERED WATER")
-	$Head/Camera3D/GlobalAlbedo.visible = true
+	$Head/Camera3D/WaterVision.visible = true
 
 
 func _on_water_hitbox_body_exited(body: Node3D) -> void:
+	if body != self:
+		return
 	print("EXITED WATER")
-	$Head/Camera3D/GlobalAlbedo.visible = false
+	$Head/Camera3D/WaterVision.visible = false
