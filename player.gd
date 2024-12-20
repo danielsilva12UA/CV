@@ -13,6 +13,7 @@ func _ready():
 	$Head/Camera3D/WaterVision.visible = false
 	resize()
 	get_tree().get_root().size_changed.connect(resize)
+	get_world_3d().environment.volumetric_fog_density = 0.02
 
 func _physics_process(delta: float) -> void:
 	global_rotation.x = 0
@@ -81,10 +82,12 @@ func _on_water_hitbox_body_entered(body: Node3D) -> void:
 		return
 	print("ENTERED WATER")
 	$Head/Camera3D/WaterVision.visible = true
+	get_world_3d().environment.volumetric_fog_enabled = 1
 
 
 func _on_water_hitbox_body_exited(body: Node3D) -> void:
 	if body != self:
 		return
 	print("EXITED WATER")
+	get_world_3d().environment.volumetric_fog_enabled = 0
 	$Head/Camera3D/WaterVision.visible = false
