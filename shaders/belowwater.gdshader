@@ -39,7 +39,7 @@ uniform float highlights_time_scale : hint_range(0.0, 10.0, 0.1) = 5.0;
 
 varying vec4 world_uv;
 
-uniform float alpha : hint_range(0.8, 1.0, 0.01) = 0.8;
+uniform float alpha : hint_range(0.8, 1.0, 0.01) = 1.0;
 
 vec3 soft_light(vec3 base, vec3 blend){
 	vec3 limit = step(0.5, blend);
@@ -56,7 +56,7 @@ float back_and_forth(float x, float y){
 
 void vertex() {
 	// Called for every vertex the material is visible on.
-	world_uv = MODEL_MATRIX * vec4(VERTEX, 10000.0);
+	world_uv = MODEL_MATRIX * vec4(VERTEX, 1.0);
 }
 
 void fragment() {
@@ -72,7 +72,6 @@ void fragment() {
 	_suv.x += sin((TIME * general_time_scale) + (_suv.x + _suv.y) * light_sin_movement) * refraction_sin_movement;
 	_suv.y += cos((TIME * general_time_scale) + (_suv.x - _suv.y) * light_cos_movement) * refraction_cos_movement;
 
-
 	float r = texture(highlights, _uv + abberation_r + sin(TIME * highlights_time_scale)).r;
 	float g = texture(highlights, _uv + abberation_g + cos(TIME * highlights_time_scale)).g;
 	float b = texture(highlights, _uv + abberation_b - sin(TIME * highlights_time_scale)).b;
@@ -81,14 +80,7 @@ void fragment() {
 
 	vec3 screen = textureLod(screen_texture, _suv, 0.0).rgb;
 
-	float depth_r = textureLod(depth_texture, _suv, 0.0).r;
-	vec4 world = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, depth_r, 1.0);
-	world.xyz /= world.w;
-	float depth_blend = smoothstep(world.z + depth_distance, world.z, VERTEX.z);
-	depth_blend = exp(depth_blend*-beers_law);
-	depth_blend = clamp(pow(depth_blend, 3.0), 0.0, 1.0);
-
-	ALBEDO = mix(screen * depth_blend * blended, water_color, water_color_ratio);
+	ALBEDO = mix(screen * blended, water_color, water_color_ratio);
 	NORMAL_MAP = texture(waves,_uv).rgb;
 	NORMAL *= normal_scale;
 	ROUGHNESS *= roughness_scale;

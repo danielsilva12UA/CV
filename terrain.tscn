@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=27 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://deucjyscpxqqj" path="res://terrain_textures/Grass/Grass002_2K-PNG_NormalDX.png" id="7_pkumn"]
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
 [ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
-[ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_diqio"]
+[ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_4dk23"]
+[ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
 
@@ -18,6 +19,60 @@ resource_local_to_scene = true
 script = ExtResource("2_v6a56")
 mode = 0
 textures = [[ExtResource("4_uxanv"), ExtResource("5_8ad3b"), ExtResource("6_mprqo")], [ExtResource("7_pkumn"), ExtResource("8_xnlm7"), ExtResource("9_le6dk")]]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_11r38"]
+frequency = 0.0125
+fractal_type = 2
+fractal_weighted_strength = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r3dmq"]
+invert = true
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_11r38")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tlr83"]
+seed = 12
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bwyvs"]
+seamless = true
+as_normal_map = true
+bump_strength = 5.0
+noise = SubResource("FastNoiseLite_tlr83")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vho1l"]
+render_priority = 0
+shader = ExtResource("10_4dk23")
+shader_parameter/water_color = Color(0.352941, 0.537255, 0.658824, 1)
+shader_parameter/depth_distance = 40.0
+shader_parameter/waves_sin_movement = 20.0
+shader_parameter/waves_cos_movement = 45.0
+shader_parameter/light_sin_movement = 25.0
+shader_parameter/light_cos_movement = 25.0
+shader_parameter/normal_scale = 0.2
+shader_parameter/roughness_scale = 0.2
+shader_parameter/general_time_scale = 1.0
+shader_parameter/water_color_ratio = 1.0
+shader_parameter/uv_scale = 0.014
+shader_parameter/waves_time_scale = 10.0
+shader_parameter/refraction_sin_movement = 0.01
+shader_parameter/refraction_cos_movement = 0.01
+shader_parameter/water_sin_desync = 0.7
+shader_parameter/water_cos_desync = 0.4
+shader_parameter/beers_law = 1.7
+shader_parameter/abberation_r = 1.0
+shader_parameter/abberation_g = 1.0
+shader_parameter/abberation_b = 1.0
+shader_parameter/highlights_time_scale = 5.0
+shader_parameter/alpha = 0.85
+shader_parameter/waves = SubResource("NoiseTexture2D_bwyvs")
+shader_parameter/highlights = SubResource("NoiseTexture2D_r3dmq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gyhvq"]
+material = SubResource("ShaderMaterial_vho1l")
+uv2_padding = 0.0
+size = Vector2(1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wne8a"]
 frequency = 0.0125
@@ -42,7 +97,7 @@ noise = SubResource("FastNoiseLite_hb4cu")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qg1kf"]
 render_priority = 0
-shader = ExtResource("10_diqio")
+shader = ExtResource("10_no4v5")
 shader_parameter/water_color = Color(0.352941, 0.537255, 0.658824, 1)
 shader_parameter/depth_distance = 40.0
 shader_parameter/waves_sin_movement = 20.0
@@ -64,7 +119,7 @@ shader_parameter/abberation_r = 1.0
 shader_parameter/abberation_g = 1.0
 shader_parameter/abberation_b = 1.0
 shader_parameter/highlights_time_scale = 5.0
-shader_parameter/alpha = 0.96
+shader_parameter/alpha = 0.85
 shader_parameter/waves = SubResource("NoiseTexture2D_55wgm")
 shader_parameter/highlights = SubResource("NoiseTexture2D_057hn")
 
@@ -100,7 +155,7 @@ shader_params/u_colormap_opacity_per_texture = null
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(2032.81, 0, 0, 0, 2032.81, 0, 0, 0, 2032.81, -0.458889, 59.5, -0.0450134)
-mesh = SubResource("PlaneMesh_fb2c2")
+mesh = SubResource("PlaneMesh_gyhvq")
 
 [node name="BelowWater" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2032.81, -2.23515, 0, 2.23515, -2032.81, 0, 0, 0, 2032.81, -0.458889, 59.5, -0.0450134)
