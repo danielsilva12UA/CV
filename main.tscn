@@ -75,6 +75,7 @@ environment = ExtResource("1_di4jb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -0.00289917, 197.015, 0.0324707)
+light_color = Color(1, 0.670588, 0.258824, 1)
 shadow_enabled = true
 
 [node name="terrain_world" parent="." instance=ExtResource("1_y6eus")]
@@ -184,6 +185,11 @@ other_portal = NodePath("../../FloorBlue/NeoPortal")
 
 [node name="House" parent="." instance=ExtResource("5_rlg4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1431, 73.8385, -24.9908)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0318775, 17.0535, 6.26131)
+light_energy = 5.0
+light_indirect_energy = 2.7
 
 [node name="Building" parent="." instance=ExtResource("6_0ushw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3624, 75.4526, 110.375)
