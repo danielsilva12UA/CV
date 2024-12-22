@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=31 format=3 uid="uid://bi1pdh4ukdqwl"]
-=======
-[gd_scene load_steps=28 format=3 uid="uid://bi1pdh4ukdqwl"]
->>>>>>> e4d17d7d45e9c657d4ac04c6a4798318da10a701
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -17,14 +13,10 @@
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
 [ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
 [ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
 [ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
-=======
-[ext_resource type="PackedScene" uid="uid://dncwpjjf8emif" path="res://hut/boat.tscn" id="14_1t27r"]
->>>>>>> e4d17d7d45e9c657d4ac04c6a4798318da10a701
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
@@ -180,7 +172,6 @@ transform = Transform3D(-4.625, 0, -6.63683, 0, 7.5867, 0, -5.51714, 0, 5.56364,
 [node name="bridge" parent="." instance=ExtResource("12_qntvv")]
 transform = Transform3D(14.7302, 0, 3.63506, 0, 4.90261, 0, -17.9584, 0, 2.98163, 122.338, 60.9724, -100.655)
 
-<<<<<<< HEAD
 [node name="StrangePalm" parent="." instance=ExtResource("16_0df4x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3783, 61.4266, 131.052)
 
@@ -252,7 +243,3 @@ transform = Transform3D(0.531369, 0, -0.847141, 0, 1, 0, 0.847141, 0, 0.531369, 
 
 [node name="StrangePalmOld7" parent="." instance=ExtResource("16_75j64")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4068, 61.9502, 19.4023)
-=======
-[node name="Boat" parent="." instance=ExtResource("14_1t27r")]
-transform = Transform3D(14.1026, -2.81374, -3.38324, 3.18654, 14.3633, 1.33711, 3.03471, -2.00617, 14.3182, 168.2, 61.1641, -176.306)
->>>>>>> e4d17d7d45e9c657d4ac04c6a4798318da10a701
