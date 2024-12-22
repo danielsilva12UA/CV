@@ -7,7 +7,7 @@ uniform float wave : hint_range(0.0, 1.0, 0.1) = 0.2;
 uniform float twist : hint_range(0.0, 1.0, 0.1) = 0.7;
 uniform float mask_black : hint_range(0.0, 1.0, 0.1) = 0.5;
 uniform float mask_white : hint_range(0.0, 1.0, 0.1) = 0.5;
-
+uniform sampler2D fish_texture;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
@@ -41,12 +41,11 @@ void vertex() {
 	
 	//twist motion with mask
 	VERTEX.xy = mix(VERTEX.xy, twist_matrix * VERTEX.xy, mask);
-	
-	
 }
 
 void fragment() {
 	// Called for every pixel the material is visible on.
+	ALBEDO = texture(fish_texture, UV).rgb;
 }
 
 //void light() {
