@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b54hfwcawakq0"
+path="res://.godot/imported/BoatWSail.obj-67a4dc1bd2361af2a8d927d6af90d83b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BoatWSail.obj-67a4dc1bd2361af2a8d927d6af90d83b.mesh"]
+
+source_file="res://Ships by @Quaternius/OBJ/BoatWSail.obj"
+dest_files=["res://.godot/imported/BoatWSail.obj-67a4dc1bd2361af2a8d927d6af90d83b.mesh", "res://.godot/imported/BoatWSail.obj-67a4dc1bd2361af2a8d927d6af90d83b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
