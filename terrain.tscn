@@ -1,18 +1,22 @@
-[gd_scene load_steps=27 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=31 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_v6a56"]
 [ext_resource type="Texture2D" uid="uid://bpu3w7xmq5bi1" path="res://terrain_textures/Grass/Grass002_2K-PNG_Color.png" id="4_uxanv"]
 [ext_resource type="Texture2D" uid="uid://c2d550kh3ofqg" path="res://terrain_textures/Sand/Ground080_2K-JPG_Color.jpg" id="5_8ad3b"]
-[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
+[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
 [ext_resource type="Texture2D" uid="uid://deucjyscpxqqj" path="res://terrain_textures/Grass/Grass002_2K-PNG_NormalDX.png" id="7_pkumn"]
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
-[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
+[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
 [ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_4dk23"]
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
+[ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
+[ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
+[ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
+[ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
@@ -167,3 +171,75 @@ transform = Transform3D(-4.625, 0, -6.63683, 0, 7.5867, 0, -5.51714, 0, 5.56364,
 
 [node name="bridge" parent="." instance=ExtResource("12_qntvv")]
 transform = Transform3D(14.7302, 0, 3.63506, 0, 4.90261, 0, -17.9584, 0, 2.98163, 122.338, 60.9724, -100.655)
+
+[node name="StrangePalm" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3783, 61.4266, 131.052)
+
+[node name="StrangePalm2" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.921, 61.7505, 61.7233)
+
+[node name="StrangePalmCurved" parent="." instance=ExtResource("15_rx3ql")]
+transform = Transform3D(-0.193635, 0, 0.981074, 0, 1, 0, -0.981074, 0, -0.193635, -47.5227, 62.8125, -94.3401)
+
+[node name="StrangePalmOld" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64512, 61.9502, 94.934)
+
+[node name="StrangePalmYoung" parent="." instance=ExtResource("17_ex8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 651.909, 65.0563, 889.091)
+
+[node name="StrangePalmOld2" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.205, 61.9502, 19.0528)
+
+[node name="StrangePalmYoung2" parent="." instance=ExtResource("17_ex8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.8733, 74.8942, -70.9883)
+
+[node name="StrangePalmOld3" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(-0.333428, 0, 0.942775, 0, 1, 0, -0.942775, 0, -0.333428, -466.423, 68.7065, 443.242)
+
+[node name="StrangePalm3" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.916, 61.4266, 96.2129)
+
+[node name="StrangePalm4" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -210.864, 213.361, 453.637)
+
+[node name="StrangePalmYoung3" parent="." instance=ExtResource("17_ex8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.535, 63.1854, 319.198)
+
+[node name="StrangePalmOld4" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(-0.478738, 0, -0.877958, 0, 1, 0, 0.877958, 0, -0.478738, -230.943, 212.989, 492.852)
+
+[node name="StrangePalmYoung4" parent="." instance=ExtResource("17_ex8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.865, 66.1377, 25.6394)
+
+[node name="StrangePalm5" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2131, 63.7672, -91.527)
+
+[node name="StrangePalmCurved2" parent="." instance=ExtResource("15_rx3ql")]
+transform = Transform3D(-0.193635, 0, 0.981074, 0, 1, 0, -0.981074, 0, -0.193635, 182.507, 60.2679, -185.907)
+
+[node name="StrangePalmYoung5" parent="." instance=ExtResource("17_ex8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.232, 64.3608, -403.927)
+
+[node name="StrangePalm6" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -490.54, 74.6962, -45.9008)
+
+[node name="StrangePalmOld5" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(0.409286, 0, -0.912406, 0, 1, 0, 0.912406, 0, 0.409286, -488.487, 74.0729, -9.97628)
+
+[node name="StrangePalmYoung6" parent="." instance=ExtResource("17_ex8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -797.698, 68.188, -854.99)
+
+[node name="StrangePalm7" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -864.304, 70.7973, -843.88)
+
+[node name="StrangePalmOld6" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -843.188, 71.1347, -824.138)
+
+[node name="StrangePalm8" parent="." instance=ExtResource("16_0df4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -846.817, 74.6537, -817.949)
+
+[node name="StrangePalmCurved3" parent="." instance=ExtResource("15_rx3ql")]
+transform = Transform3D(0.531369, 0, -0.847141, 0, 1, 0, 0.847141, 0, 0.531369, -500.06, 74.585, -6.32813)
+
+[node name="StrangePalmOld7" parent="." instance=ExtResource("16_75j64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4068, 61.9502, 19.4023)
