@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=28 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
+[ext_resource type="PackedScene" uid="uid://dncwpjjf8emif" path="res://hut/boat.tscn" id="14_1t27r"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
@@ -167,3 +168,6 @@ transform = Transform3D(-4.625, 0, -6.63683, 0, 7.5867, 0, -5.51714, 0, 5.56364,
 
 [node name="bridge" parent="." instance=ExtResource("12_qntvv")]
 transform = Transform3D(14.7302, 0, 3.63506, 0, 4.90261, 0, -17.9584, 0, 2.98163, 122.338, 60.9724, -100.655)
+
+[node name="Boat" parent="." instance=ExtResource("14_1t27r")]
+transform = Transform3D(14.1026, -2.81374, -3.38324, 3.18654, 14.3633, 1.33711, 3.03471, -2.00617, 14.3182, 168.2, 61.1641, -176.306)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bnyi0te0e5u8"
+path="res://.godot/imported/Sail ship.obj-e1e8180e555910301e17d79e8bf95766.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sail ship.obj-e1e8180e555910301e17d79e8bf95766.mesh"]
+
+source_file="res://Ships by @Quaternius/OBJ/Sail ship.obj"
+dest_files=["res://.godot/imported/Sail ship.obj-e1e8180e555910301e17d79e8bf95766.mesh", "res://.godot/imported/Sail ship.obj-e1e8180e555910301e17d79e8bf95766.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

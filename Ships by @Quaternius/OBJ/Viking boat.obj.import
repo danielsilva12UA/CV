@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3inxh2x3brpp"
+path="res://.godot/imported/Viking boat.obj-802112ba01e6ef6a68851de7a9a6565e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Viking boat.obj-802112ba01e6ef6a68851de7a9a6565e.mesh"]
+
+source_file="res://Ships by @Quaternius/OBJ/Viking boat.obj"
+dest_files=["res://.godot/imported/Viking boat.obj-802112ba01e6ef6a68851de7a9a6565e.mesh", "res://.godot/imported/Viking boat.obj-802112ba01e6ef6a68851de7a9a6565e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
