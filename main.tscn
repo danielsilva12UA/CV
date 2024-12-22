@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=28 format=4 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="6_0ushw"]
 [ext_resource type="PackedScene" uid="uid://dxavntt82we8v" path="res://mirror.tscn" id="6_7yv4p"]
 [ext_resource type="Shader" path="res://shaders/portal.gdshader" id="7_6psad"]
+[ext_resource type="Texture2D" uid="uid://xf130wgednnh" path="res://piranha_model/pirahna_texture.png" id="9_mitpk"]
+[ext_resource type="Script" path="res://piranha_mesh.gd" id="10_8ocsy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4xfyt"]
 
@@ -67,6 +69,27 @@ material = SubResource("ShaderMaterial_ox161")
 flip_faces = true
 size = Vector2(10, 6.5)
 orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s07lg"]
+resource_name = "piranha_mtl"
+albedo_texture = ExtResource("9_mitpk")
+metallic = 0.873
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g86m7"]
+_surfaces = [{
+"aabb": AABB(-1.66679, -0.356606, -0.450423, 3.26914, 1.93844, 0.900846),
+"attribute_data": PackedByteArray("3DaIZY0Iym97K/UuQz/FlOwEPaJHSDDEPhVMzuZJefBoMe7dGlahXcZ3x4bwery4Rmdx2E8rEvvfGDnzy4iO+oGIQuBrmY76tZlC4GecpcXPhaXF/UhMOx5GZSX+XEw73V9lJWNbXBCYSlwQ7KvHY02n8FZztsdjErvwVuilfn53vH5+nqehoMG6oaDJqrPFlrezxbiwdfqnsXX6npdse5iKbHuTkUpPo5BKT8+FzKBmnMygeyv1Lo0Iym/cNohl7AQ9okM/xZQ+FUzOR0gwxGgx7t3mSXnwGlahXcZ3x4bwery4Rmdx2N8YOfNPKxL7xpyvBKaQUid1hp8CX/lnJontTUsq4N4nu7drIeCqnT32oOEePNXwBnvJdinivrsFX/lnJontTUsq4N4nPNXwBnvJdinivrsFxpyvBKaQUid1hp8CPNXwBnvJdinivrsFdYafAqaQUifGnK8E4r67BXvJdik81fAGKuDeJ4ntTUtf+Wcm4r67BXvJdik81fAGdYafAqaQUifGnK8EKuDeJ4ntTUtf+Wcm9qDhHuCqnT27t2sh4r67BXvJdik81fAG0vfGfgzVhZEg6lFQv9OEVnqBm2O2ZWlaVX0tGmBtGxtbxfujPuL9m+nXcc4d9Tm7W9Pu+ivKC+qc6Xbq1f5PzPL3Ed0yEldBgguEQPMbkR3sBJkY7ASZGIILhEDzG5EdMhJXQb/ThFYM1YWRIOpRUNL3xn4d9Tm7PuL9m+nXcc5bxfujK8oL6pzpdupb0+768vcR3dX+T8wyEldBgguEQPMbkR3sBJkYYG0bG7ZlaVpVfS0aeoGbY+wEmRiCC4RA8xuRHTISV0F1hp8CppBSJ8acrwTGnK8EppBSJ3WGnwIq4N4nie1NS1/5ZyZf+Wcmie1NSyrg3ic="),
+"format": 34896613399,
+"index_count": 318,
+"index_data": PackedByteArray("AAABAAIAAwAEAAAAAAAEAAEABQAGAAMAAwAGAAQABwAIAAUABQAIAAYACQAAAAIACgADAAkACQADAAAACwAFAAoACgAFAAMADAAHAAsACwAHAAUADQAOAAgACAAOAAYADwAQABEAEQAQABIAEwASABQAFAASABAAFQAWABcAFwAWABgAGQAYABoAGgAYABYAGwAcAB0AHQAcAB4AHwAbACAAIAAbAB0AIQAfACIAIgAfACAAIQAiACMAIwAiACQAJQAjACYAJgAjACQAJwAoACkAKQAoACoAKAAnACsAKwAnACwAKwAsABQAFAAsABMALQAuAC8ALgAwAC8ALwAwADEAMAAyADEAMQAyADMAMgA0ADMAMwA0ADUALQAvADYALwAxADYANgAxADcAMQAzADcANwAzADgAMwA1ADgAOAA1ADkAMgA6ADQANAA6ADsAPAA9AD4APwBAAEEAQgBDAEQARQBGAEcASABJAEoASwBMAE0ATgBPAFAAUQBSAFMAVABVAFYAVwBYAFkAWgBbAFwAXQBeAF8AYABhAGIAYwBkAGUAZgBnAGgAaQBqAGsAbABtAG4AbgBtAG8AcABxAHIAcgBxAHMAdAB1AHYAdgB1AHcAeAB5AHoAegB5AHYAdwB7AHYAdgB7AHoAegB7AHwAfQB+AH8AfwB+AIAAgQCCAIMAgwCCAIQAhQCGAIcAhwCGAIgAiQCKAIsAiwCKAIwAiwCNAI4AjgCNAI8AkACRAI4AjgCRAIsAiwCRAIkAkgCTAJQAlACTAJUAlgCXAJgAmACXAJkAmgCbAJwAnACbAJ0AngCfAKAAoQCiAKMApAClAKYApwCoAKkA"),
+"material": SubResource("StandardMaterial3D_s07lg"),
+"name": "piranha_mtl",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 170,
+"vertex_data": PackedByteArray("sl9jeWeycbU1X6gnJaDZwksiEIJZgpq6lpV5b3jSHrUZlUMIEbCyvffLzGY8zeS1hMk4Daq4t7k5/PhSsqnTuwPiDTTuv2G7MGCtsKqgY7mWlTTUqrgZu/LMYMDQn3fC2umhjziYu8jl/0MbqbFCyS7yTgNvmibAOfz4UrKp7qHa6aGPOJiitzn8+FJMVjTi2umhj8ZnodLyzGDALmAP4fLMYMDQnyi35f9DG6mxJqQD4g007r9UmOX/QxtVToDZA+INNBBAR+k5/PhSTFY04jn8+FKyqe6hLvJOA2+aJ8Xl/0MbqbEmpC7yTgOPZYXa5f9DG1VOgNmEyTgNqriVw4TJOA1UR6nrGZVDCBGwrM0ZlUMI7U9n6jVfqCcloC3dNV+oJ9lfCvBLIhCCWYKK+ksiEIKlfSL+MGCtsFRfoO0wYK2wqqDQ2EsiEIKlfSL+SyIQglmCivqWlTTUqriPyZaVNNRUR73pSyIQgqV96hI1X6gn2V+KCLJfY3mXTfwEGZVDCO1PvhaWlXlvhy22AYTJOA1UR24X98vMZsIyCgED4g00EEACEjn8+FJMVhQUMGCtsFRfLySWlTTUVEcRHvLMYMAuYF0M2umhj8Zn/AEu8k4Dj2U9LeX/QxtVTmod1O29RaeshpsM8usxqLSGm9Dn6D83sYab2/eiT3SowYw09wA5Q6TBjFjwgUuKrMGM4/pkUquIrre6+0U/j4+utzn5gE+9oK63LfpWU5Flrb+9+n093Hitvwb6ClZ5fq2/y/loHUd6QvX//z0xGXJC9T/70R71XUL1BfmvIM+kEPQS/uEyj5UQ9ML7sR0gjhD09uw5KEJRLez89T83QlEt7NPyniFCUS3svOp8K4OzLexO89Y5GaYt7K/wKSWxsS3s0/KeIUJRAAD89T83QlEAAPbsOShCUQAAr/ApJbGxUgZO89Y5GaZSBrzqfCuDs1IGP/vRHvVdPjj//z0xGXI+OMv5aB1Hej44wvuxHSCOBy0S/uEyj5UHLQX5ryDPpAct0OfoPzexOQcM8usxqLQ5B9TtvUWnrDkHWPCBS4qspgQ09wA5Q6SmBNv3ok90qKYEOfmAT72gdgW6+0U/j492BeP6ZFKriHYFBvoKVnl+BAa9+n093HgEBi36VlORZQQGr3j//1l/Sc58mtzRWX9JzrtJo8hZf0nO61jlpll/Sc42dyIbWX/3pD9dAABZf/ekNzLtbFl/96ToKO1VWX/3pH0AjuPyfsOCnh547/J+w4IqEBuQ8n7DgnwvebHAf8OCFQh8O/J+w4IAAOJc8n7DghYgZ1jyfsOCGDihj/J+xILEL11w8n7EgmS3kSJFth7F5rYiF0W2IMUylCIu//8jxcmPnAb//yTFyY+cBgAAQhHmtiIXuUlDETKUIi4AAEMRZLeRIrlJQxHrWOWmWX8AAHya3NFZfwAAu0mjyFl/AACveP//WX8AAHwvebHAfw0Anh547/J+EwAqEBuQ8n4IAH0AjuPyfhMAAADiXPJ+AAAWIGdY8n4XABUIfDvyfgAAxC9dcPJ+LwAYOKGP8n4vAGS3kSK5SR7F5rYiF7lJIMUylCIuAAAjxcmPnAYAACTF6CjtVVl/AAA/XQAAWX8AADcy7WxZfwAANnciG1l/AADJj5wG//9CEea2IhdFtkMRMpQiLv//QxFkt5EiRbZDEdDn6D/2S1MBDPLrMVVSUwHU7b1FhlBTAdTtvUVXU4abDPLrMVZLhpvQ5+g/x06Gm1jwgUt0U6YENPcAObtbpgTb96JPilemBNv3ok+KV8GMNPcAObtbwYxY8IFLdFPBjPHyovUOMFf04eNs4wT+yPu/Itzg1xNAAuoX29zaJfsbIxbAG937IToQ504qdc6PDxtBkQP/GJIjRxPTxTF/ogIDuZEXhHe8C7+tYxtiuq0nQM7hGmt4wBexdsUpqn2GAwxzrhCEd7wLMH+iAnhe51RreMAXklbzQ6p9hgNBZV9kc0pBST9g22XKR49RqFzAbYY/VF66/fkfkvmnWsPaaj1c65oikvmnWrr9+R8A4yIfYs/rNqrQ/cHRSxFTGMs7uiRFjVOVyai4pD8YURw29EbuMs8+ZysOPyTMPbD+wXatKrZBqw8nqC9EOR1ShTetMFnsAhhZ7AIYWewCGOYoLRzmKC0c5igtHFtaFApbWhQKW1oUCpqLARKaiwESmosBEn4Pz8t+D8/Lfg/Py0QEUNBEBFDQRARQ0P///////////////98NiAjfDYgI3w2ICHGZjeZxmY3mcZmN5mejwOhno8DoZ6PA6OqPLNnqjyzZ6o8s2SCSB+ggkgfoIJIH6P4k/mH+JP5h/iT+YSvzupUr87qVK/O6lfXwVcD18FXA9fBVwFRBl4NUQZeDVEGXg////////////////////////////////////////////3//f/9//380fQqA2nsPgP9//3//f/9/2nsPgPh3HoD4dx6AZRPsF2UT7BdjE+wXYxPsF6Q7xTioO8I4pTvFOKk7wTiotFbLqLRWy6i0VsuotFbLifvNezAEtYSf+8x7MAS1hMv7y3vK+8t7y/vLe8r7y3vK+8t7mewS6JnsEuib7BLom+wS6ArW9KkK1vSpCtb0qQrW9KlaxDnHVsQ8x1nEOcdVxD3HwRw1WsEcNVrBHDVapRP856UT/OelE/zn0wxEatMMRGrTDERqGNfR4xjX0eMY19Hj")
+}]
+blend_shape_mode = 0
 
 [node name="Main" type="Node3D"]
 
@@ -196,6 +219,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3624, 75.4526, 110.375)
 [node name="Mirror" parent="Building" instance=ExtResource("6_7yv4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183659, 3.18147, 0.991249)
 mesh = SubResource("PlaneMesh_bywuo")
+
+[node name="PiranhaMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.471289, 0, 0.881979, 0, 1, 0, -0.881979, 0, 0.471289, -12.6594, 68.2133, 52.1004)
+mesh = SubResource("ArrayMesh_g86m7")
+script = ExtResource("10_8ocsy")
 
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]
