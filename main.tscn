@@ -1,74 +1,12 @@
-[gd_scene load_steps=29 format=4 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=10 format=4 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
 [ext_resource type="PackedScene" uid="uid://bi1pdh4ukdqwl" path="res://terrain.tscn" id="1_y6eus"]
-[ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://neoportal.tscn" id="4_pe1pw"]
-[ext_resource type="PackedScene" uid="uid://cyej4a711fov2" path="res://house.tscn" id="5_rlg4i"]
-[ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="6_0ushw"]
-[ext_resource type="PackedScene" uid="uid://dxavntt82we8v" path="res://mirror.tscn" id="6_7yv4p"]
-[ext_resource type="Shader" path="res://shaders/portal.gdshader" id="7_6psad"]
 [ext_resource type="Texture2D" uid="uid://xf130wgednnh" path="res://piranha_model/pirahna_texture.png" id="9_mitpk"]
 [ext_resource type="Script" path="res://static_body_3d.gd" id="10_b0kd7"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4xfyt"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mgtio"]
-size = Vector3(100, 1, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjcbb"]
-albedo_color = Color(0, 0, 1, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_r68i0"]
-material = SubResource("StandardMaterial3D_hjcbb")
-size = Vector2(100, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr5h8"]
-albedo_color = Color(0, 0, 1, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_6okeb"]
-material = SubResource("StandardMaterial3D_pr5h8")
-flip_faces = true
-size = Vector2(100, 50)
-
-[sub_resource type="BoxMesh" id="BoxMesh_eollh"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_nnoyi"]
-resource_local_to_scene = true
-flip_faces = true
-size = Vector2(50, 50)
-orientation = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3umk8"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_cux1m"]
-material = SubResource("StandardMaterial3D_3umk8")
-size = Vector2(100, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hovnr"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_pbde6"]
-material = SubResource("StandardMaterial3D_hovnr")
-flip_faces = true
-size = Vector2(100, 50)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_1btlh"]
-resource_local_to_scene = true
-flip_faces = true
-size = Vector2(50, 50)
-orientation = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ox161"]
-render_priority = 0
-shader = ExtResource("7_6psad")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_bywuo"]
-material = SubResource("ShaderMaterial_ox161")
-flip_faces = true
-size = Vector2(10, 6.5)
-orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s07lg"]
 resource_name = "piranha_mtl"
@@ -113,115 +51,6 @@ shape = SubResource("WorldBoundaryShape3D_4xfyt")
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.261, 104.696, -75.5965)
-
-[node name="FloorBlue" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 93.3038, -75.5965)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="FloorBlue"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorBlue/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_mgtio")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBlue"]
-mesh = SubResource("PlaneMesh_r68i0")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="FloorBlue"]
-mesh = SubResource("PlaneMesh_6okeb")
-
-[node name="Boxes" type="Node" parent="FloorBlue"]
-
-[node name="Box1" type="MeshInstance3D" parent="FloorBlue/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 93.8038, -75.5965)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box2" type="MeshInstance3D" parent="FloorBlue/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3252, 93.8038, -59.2958)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box3" type="MeshInstance3D" parent="FloorBlue/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1571, 93.8038, -86.4638)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box4" type="MeshInstance3D" parent="FloorBlue/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1585, 93.8038, -62.451)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box5" type="MeshInstance3D" parent="FloorBlue/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3133, 93.8038, -88.1374)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="NeoPortal" parent="FloorBlue" node_paths=PackedStringArray("other_portal") instance=ExtResource("4_pe1pw")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 25, 0)
-mesh = SubResource("PlaneMesh_nnoyi")
-other_portal = NodePath("../../FloorRed/NeoPortal")
-
-[node name="FloorRed" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 93.3038, 21.285)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorRed"]
-mesh = SubResource("PlaneMesh_cux1m")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="FloorRed"]
-mesh = SubResource("PlaneMesh_pbde6")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="FloorRed"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorRed/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_mgtio")
-
-[node name="Boxes" type="Node" parent="FloorRed"]
-
-[node name="Box1" type="MeshInstance3D" parent="FloorRed/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 93.8038, 21.285)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box2" type="MeshInstance3D" parent="FloorRed/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3252, 93.8038, 37.5857)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box3" type="MeshInstance3D" parent="FloorRed/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1571, 93.8038, 10.4177)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box4" type="MeshInstance3D" parent="FloorRed/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1585, 93.8038, 34.4305)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="Box5" type="MeshInstance3D" parent="FloorRed/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3133, 93.8038, 8.74412)
-mesh = SubResource("BoxMesh_eollh")
-skeleton = NodePath("../..")
-
-[node name="NeoPortal" parent="FloorRed" node_paths=PackedStringArray("other_portal") instance=ExtResource("4_pe1pw")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 25, 0)
-mesh = SubResource("PlaneMesh_1btlh")
-other_portal = NodePath("../../FloorBlue/NeoPortal")
-
-[node name="House" parent="." instance=ExtResource("5_rlg4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1431, 73.8385, -24.9908)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="House"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0318775, 17.0535, 6.26131)
-light_energy = 5.0
-light_indirect_energy = 2.7
-
-[node name="Building" parent="." instance=ExtResource("6_0ushw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3624, 75.4526, 110.375)
-
-[node name="Mirror" parent="Building" instance=ExtResource("6_7yv4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183659, 3.18147, 0.991249)
-mesh = SubResource("PlaneMesh_bywuo")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 
