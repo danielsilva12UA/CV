@@ -49,7 +49,7 @@ data = PackedVector3Array(-0.4447, 0.5626, 0.1774, -0.451, -0.0563, 0.1131, -1.2
 [node name="Main" type="Node3D"]
 
 [node name="Building" parent="." instance=ExtResource("1_kjq6a")]
-transform = Transform3D(-6.55671e-07, 0, -15, 0, 15, 0, 15, 0, -6.55671e-07, 3.07736, 78.5654, -20.5709)
+transform = Transform3D(-6.55671e-07, 0, -15, 0, 15, 0, 15, 0, -6.55671e-07, 3.07736, 78.5654, -13.3755)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_di4jb")
