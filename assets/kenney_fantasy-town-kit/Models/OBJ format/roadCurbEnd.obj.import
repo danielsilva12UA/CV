@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dg0ul8h0nkop1"
+path="res://.godot/imported/roadCurbEnd.obj-0b0a9ead3a75ee192abbf54a8052d095.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadCurbEnd.obj-0b0a9ead3a75ee192abbf54a8052d095.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/roadCurbEnd.obj"
+dest_files=["res://.godot/imported/roadCurbEnd.obj-0b0a9ead3a75ee192abbf54a8052d095.mesh", "res://.godot/imported/roadCurbEnd.obj-0b0a9ead3a75ee192abbf54a8052d095.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

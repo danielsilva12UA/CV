@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnlvnrvmrtqab"
+path="res://.godot/imported/planksHalf.obj-2d97b90e1ad58ef0a3eac9e70d23f79f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/planksHalf.obj-2d97b90e1ad58ef0a3eac9e70d23f79f.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/planksHalf.obj"
+dest_files=["res://.godot/imported/planksHalf.obj-2d97b90e1ad58ef0a3eac9e70d23f79f.mesh", "res://.godot/imported/planksHalf.obj-2d97b90e1ad58ef0a3eac9e70d23f79f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

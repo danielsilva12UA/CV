@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bb1q3sk6pdevj"
+path="res://.godot/imported/stairsFullCornerInner.obj-d94f019b1f4aedaf83254ff4db9e4635.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsFullCornerInner.obj-d94f019b1f4aedaf83254ff4db9e4635.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/stairsFullCornerInner.obj"
+dest_files=["res://.godot/imported/stairsFullCornerInner.obj-d94f019b1f4aedaf83254ff4db9e4635.mesh", "res://.godot/imported/stairsFullCornerInner.obj-d94f019b1f4aedaf83254ff4db9e4635.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

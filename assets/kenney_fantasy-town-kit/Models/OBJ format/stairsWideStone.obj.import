@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kq78p5i2m2ay"
+path="res://.godot/imported/stairsWideStone.obj-4dddf60c9d8a3f381ed58e2f724b9f0e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsWideStone.obj-4dddf60c9d8a3f381ed58e2f724b9f0e.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/stairsWideStone.obj"
+dest_files=["res://.godot/imported/stairsWideStone.obj-4dddf60c9d8a3f381ed58e2f724b9f0e.mesh", "res://.godot/imported/stairsWideStone.obj-4dddf60c9d8a3f381ed58e2f724b9f0e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

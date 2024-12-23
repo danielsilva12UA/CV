@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1b8f7nexe10w"
+path="res://.godot/imported/wallWoodDoorwaySquareWideCurved.obj-609be0d372e35c62cb903ab3e41828fa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodDoorwaySquareWideCurved.obj-609be0d372e35c62cb903ab3e41828fa.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/wallWoodDoorwaySquareWideCurved.obj"
+dest_files=["res://.godot/imported/wallWoodDoorwaySquareWideCurved.obj-609be0d372e35c62cb903ab3e41828fa.mesh", "res://.godot/imported/wallWoodDoorwaySquareWideCurved.obj-609be0d372e35c62cb903ab3e41828fa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

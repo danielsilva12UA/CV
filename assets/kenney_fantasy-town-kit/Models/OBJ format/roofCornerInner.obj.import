@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b217bhkvpd6rj"
+path="res://.godot/imported/roofCornerInner.obj-d8f5de049b5cbb2d7cae2909b3a01398.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roofCornerInner.obj-d8f5de049b5cbb2d7cae2909b3a01398.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/roofCornerInner.obj"
+dest_files=["res://.godot/imported/roofCornerInner.obj-d8f5de049b5cbb2d7cae2909b3a01398.mesh", "res://.godot/imported/roofCornerInner.obj-d8f5de049b5cbb2d7cae2909b3a01398.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
