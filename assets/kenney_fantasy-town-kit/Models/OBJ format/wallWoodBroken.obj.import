@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgdvc5og8som6"
+path="res://.godot/imported/wallWoodBroken.obj-ed02e33fbc8e9eb28b81b76ae7624dec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodBroken.obj-ed02e33fbc8e9eb28b81b76ae7624dec.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/wallWoodBroken.obj"
+dest_files=["res://.godot/imported/wallWoodBroken.obj-ed02e33fbc8e9eb28b81b76ae7624dec.mesh", "res://.godot/imported/wallWoodBroken.obj-ed02e33fbc8e9eb28b81b76ae7624dec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

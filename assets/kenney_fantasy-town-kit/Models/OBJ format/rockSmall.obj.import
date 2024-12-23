@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crcc10mnlj2d2"
+path="res://.godot/imported/rockSmall.obj-04c8666531e8665473e880b508f95cf6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rockSmall.obj-04c8666531e8665473e880b508f95cf6.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/rockSmall.obj"
+dest_files=["res://.godot/imported/rockSmall.obj-04c8666531e8665473e880b508f95cf6.mesh", "res://.godot/imported/rockSmall.obj-04c8666531e8665473e880b508f95cf6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

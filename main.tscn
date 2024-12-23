@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=13 format=4 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
+[ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
 [ext_resource type="PackedScene" uid="uid://bi1pdh4ukdqwl" path="res://terrain.tscn" id="1_y6eus"]
 [ext_resource type="Shader" path="res://fish.gdshader" id="4_rbja1"]
@@ -47,6 +48,9 @@ data = PackedVector3Array(-0.4447, 0.5626, 0.1774, -0.451, -0.0563, 0.1131, -1.2
 
 [node name="Main" type="Node3D"]
 
+[node name="Building" parent="." instance=ExtResource("1_kjq6a")]
+transform = Transform3D(-6.55671e-07, 0, -15, 0, 15, 0, 15, 0, -6.55671e-07, 3.07736, 78.5654, -20.5709)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_di4jb")
 
@@ -79,7 +83,7 @@ transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_u7d1h")
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.261, 104.696, -75.5965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3329, 76.231, 59.0876)
 
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]

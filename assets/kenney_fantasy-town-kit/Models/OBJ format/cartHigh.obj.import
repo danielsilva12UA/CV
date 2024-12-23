@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5x0na161c8tk"
+path="res://.godot/imported/cartHigh.obj-b916c61917ab32a72158e80cbdb3bc90.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cartHigh.obj-b916c61917ab32a72158e80cbdb3bc90.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/cartHigh.obj"
+dest_files=["res://.godot/imported/cartHigh.obj-b916c61917ab32a72158e80cbdb3bc90.mesh", "res://.godot/imported/cartHigh.obj-b916c61917ab32a72158e80cbdb3bc90.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

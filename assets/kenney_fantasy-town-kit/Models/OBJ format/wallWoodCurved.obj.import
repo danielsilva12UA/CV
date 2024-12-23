@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://coodyw1brrync"
+path="res://.godot/imported/wallWoodCurved.obj-1a58a63c8e7d63ed1ff8aa9093acdf51.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodCurved.obj-1a58a63c8e7d63ed1ff8aa9093acdf51.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/wallWoodCurved.obj"
+dest_files=["res://.godot/imported/wallWoodCurved.obj-1a58a63c8e7d63ed1ff8aa9093acdf51.mesh", "res://.godot/imported/wallWoodCurved.obj-1a58a63c8e7d63ed1ff8aa9093acdf51.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

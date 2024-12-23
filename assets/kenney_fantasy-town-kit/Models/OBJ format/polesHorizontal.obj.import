@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmnmlktgyonj8"
+path="res://.godot/imported/polesHorizontal.obj-ecd9a5f80f87d74d342042ca2a3958bf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/polesHorizontal.obj-ecd9a5f80f87d74d342042ca2a3958bf.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/polesHorizontal.obj"
+dest_files=["res://.godot/imported/polesHorizontal.obj-ecd9a5f80f87d74d342042ca2a3958bf.mesh", "res://.godot/imported/polesHorizontal.obj-ecd9a5f80f87d74d342042ca2a3958bf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

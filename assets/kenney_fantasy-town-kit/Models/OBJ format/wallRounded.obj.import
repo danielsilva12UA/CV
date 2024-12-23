@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bt3r0jsfgorup"
+path="res://.godot/imported/wallRounded.obj-7970bf7848e068a91410d7b4d828f6fd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallRounded.obj-7970bf7848e068a91410d7b4d828f6fd.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/wallRounded.obj"
+dest_files=["res://.godot/imported/wallRounded.obj-7970bf7848e068a91410d7b4d828f6fd.mesh", "res://.godot/imported/wallRounded.obj-7970bf7848e068a91410d7b4d828f6fd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

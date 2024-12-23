@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b758yevl1rivf"
+path="res://.godot/imported/fountainCornerInnerSquare.obj-9b1ef790e97a41b369e5d1d5adbf0e45.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fountainCornerInnerSquare.obj-9b1ef790e97a41b369e5d1d5adbf0e45.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/fountainCornerInnerSquare.obj"
+dest_files=["res://.godot/imported/fountainCornerInnerSquare.obj-9b1ef790e97a41b369e5d1d5adbf0e45.mesh", "res://.godot/imported/fountainCornerInnerSquare.obj-9b1ef790e97a41b369e5d1d5adbf0e45.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

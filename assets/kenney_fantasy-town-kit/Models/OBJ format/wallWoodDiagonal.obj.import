@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dghmg1uhaoy58"
+path="res://.godot/imported/wallWoodDiagonal.obj-283238f41415f48f46f7796c0281003a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodDiagonal.obj-283238f41415f48f46f7796c0281003a.mesh"]
+
+source_file="res://assets/kenney_fantasy-town-kit/Models/OBJ format/wallWoodDiagonal.obj"
+dest_files=["res://.godot/imported/wallWoodDiagonal.obj-283238f41415f48f46f7796c0281003a.mesh", "res://.godot/imported/wallWoodDiagonal.obj-283238f41415f48f46f7796c0281003a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
