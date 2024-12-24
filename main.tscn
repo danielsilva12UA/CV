@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=13 format=4 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
 [ext_resource type="PackedScene" uid="uid://dyg7ycckfiylj" path="res://player.tscn" id="1_vi72f"]
 [ext_resource type="PackedScene" uid="uid://bi1pdh4ukdqwl" path="res://terrain.tscn" id="1_y6eus"]
 [ext_resource type="Shader" path="res://fish.gdshader" id="4_rbja1"]
+[ext_resource type="PackedScene" uid="uid://dlf2k0dogi0xh" path="res://boat_w_sail.tscn" id="7_215h5"]
 [ext_resource type="Texture2D" uid="uid://xf130wgednnh" path="res://piranha_model/pirahna_texture.png" id="9_mitpk"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4xfyt"]
@@ -86,6 +87,9 @@ transform = Transform3D(1, 0, 0, 3.55271e-15, -45.8917, 0, 0, 0, -40.8065, -105.
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3329, 76.231, 59.0876)
+
+[node name="BoatWSail2" parent="." instance=ExtResource("7_215h5")]
+transform = Transform3D(-19.183, 0, 1.67703e-06, 0, 19.183, 0, -1.67703e-06, 0, -19.183, 4.53428, 72.6766, -128.15)
 
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]

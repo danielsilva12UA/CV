@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=4 uid="uid://dyg7ycckfiylj"]
+[gd_scene load_steps=48 format=4 uid="uid://dyg7ycckfiylj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ydsig"]
 [ext_resource type="Shader" path="res://underwater.gdshader" id="2_45ppr"]
 [ext_resource type="Texture2D" uid="uid://c3muj4c038bho" path="res://global_albedo.png" id="3_ryuif"]
+[ext_resource type="PackedScene" uid="uid://dl24nvisuglru" path="res://interaction/player_interactor.tscn" id="5_hlkqy"]
 [ext_resource type="Texture2D" uid="uid://b5opl8l5pesnk" path="res://assets/kenney_mini-characters/Models/GLB format/Textures/colormap.png" id="5_y01rv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n68wo"]
@@ -23,6 +24,8 @@ noise = SubResource("FastNoiseLite_p7a7k")
 shader = ExtResource("2_45ppr")
 shader_parameter/color = Color(0.352941, 0.537255, 0.658824, 0.584314)
 shader_parameter/fast_noise = SubResource("NoiseTexture2D_wqokq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32br6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ik2eg"]
 resource_name = "colormap"
@@ -2744,6 +2747,14 @@ material = SubResource("ShaderMaterial_5r6c7")
 texture = ExtResource("3_ryuif")
 centered = false
 
+[node name="PlayerInteractor" parent="Head/Camera3D" node_paths=PackedStringArray("player") instance=ExtResource("5_hlkqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541778, 0.0225322)
+player = NodePath("../../..")
+
+[node name="CollisionShape3D" parent="Head/Camera3D/PlayerInteractor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.34154, -1.16825e-05, 0.441357, -1.51625)
+shape = SubResource("BoxShape3D_32br6")
+
 [node name="Body" type="Node3D" parent="."]
 
 [node name="character-male-d2" type="Node3D" parent="Body"]
@@ -2816,3 +2827,5 @@ skin = SubResource("Skin_tfyoo")
 libraries = {
 "": SubResource("AnimationLibrary_lqpkp")
 }
+
+[editable path="Head/Camera3D/PlayerInteractor"]
