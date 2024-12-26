@@ -18,6 +18,7 @@ var animation
 @onready var PlayerCamera1st = $Head.get_child(0)
 @onready var PlayerCamera2nd = $Head.get_child(2)
 @onready var PlayerCamera3rd = $Head.get_child(1)
+@onready var BoatCamera = get_parent().get_child(5).get_child(5)
 
 func _ready():
 	animation = $Body/"character-male-d2"/AnimationPlayer
@@ -99,15 +100,16 @@ func _input(event):
 		$Head.global_rotation.y = global_rotation.y
 	
 	if event.is_action_pressed("change_view"):
-		if currentCamera == 0:
-			PlayerCamera3rd.current = true
-			currentCamera = 1
-		elif currentCamera == 1:
-			PlayerCamera2nd.current = true
-			currentCamera = 2
-		elif currentCamera == 2:
-			PlayerCamera1st.current = true
-			currentCamera = 0
+		if BoatCamera.current == false:
+			if currentCamera == 0:
+				PlayerCamera3rd.current = true
+				currentCamera = 1
+			elif currentCamera == 1:
+				PlayerCamera2nd.current = true
+				currentCamera = 2
+			elif currentCamera == 2:
+				PlayerCamera1st.current = true
+				currentCamera = 0
 		
 	
 func resize() -> void:
