@@ -2730,7 +2730,7 @@ _data = {
 script = ExtResource("1_ydsig")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.517334)
+transform = Transform3D(1, 0, 0, 0, 0.531488, 0, 0, 0, 1, 0, 0.409105, -0.517334)
 shape = SubResource("BoxShape3D_n68wo")
 
 [node name="Head" type="Node3D" parent="."]
@@ -2754,6 +2754,14 @@ player = NodePath("../../..")
 [node name="CollisionShape3D" parent="Head/Camera3D/PlayerInteractor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.34154, -1.16825e-05, 0.441357, -1.51625)
 shape = SubResource("BoxShape3D_32br6")
+
+[node name="Camera3D3rdPerson" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144461, 1.13178)
+fov = 90.0
+
+[node name="Camera3D2ndPerson" type="Camera3D" parent="Head"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.144, -1.106)
+fov = 90.0
 
 [node name="Body" type="Node3D" parent="."]
 

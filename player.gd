@@ -5,12 +5,19 @@ const SPEED = 15.0
 const JUMP_VELOCITY = 15.0
 const MOUSE_SENSITIVITY = 700
 
+static var currentCamera = 0
+static var cameras : Array = ["Camera3D", "Camera3D3rdPerson", "Camera3D2ndPerson"]
+
 var mouse_captured = true
 var input_mouse
 
 var underwater = false
 
 var animation
+
+@onready var PlayerCamera1st = $Head.get_child(0)
+@onready var PlayerCamera2nd = $Head.get_child(2)
+@onready var PlayerCamera3rd = $Head.get_child(1)
 
 func _ready():
 	animation = $Body/"character-male-d2"/AnimationPlayer
@@ -90,8 +97,19 @@ func _input(event):
 			$Head.global_rotation.x += rotation_angle.x
 		$Head.global_rotation.z = 0
 		$Head.global_rotation.y = global_rotation.y
-
-
+	
+	if event.is_action_pressed("change_view"):
+		if currentCamera == 0:
+			PlayerCamera3rd.current = true
+			currentCamera = 1
+		elif currentCamera == 1:
+			PlayerCamera2nd.current = true
+			currentCamera = 2
+		elif currentCamera == 2:
+			PlayerCamera1st.current = true
+			currentCamera = 0
+		
+	
 func resize() -> void:
 	$Head/Camera3D/WaterVision.scale.x = get_viewport().size.x / 1025.0
 	$Head/Camera3D/WaterVision.scale.y = get_viewport().size.y / 1025.0
