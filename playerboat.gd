@@ -4,6 +4,13 @@ extends Node3D
 
 @onready var boat_meshinstance: MeshInstance3D = $Boat
 @onready var boat_material: StandardMaterial3D = boat_meshinstance.mesh.surface_get_material(0)
+@onready var Player = get_parent().get_child(4)
+@onready var BoatSeat: Node3D = $PlayerPosition  # The reference point on the boat
+@onready var BoatExit: Node3D = $PlayerExit # The reference point out of the boat
+@onready var PlayerCamera = Player.get_child(1).get_child(0)
+@onready var BoatCamera: Camera3D = $BoatCamera
+
+static var onBoat = false
 
 func add_highlight() -> void:
 	boat_meshinstance.set_surface_override_material(0, boat_material.duplicate())
@@ -13,20 +20,31 @@ func remove_highlight() -> void:
 	boat_meshinstance.set_surface_override_material(0, null)
 
 func move_player_into_boat() -> void:
-	pass
+	Player.global_transform.origin = BoatSeat.global_transform.origin
 
-func adjust_camera_view() -> void:
-	pass
+func move_player_out_of_boat() -> void:
+	Player.global_transform.origin = BoatExit.global_transform.origin
+
+func adjust_camera_to_boat() -> void:
+	BoatCamera.current = true
+
+func adjust_camera_to_player() -> void:
+	PlayerCamera.current = true
+
 
 func _on_interactable_focused() -> void:
 	add_highlight()
 
-
 func _on_interactable_interacted() -> void:
 	print("Interacted with the boat")
-	move_player_into_boat()
-	adjust_camera_view()
-
+	if (onBoat):
+		move_player_out_of_boat()
+		adjust_camera_to_player()
+		onBoat = false
+	else:
+		move_player_into_boat()
+		adjust_camera_to_boat()
+		onBoat = true
 
 func _on_interactable_unfocused() -> void:
 	remove_highlight()

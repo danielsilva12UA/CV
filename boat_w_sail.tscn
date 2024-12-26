@@ -33,6 +33,16 @@ shape = SubResource("ConcavePolygonShape3D_1oolu")
 transform = Transform3D(0.374813, 0, 0, 0, 0.224534, 0, 0, 0, 0.851664, 0, 0.115194, 0)
 shape = SubResource("BoxShape3D_tgb6h")
 
+[node name="PlayerPosition" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305078, 0.122746, -0.334639)
+
+[node name="PlayerExit" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.315023, 0.122746, -0.562539)
+
+[node name="BoatCamera" type="Camera3D" parent="." index="5"]
+transform = Transform3D(-0.999988, 0, 0.00485195, 0.00190851, 0.91939, 0.393344, -0.00446083, 0.393348, -0.919379, 0, 0.710099, -1.11017)
+fov = 100.0
+
 [connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
