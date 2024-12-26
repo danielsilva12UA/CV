@@ -90,7 +90,7 @@ transform = Transform3D(1, 0, 0, 3.55271e-15, -45.8917, 0, 0, 0, -40.8065, -105.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3329, 76.231, 59.0876)
 
 [node name="BoatWSail2" parent="." instance=ExtResource("7_215h5")]
-transform = Transform3D(-19.183, 0, 1.67703e-06, 0, 19.183, 0, -1.67703e-06, 0, -19.183, 2.97962, 72.6766, -144.265)
+transform = Transform3D(-0.584813, 0, 19.1741, 0, 19.183, 0, -19.1741, 0, -0.584813, 2.64786, 72.6766, -140.219)
 
 [node name="Pier" parent="." instance=ExtResource("8_dljn8")]
 transform = Transform3D(0.0229317, 0, -0.999737, 0, 1, 0, 0.999737, 0, 0.0229317, 15.531, 72.0799, -84.5731)
