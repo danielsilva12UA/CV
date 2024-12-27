@@ -92,13 +92,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.531202, 76.231, -104.16)
 [node name="BoatWSail2" parent="." instance=ExtResource("7_215h5")]
 transform = Transform3D(-19.183, 0, -1.67703e-06, 0, 19.183, 0, 1.67703e-06, 0, -19.183, 9.89632, 72.6766, -143.481)
 
-<<<<<<< HEAD
-[node name="pier" parent="." instance=ExtResource("8_dljn8")]
-transform = Transform3D(7.15493e-08, 0, -6, 0, 6, 0, 6, 0, 7.15493e-08, 3.68713, 74.8079, -103.703)
-=======
 [node name="Pier" parent="." instance=ExtResource("8_dljn8")]
-transform = Transform3D(0.0229317, 0, -0.999737, 0, 1, 0, 0.999737, 0, 0.0229317, 15.531, 69.8575, -84.5731)
->>>>>>> 8c4eac4908e7bf907a9cf98cac49651b3d3d512d
+transform = Transform3D(0.13759, 0, -5.99842, 0, 6, 0, 5.99842, 0, 0.13759, 6.651, 74.8936, -102.731)
 
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]
