@@ -41,10 +41,12 @@ func _on_interactable_interacted() -> void:
 		move_player_out_of_boat()
 		adjust_camera_to_player()
 		onBoat = false
+		Player.playerPhysics = true
 	else:
 		move_player_into_boat()
 		adjust_camera_to_boat()
 		onBoat = true
+		Player.playerPhysics = false
 
 func _on_interactable_unfocused() -> void:
 	remove_highlight()
