@@ -12,6 +12,12 @@ extends Node3D
 @onready var PlayerHead = $"../Player/Head"
 
 static var onBoat = false
+var mouse_captured = true
+var input_mouse
+
+const SPEED = 15.0
+const JUMP_VELOCITY = 15.0
+const MOUSE_SENSITIVITY = 1000
 
 func add_highlight() -> void:
 	boat_meshinstance.set_surface_override_material(0, boat_material.duplicate())
@@ -54,3 +60,24 @@ func _on_interactable_interacted() -> void:
 
 func _on_interactable_unfocused() -> void:
 	remove_highlight()
+	
+func _input(event):
+	if onBoat:
+		var rotation_angle = 0
+		if event is InputEventMouseMotion and mouse_captured:
+			var input_mouse = event.relative / MOUSE_SENSITIVITY
+			rotation_angle -= event.relative.x / MOUSE_SENSITIVITY
+			# Compute new potential sail rotation
+			var new_sail_rotation = $Sail.global_rotation.y + rotation_angle
+			# Get the boat's current Y-axis global rotation
+			var boat_rotation_y = global_rotation.y
+			# Calculate the angle difference between the sail and the boat
+			var angle_difference = new_sail_rotation - boat_rotation_y
+			# Clamp the angle difference to [-45, 45]
+			if angle_difference < 0:
+				print("Teleported")
+				angle_difference -= clamp(-angle_difference, deg_to_rad(0), deg_to_rad(45))
+			else:
+				angle_difference = clamp(angle_difference, deg_to_rad(0), deg_to_rad(45))
+			# Set the sail's rotation relative to the boat within the clamped range
+			$Sail.global_rotation.y = boat_rotation_y + angle_difference
