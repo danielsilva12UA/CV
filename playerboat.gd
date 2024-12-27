@@ -10,6 +10,7 @@ extends StaticBody3D
 @onready var PlayerCamera = $"../Player/Head/Camera3D"
 @onready var BoatCamera: Camera3D = $Boat/BoatCamera
 @onready var PlayerHead = $"../Player/Head"
+@onready var Sail = $Boat/Sail
 
 static var onBoat = false
 var mouse_captured = true
@@ -70,7 +71,7 @@ func _input(event):
 			var input_mouse = event.relative / MOUSE_SENSITIVITY
 			rotation_angle -= event.relative.x / MOUSE_SENSITIVITY
 			# Compute new potential sail rotation
-			var new_sail_rotation = $Sail.rotation.y + rotation_angle
+			var new_sail_rotation = Sail.rotation.y + rotation_angle
 			# Get the boat's current Y-axis global rotation
 			var boat_rotation_y = global_rotation.y
 			# Calculate the angle difference between the sail and the boat
@@ -82,7 +83,7 @@ func _input(event):
 			elif new_rotation_y > deg_to_rad(45):
 				new_rotation_y = deg_to_rad(45)
 			# Set the sail's rotation relative to the boat within the clamped range
-			$Sail.rotation.y = new_rotation_y
+			Sail.rotation.y = new_rotation_y
 			print(rad_to_deg(new_rotation_y))
 
 func _physics_process(delta: float) -> void:
@@ -105,7 +106,7 @@ func _physics_process(delta: float) -> void:
 		var forward_input = Input.get_action_strength("move_forwards") - Input.get_action_strength("move_backwards")
 		if forward_input != 0:
 			# Calculate sail's influence on direction.
-			var sail_angle = $Sail.rotation.y
+			var sail_angle = Sail.rotation.y
 			var sail_direction = Vector3(sin(sail_angle), 0, cos(sail_angle)).normalized()
 
 			# Align sail direction with the boat's forward direction.
