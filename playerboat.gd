@@ -21,8 +21,10 @@ func remove_highlight() -> void:
 	boat_meshinstance.set_surface_override_material(0, null)
 
 func move_player_into_boat() -> void:
+	# Requires to change animation for the player so it doesn't look weird
 	Player.global_transform.origin = BoatSeat.global_transform.origin
 	Player.global_rotation = BoatSeat.global_rotation
+
 
 func move_player_out_of_boat() -> void:
 	Player.global_transform.origin = BoatExit.global_transform.origin
