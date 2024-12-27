@@ -34,7 +34,7 @@ transform = Transform3D(0.374813, 0, 0, 0, 0.224534, 0, 0, 0, 0.851664, 0, 0.115
 shape = SubResource("BoxShape3D_tgb6h")
 
 [node name="PlayerPosition" type="MeshInstance3D" parent="." index="3"]
-transform = Transform3D(7.62024, 0, 0, 0, 7.62024, 0, 0, 0, 7.62024, 0.054155, 0.143439, 0.0781358)
+transform = Transform3D(-7.62024, 0, -6.66183e-07, 0, 7.62024, 0, 6.66183e-07, 0, -7.62024, 0.054155, 0.129015, -0.147162)
 
 [node name="PlayerExit" type="MeshInstance3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.315023, 0.122746, -0.562539)

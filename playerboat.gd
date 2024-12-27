@@ -4,11 +4,12 @@ extends Node3D
 
 @onready var boat_meshinstance: MeshInstance3D = $Boat
 @onready var boat_material: StandardMaterial3D = boat_meshinstance.mesh.surface_get_material(0)
-@onready var Player = get_parent().get_child(4)
+@onready var Player = $"../Player"
 @onready var BoatSeat: Node3D = $PlayerPosition  # The reference point on the boat
 @onready var BoatExit: Node3D = $PlayerExit # The reference point out of the boat
-@onready var PlayerCamera = Player.get_child(1).get_child(0)
+@onready var PlayerCamera = $"../Player/Head/Camera3D"
 @onready var BoatCamera: Camera3D = $BoatCamera
+@onready var PlayerHead = $"../Player/Head"
 
 static var onBoat = false
 
@@ -21,6 +22,7 @@ func remove_highlight() -> void:
 
 func move_player_into_boat() -> void:
 	Player.global_transform.origin = BoatSeat.global_transform.origin
+	Player.global_rotation = BoatSeat.global_rotation
 
 func move_player_out_of_boat() -> void:
 	Player.global_transform.origin = BoatExit.global_transform.origin
@@ -41,10 +43,12 @@ func _on_interactable_interacted() -> void:
 		move_player_out_of_boat()
 		adjust_camera_to_player()
 		onBoat = false
+		Player.playerPhysics = true
 	else:
 		move_player_into_boat()
 		adjust_camera_to_boat()
 		onBoat = true
+		Player.playerPhysics = false
 
 func _on_interactable_unfocused() -> void:
 	remove_highlight()
