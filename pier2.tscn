@@ -7,6 +7,8 @@ data = PackedVector3Array(1.5498, 3.8907, -3.0056, 1.5149, 4.4594, -3.6342, 1.51
 
 [node name="pier2" instance=ExtResource("1_bewv5")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2167, 1.80298, 3.50434)
+[node name="StaticBody3D" type="StaticBody3D" parent="pier_1" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pier_1/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86102e-05, 3.45707e-06, -2.6226e-06)
 shape = SubResource("ConcavePolygonShape3D_ej6at")
