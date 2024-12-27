@@ -87,13 +87,13 @@ shape = SubResource("ConcavePolygonShape3D_11k0p")
 transform = Transform3D(1, 0, 0, 3.55271e-15, -45.8917, 0, 0, 0, -40.8065, -105.987, 18.4518, 2.03834)
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3329, 76.231, 59.0876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.531202, 76.231, -104.16)
 
 [node name="BoatWSail2" parent="." instance=ExtResource("7_215h5")]
-transform = Transform3D(-0.584813, 0, 19.1741, 0, 19.183, 0, -19.1741, 0, -0.584813, 2.64786, 72.6766, -140.219)
+transform = Transform3D(-19.183, 0, -1.67703e-06, 0, 19.183, 0, 1.67703e-06, 0, -19.183, 9.89632, 72.6766, -143.481)
 
-[node name="Pier" parent="." instance=ExtResource("8_dljn8")]
-transform = Transform3D(0.0229317, 0, -0.999737, 0, 1, 0, 0.999737, 0, 0.0229317, 15.531, 72.0799, -84.5731)
+[node name="pier" parent="." instance=ExtResource("8_dljn8")]
+transform = Transform3D(7.15493e-08, 0, -6, 0, 6, 0, 6, 0, 7.15493e-08, 3.68713, 74.8079, -103.703)
 
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]
