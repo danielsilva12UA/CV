@@ -68,16 +68,17 @@ func _input(event):
 			var input_mouse = event.relative / MOUSE_SENSITIVITY
 			rotation_angle -= event.relative.x / MOUSE_SENSITIVITY
 			# Compute new potential sail rotation
-			var new_sail_rotation = $Sail.global_rotation.y + rotation_angle
+			var new_sail_rotation = $Sail.rotation.y + rotation_angle
 			# Get the boat's current Y-axis global rotation
 			var boat_rotation_y = global_rotation.y
 			# Calculate the angle difference between the sail and the boat
 			var angle_difference = new_sail_rotation - boat_rotation_y
 			# Clamp the angle difference to [-45, 45]
-			if angle_difference < 0:
-				print("Teleported")
-				angle_difference -= clamp(-angle_difference, deg_to_rad(0), deg_to_rad(45))
-			else:
-				angle_difference = clamp(angle_difference, deg_to_rad(0), deg_to_rad(45))
+			var new_rotation_y = boat_rotation_y + angle_difference
+			if new_rotation_y < deg_to_rad(-45):
+				new_rotation_y = deg_to_rad(-45)
+			elif new_rotation_y > deg_to_rad(45):
+				new_rotation_y = deg_to_rad(45)
 			# Set the sail's rotation relative to the boat within the clamped range
-			$Sail.global_rotation.y = boat_rotation_y + angle_difference
+			$Sail.rotation.y = new_rotation_y
+			print(rad_to_deg(new_rotation_y))
