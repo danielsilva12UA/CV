@@ -15,10 +15,10 @@ var underwater = false
 
 var animation
 
-@onready var PlayerCamera1st = $Head.get_child(0)
-@onready var PlayerCamera2nd = $Head.get_child(2)
-@onready var PlayerCamera3rd = $Head.get_child(1)
-@onready var BoatCamera = get_parent().get_child(5).get_child(5)
+@onready var PlayerCamera1st = $Head/Camera3D
+@onready var PlayerCamera2nd = $Head/Camera3D2ndPerson
+@onready var PlayerCamera3rd = $Head/Camera3D2ndPerson
+@onready var BoatCamera = $"../BoatWSail2/$BoatCamera"
 
 func _ready():
 	animation = $Body/"character-male-d2"/AnimationPlayer
