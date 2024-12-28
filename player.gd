@@ -17,8 +17,7 @@ var animation
 
 @onready var PlayerCamera1st = $Head/Camera3D
 @onready var PlayerCamera2nd = $Head/Camera3D2ndPerson
-@onready var PlayerCamera3rd = $Head/Camera3D2ndPerson
-@onready var BoatCamera = $"../BoatWSail2/$BoatCamera"
+@onready var PlayerCamera3rd = $Head/Camera3D3rdPerson
 
 func _ready():
 	animation = $Body/"character-male-d2"/AnimationPlayer
@@ -102,7 +101,7 @@ func _input(event):
 			$Head.global_rotation.y = global_rotation.y
 		
 		if event.is_action_pressed("change_view"):
-			if BoatCamera.current == false:
+			if playerPhysics:
 				if currentCamera == 0:
 					PlayerCamera3rd.current = true
 					currentCamera = 1
