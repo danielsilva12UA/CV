@@ -173,7 +173,10 @@ func _physics_process(delta: float) -> void:
 		rotate_y(angular_velocity * delta)
 
 		# Apply velocity to the boat's position, allowing for residual forward motion
-		global_transform.origin += velocity * delta
+		#global_transform.origin += velocity * delta
+		move_and_collide(velocity * delta)
+		Player.global_position = BoatSeat.global_position
+		Player.global_rotation = BoatSeat.global_rotation
 
 		# Smooth transition of the sail angle to match the boat's orientation when not steering
 		if forward_input == 0.0:
