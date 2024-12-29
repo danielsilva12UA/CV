@@ -26,6 +26,8 @@ const MIN_SPEED = 5.0
 const TURN_DECELERATION = 0.1
 const STEERING_DRAG_MULTIPLIER = 1.5  # How much drag we apply when steering sharply
 const WATER_RESISTANCE_FACTOR = 0.98  # Gradual reduction of speed when not steering harshly
+const TIPPING_MULTIPLIER = 0.1  # Scale the tipping sensitivity
+const TIPPING_DAMPING = 5.0     # Damping factor for smoother tipping transition
 
 var target_angular_velocity: float = 0.0
 var velocity: Vector3 = Vector3.ZERO
@@ -96,6 +98,7 @@ func _input(event):
 			target_sail_angle = new_rotation_z
 
 func _physics_process(delta: float) -> void:
+	var forward_input: float = 0.0
 	if onBoat:
 		# Restart world
 		if Input.is_action_just_pressed("restart"):
@@ -114,72 +117,80 @@ func _physics_process(delta: float) -> void:
 			mouse_captured = false
 
 		# Get forward/backward input
-		var forward_input: float = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
-
-		# Calculate sail's influence on direction
-		var sail_angle: float = -Sail.rotation.z
-		var sail_direction = Vector3(sin(sail_angle), 0, cos(sail_angle)).normalized()
-
-		# Correct boat's forward direction (negative Z is the back of the boat)
-		var boat_forward = -global_transform.basis.z.normalized()
-
-		# Align the sail direction to the boat's forward direction
-		var alignment_factor = max(0.0, cos(sail_angle))  # This makes the boat slow down if the sail is misaligned
-		var movement_direction = boat_forward.lerp(sail_direction, abs(sail_angle) / MAX_SAIL_ANGLE)
-
-		# Calculate speed reduction when the sail is misaligned
-		var speed_factor = alignment_factor
-
-		# Apply forward input to the boat's velocity
-		if forward_input != 0.0:
-			var acceleration = movement_direction * SPEED * forward_input * speed_factor * delta
-			velocity += acceleration
-
-		# Apply linear drag to velocity to gradually slow the boat
-		if velocity.length() > MIN_SPEED:
-			velocity *= LINEAR_DRAG
-		else:
-			velocity = velocity.normalized() * MIN_SPEED  # Prevent the boat from decelerating too much
-
-		# Steering drag: Increase drag when turning sharply
-		var steering_angle = abs(Sail.rotation.z)
-		var steering_drag = steering_angle / MAX_SAIL_ANGLE * STEERING_DRAG_MULTIPLIER
-		velocity *= (1 - steering_drag * delta)
-
-		# Apply water resistance factor over time to reduce the impact of sharp turns
-		if steering_angle < deg_to_rad(10):
-			velocity *= WATER_RESISTANCE_FACTOR
-
-		# When the boat is moving, apply a symmetric change to the sail's rotation to align with the boat
-		if forward_input != 0.0:
-			var boat_rotation_z = global_rotation.z
-			var rotation_difference = boat_rotation_z - Sail.rotation.z
-			# Apply gradual correction to the sail angle, slower to avoid fast correction
-			Sail.rotation.z = lerp(Sail.rotation.z, boat_rotation_z+Sail.rotation.z/2, sail_angle_damping * delta * 0.5)
-
-		# Update last steering angle
-		last_steering_angle = Sail.rotation.z
-
-		# Calculate target angular velocity based on sail influence
-		target_angular_velocity = (sail_angle / MAX_SAIL_ANGLE) * TURN_SPEED * forward_input
-
-		# Smoothly interpolate angular velocity towards the target value with a damping effect
-		angular_velocity = lerp(angular_velocity, target_angular_velocity, TURN_DECELERATION * delta)
-
-		# Limit the angular velocity to avoid excessive turning speed
-		angular_velocity = clamp(angular_velocity, -MAX_ANGULAR_VELOCITY, MAX_ANGULAR_VELOCITY)
-
-		# Apply rotation to the boat
-		rotate_y(angular_velocity * delta)
-
-		# Apply velocity to the boat's position, allowing for residual forward motion
-		#global_transform.origin += velocity * delta
-		move_and_collide(velocity * delta)
+		forward_input = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
+		
 		Player.global_position = BoatSeat.global_position
 		Player.global_rotation = BoatSeat.global_rotation
 		Player.animation.play("sit")
+	
+	# Calculate sail's influence on direction
+	var sail_angle: float = -Sail.rotation.z
+	var sail_direction = Vector3(sin(sail_angle), 0, cos(sail_angle)).normalized()
 
-		# Smooth transition of the sail angle to match the boat's orientation when not steering
-		if forward_input == 0.0:
-			# Apply damping to the sail angle to bring it smoothly to match the boat's heading
-			Sail.rotation.z = lerp(Sail.rotation.z, global_rotation.z, sail_angle_damping * delta)
+	# Correct boat's forward direction (negative Z is the back of the boat)
+	var boat_forward = -global_transform.basis.z.normalized()
+
+	# Align the sail direction to the boat's forward direction
+	var alignment_factor = max(0.0, cos(sail_angle))  # This makes the boat slow down if the sail is misaligned
+	var movement_direction = boat_forward.lerp(sail_direction, abs(sail_angle) / MAX_SAIL_ANGLE)
+
+	# Calculate speed reduction when the sail is misaligned
+	var speed_factor = alignment_factor
+
+	# Apply forward input to the boat's velocity
+	if forward_input != 0.0:
+		var acceleration = movement_direction * SPEED * forward_input * speed_factor * delta
+		velocity += acceleration
+		
+
+	# Apply linear drag to velocity to gradually slow the boat
+	if velocity.length() > MIN_SPEED:
+		velocity *= LINEAR_DRAG
+	else:
+		velocity = velocity.normalized() * MIN_SPEED  # Prevent the boat from decelerating too much
+
+	# Steering drag: Increase drag when turning sharply
+	var steering_angle = abs(Sail.rotation.z)
+	var steering_drag = steering_angle / MAX_SAIL_ANGLE * STEERING_DRAG_MULTIPLIER
+	velocity *= (1 - steering_drag * delta)
+
+	# Apply water resistance factor over time to reduce the impact of sharp turns
+	if steering_angle < deg_to_rad(10):
+		velocity *= WATER_RESISTANCE_FACTOR
+
+	# When the boat is moving, apply a symmetric change to the sail's rotation to align with the boat
+	if forward_input != 0.0:
+		var boat_rotation_z = global_rotation.z
+		var rotation_difference = boat_rotation_z - Sail.rotation.z
+		# Apply gradual correction to the sail angle, slower to avoid fast correction
+		Sail.rotation.z = lerp(Sail.rotation.z, boat_rotation_z+Sail.rotation.z/2, sail_angle_damping * delta * 0.5)
+
+	# Update last steering angle
+	last_steering_angle = Sail.rotation.z
+
+	# Calculate target angular velocity based on sail influence
+	target_angular_velocity = (sail_angle / MAX_SAIL_ANGLE) * TURN_SPEED * forward_input
+
+	# Smoothly interpolate angular velocity towards the target value with a damping effect
+	angular_velocity = lerp(angular_velocity, target_angular_velocity, TURN_DECELERATION * delta)
+
+	# Limit the angular velocity to avoid excessive turning speed
+	angular_velocity = clamp(angular_velocity, -MAX_ANGULAR_VELOCITY, MAX_ANGULAR_VELOCITY)
+
+	# Apply rotation to the boat
+	rotate_y(angular_velocity * delta)
+	
+	# Apply tipping effect based on angular velocity (roll)
+	var target_tipping_angle = clamp(angular_velocity * TIPPING_MULTIPLIER, deg_to_rad(-6.5), deg_to_rad(6.5))
+	rotation.z =  lerp(rotation.z, target_tipping_angle, TIPPING_DAMPING * delta)
+	
+	# Apply velocity to the boat's position, allowing for residual forward motion
+	#global_transform.origin += velocity * delta
+	move_and_collide(velocity * delta)
+
+	# Smooth transition of the sail angle to match the boat's orientation when not steering
+	if forward_input == 0.0:
+		# Apply damping to the sail angle to bring it smoothly to match the boat's heading
+		Sail.rotation.z = lerp(Sail.rotation.z, global_rotation.z, sail_angle_damping * delta)
+
+	
