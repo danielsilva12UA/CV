@@ -177,6 +177,7 @@ func _physics_process(delta: float) -> void:
 		move_and_collide(velocity * delta)
 		Player.global_position = BoatSeat.global_position
 		Player.global_rotation = BoatSeat.global_rotation
+		Player.animation.play("sit")
 
 		# Smooth transition of the sail angle to match the boat's orientation when not steering
 		if forward_input == 0.0:
