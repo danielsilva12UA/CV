@@ -2750,13 +2750,14 @@ shape = SubResource("BoxShape3D_32br6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera"]
 shape = SubResource("BoxShape3D_qsbov")
 
-[node name="Camera3D3rdPerson" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18642, 6.98928)
-fov = 90.0
+[node name="Camera1stPerson" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130778, -0.0225322)
 
-[node name="Camera3D2ndPerson" type="Camera3D" parent="Head"]
+[node name="Camera2ndPerson" type="Node3D" parent="Head"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.89797, -6.90987)
-fov = 90.0
+
+[node name="Camera3rdPerson" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18642, 6.98928)
 
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
