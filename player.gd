@@ -15,14 +15,14 @@ var underwater = false
 
 var animation
 
-@onready var PlayerCamera1st = $Head/Camera3D
+@onready var PlayerCamera1st = $Head/Camera/Camera3D
 @onready var PlayerCamera2nd = $Head/Camera3D2ndPerson
 @onready var PlayerCamera3rd = $Head/Camera3D3rdPerson
 
 func _ready():
 	animation = $Body/"character-male-d2"/AnimationPlayer
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$Head/Camera3D/WaterVision.visible = false
+	$Head/Camera/Camera3D/WaterVision.visible = false
 	resize()
 	get_tree().get_root().size_changed.connect(resize)
 	get_world_3d().environment.volumetric_fog_density = 0.02
@@ -114,23 +114,31 @@ func _input(event):
 			
 	
 func resize() -> void:
-	$Head/Camera3D/WaterVision.scale.x = get_viewport().size.x / 1025.0
-	$Head/Camera3D/WaterVision.scale.y = get_viewport().size.y / 1025.0
+	$Head/Camera/Camera3D/WaterVision.scale.x = get_viewport().size.x / 1025.0
+	$Head/Camera/Camera3D/WaterVision.scale.y = get_viewport().size.y / 1025.0
 
 
 func _on_water_hitbox_body_entered(body: Node3D) -> void:
-	if body != self:
-		return
-	underwater = true
-	print("ENTERED WATER")
-	$Head/Camera3D/WaterVision.visible = true
-	get_world_3d().environment.volumetric_fog_enabled = true
+	if body == self:
+		underwater = true
+		print("ENTERED WATER")
 
 
 func _on_water_hitbox_body_exited(body: Node3D) -> void:
-	if body != self:
-		return
-	underwater = false
-	print("EXITED WATER")
-	get_world_3d().environment.volumetric_fog_enabled = false
-	$Head/Camera3D/WaterVision.visible = false
+	if body == self:
+		underwater = false
+		print("EXITED WATER")
+
+
+func _on_water_hitbox_area_entered(area: Area3D) -> void:
+	if area == $Head/Camera:
+		print("hello???")
+		$Head/Camera/Camera3D/WaterVision.visible = true
+		get_world_3d().environment.volumetric_fog_enabled = true
+
+
+func _on_water_hitbox_area_exited(area: Area3D) -> void:
+	if area == $Head/Camera:
+		print("hello???")
+		$Head/Camera/Camera3D/WaterVision.visible = false
+		get_world_3d().environment.volumetric_fog_enabled = false
