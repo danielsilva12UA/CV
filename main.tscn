@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=21 format=4 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -75,6 +75,12 @@ flip_faces = true
 size = Vector2(15, 14)
 orientation = 2
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_6obo7"]
+resource_local_to_scene = true
+flip_faces = true
+size = Vector2(12, 13.2)
+orientation = 2
+
 [node name="Main" type="Node3D"]
 
 [node name="Building" parent="." instance=ExtResource("1_kjq6a")]
@@ -147,6 +153,18 @@ transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, -241.7
 mesh = SubResource("PlaneMesh_ch08p")
 skeleton = NodePath("../BuildingB")
 other_portal = NodePath("../PortalBuildingB2")
+
+[node name="PortalBuildingB4" parent="." node_paths=PackedStringArray("other_portal") instance=ExtResource("10_ivc53")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -309.768, 116.389, 433.777)
+mesh = SubResource("PlaneMesh_6obo7")
+skeleton = NodePath("../BuildingB")
+other_portal = NodePath("../PortalBuildingB5")
+
+[node name="PortalBuildingB5" parent="." node_paths=PackedStringArray("other_portal") instance=ExtResource("10_ivc53")]
+transform = Transform3D(-4.37113e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113e-08, -309.768, 130.389, 463.777)
+mesh = SubResource("PlaneMesh_6obo7")
+skeleton = NodePath("../BuildingB")
+other_portal = NodePath("../PortalBuildingB4")
 
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]
