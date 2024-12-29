@@ -183,7 +183,7 @@ mesh = SubResource("ArrayMesh_wqeoq")
 skeleton = NodePath("")
 
 [node name="PlayerPosition" type="MeshInstance3D" parent="Boat"]
-transform = Transform3D(-0.0762024, 0, -6.66183e-09, -6.66183e-09, -9.08401e-09, 0.0762024, -7.9415e-16, 0.0762024, 9.08401e-09, 0.000644907, 0.00143612, 0.00130893)
+transform = Transform3D(-0.0762024, 0, -6.66183e-09, -6.66183e-09, -9.08401e-09, 0.0762024, -7.9415e-16, 0.0762024, 9.08401e-09, 1.40766e-05, 0.00143612, 0.00121259)
 skeleton = NodePath("../..")
 
 [node name="PlayerExit" type="MeshInstance3D" parent="Boat"]
