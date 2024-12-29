@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=22 format=4 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -78,7 +78,13 @@ orientation = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_6obo7"]
 resource_local_to_scene = true
 flip_faces = true
-size = Vector2(12, 13.2)
+size = Vector2(5.25, 13.2)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4shxu"]
+resource_local_to_scene = true
+flip_faces = true
+size = Vector2(5.25, 13.2)
 orientation = 2
 
 [node name="Main" type="Node3D"]
@@ -125,7 +131,7 @@ shape = SubResource("ConcavePolygonShape3D_11k0p")
 transform = Transform3D(1, 0, 0, 3.55271e-15, -45.8917, 0, 0, 0, -40.8065, -105.987, 18.4518, 2.03834)
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.531202, 76.231, -104.16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41295, 76.2369, -103.114)
 
 [node name="BoatWSail2" parent="." instance=ExtResource("7_215h5")]
 transform = Transform3D(-19.183, 0, -1.67703e-06, 0, 19.183, 0, 1.67703e-06, 0, -19.183, 9.89632, 72.6766, -143.481)
@@ -155,14 +161,14 @@ skeleton = NodePath("../BuildingB")
 other_portal = NodePath("../PortalBuildingB2")
 
 [node name="PortalBuildingB4" parent="." node_paths=PackedStringArray("other_portal") instance=ExtResource("10_ivc53")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -309.768, 116.389, 433.777)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -324.768, 116.389, 452.152)
 mesh = SubResource("PlaneMesh_6obo7")
 skeleton = NodePath("../BuildingB")
 other_portal = NodePath("../PortalBuildingB5")
 
 [node name="PortalBuildingB5" parent="." node_paths=PackedStringArray("other_portal") instance=ExtResource("10_ivc53")]
-transform = Transform3D(-4.37113e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113e-08, -309.768, 130.389, 463.777)
-mesh = SubResource("PlaneMesh_6obo7")
+transform = Transform3D(-4.37113e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113e-08, -325.181, 130.561, 452.149)
+mesh = SubResource("PlaneMesh_4shxu")
 skeleton = NodePath("../BuildingB")
 other_portal = NodePath("../PortalBuildingB4")
 
