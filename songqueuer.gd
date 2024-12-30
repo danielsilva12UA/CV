@@ -63,7 +63,7 @@ func _on_fade_volume_timer_timeout():
 	# Gradually increase the volume to full
 	while volume_db < target_volume_db:
 		volume_db += 1  # Gradually increase the volume
-		await get_tree().create_timer(0.1).timeout  # Use await instead of yield
+		await get_tree().create_timer(0.1).timeout
 
 # Callback to gradually decrease the volume during the fade-out phase
 func _on_fade_out_volume_timer_timeout():
@@ -72,4 +72,4 @@ func _on_fade_out_volume_timer_timeout():
 	# Gradually decrease the volume to low during the fade-out
 	while volume_db > target_volume_db:
 		volume_db -= 1  # Gradually decrease the volume
-		await get_tree().create_timer(0.1).timeout  # Use await instead of yield
+		await get_tree().create_timer(0.1).timeout

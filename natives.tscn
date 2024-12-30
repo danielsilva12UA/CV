@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://e4km4bms5oo5"]
+
+[ext_resource type="Script" path="res://natives_island.gd" id="1_f3shu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwxox"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxb03"]
+size = Vector3(1.09204, 1.12256, 1)
+
+[node name="natives" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.361, 76.3975, 312.776)
+script = ExtResource("1_f3shu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -27.2, 5.54178)
+visible = false
+mesh = SubResource("BoxMesh_nwxox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -27.2, 5.54178)
+visible = false
+shape = SubResource("BoxShape3D_hxb03")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

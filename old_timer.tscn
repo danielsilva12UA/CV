@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6p3jkuaeosmh"]
+
+[ext_resource type="PackedScene" uid="uid://banexvucc3gad" path="res://assets/kenney_mini-characters/Models/FBX format/character-male-b.fbx" id="1_buyyv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvjgp"]
+size = Vector3(0.273438, 0.634216, 0.356018)
+
+[node name="OldTimer" instance=ExtResource("1_buyyv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0283203, 0.330231, 0.0105896)
+shape = SubResource("BoxShape3D_hvjgp")
+
+[node name="Skeleton3D" parent="character-male-b" index="0"]
+bones/4/rotation = Quaternion(0, 0, -0.382683, 0.92388)
+bones/5/rotation = Quaternion(0, 0, 0.382683, 0.92388)

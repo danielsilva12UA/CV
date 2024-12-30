@@ -1,23 +1,25 @@
-[gd_scene load_steps=32 format=3 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=35 format=3 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_v6a56"]
 [ext_resource type="Texture2D" uid="uid://bpu3w7xmq5bi1" path="res://terrain_textures/Grass/Grass002_2K-PNG_Color.png" id="4_uxanv"]
 [ext_resource type="Texture2D" uid="uid://c2d550kh3ofqg" path="res://terrain_textures/Sand/Ground080_2K-JPG_Color.jpg" id="5_8ad3b"]
-[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
+[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
 [ext_resource type="Texture2D" uid="uid://deucjyscpxqqj" path="res://terrain_textures/Grass/Grass002_2K-PNG_NormalDX.png" id="7_pkumn"]
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
-[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
+[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
 [ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_4dk23"]
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
-[ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
-[ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
-[ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
-[ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
+[ext_resource type="PackedScene" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
+[ext_resource type="PackedScene" path="res://strange_palm.tscn" id="16_0df4x"]
+[ext_resource type="PackedScene" path="res://strange_palm_old.tscn" id="16_75j64"]
+[ext_resource type="PackedScene" path="res://strange_palm_young.tscn" id="17_ex8om"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="18_vdcsx"]
+[ext_resource type="Script" path="res://old_timers.gd" id="19_0eoom"]
+[ext_resource type="PackedScene" uid="uid://d2qv1eoaiyk7y" path="res://old_timers_running.tscn" id="20_1p4md"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
@@ -120,6 +122,14 @@ shader_parameter/highlights = SubResource("NoiseTexture2D_057hn")
 material = SubResource("ShaderMaterial_qg1kf")
 uv2_padding = 0.0
 size = Vector2(1, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_5lpg0"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.91162, -2.14718, 3.24603, 0, 0, 0, 0, 0, 0, -3.28545, -1.8569, 7.28207, 0, 0, 0, 0, 0, 0, 3.6261, -1.35515, 7.46097, 0, 0, 0, 0, 0, 0, 5.10429, -1.29247, -0.831635, 0, 0, 0, 0, 0, 0, 1.88588, -1.52004, -4.11844, 0, 0, 0, 0, 0, 0, -1.52036, -1.81175, -4.27969, 0, 0, 0, 0, 0, 0, -5.78596, -2.26691, -2.6348, 0, 0, 0, 0, 0, 0, -6.30344, -2.22828, 0.618927, 0, 0, 0, 0, 0, 0, -5.91162, -2.14718, 3.24603),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
 
 [node name="terrain_world" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33459, 13.5026, -15.1219)
@@ -235,3 +245,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4068, 61.9502, 19.4023)
 
 [node name="Sail ship" parent="." instance=ExtResource("18_vdcsx")]
 transform = Transform3D(10.3165, -8.73882, 11.6682, 9.4801, 14.8808, 2.76297, -11.0743, 4.59775, 13.2349, 232.77, 1.64, 303.91)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.847, 66.3989, 330.55)
+curve = SubResource("Curve3D_5lpg0")
+script = ExtResource("19_0eoom")
+
+[node name="PathFollow3D" parent="Path3D" instance=ExtResource("20_1p4md")]
+transform = Transform3D(-1.29049, -0.0505278, -0.838179, 0, 1.53685, -0.0926453, 0.8397, -0.0776538, -1.28816, -5.91162, -2.14718, 3.24603)

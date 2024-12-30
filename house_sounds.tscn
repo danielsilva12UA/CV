@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnspxh81x3ies"]
+
+[ext_resource type="Script" path="res://natives_island.gd" id="1_n3hrb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwxox"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxb03"]
+size = Vector3(1.09204, 1.12256, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77wdo"]
+size = Vector3(0.222015, 1.94653, 0.177979)
+
+[node name="house" type="Area3D"]
+transform = Transform3D(0.76404, 0, 0, 0, 0.103562, 0, 0, 0, 1.06661, -247.538, 119.759, 445.9)
+script = ExtResource("1_n3hrb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -27.2, 5.54178)
+visible = false
+mesh = SubResource("BoxMesh_nwxox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 32.7011, -38.6028, 5.54178)
+shape = SubResource("BoxShape3D_hxb03")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, -98.587, 38.057, 7.53156)
+shape = SubResource("BoxShape3D_77wdo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

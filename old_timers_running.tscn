@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2qv1eoaiyk7y"]
+
+[ext_resource type="Script" path="res://old_timers_path.gd" id="1_2f63o"]
+[ext_resource type="PackedScene" uid="uid://c6p3jkuaeosmh" path="res://old_timer.tscn" id="2_2h2fe"]
+
+[node name="PathFollow3D" type="PathFollow3D"]
+transform = Transform3D(-1.2228, -0.0390951, -0.615983, 1.27568e-09, 1.367, -0.0867604, 0.617222, -0.0774528, -1.22035, -6.19925, -1.97279, 1.28369)
+script = ExtResource("1_2f63o")
+
+[node name="OldTimer" parent="." instance=ExtResource("2_2h2fe")]
+transform = Transform3D(-1.87391, 0.0138447, 0.218137, -0.0138447, 1.87153, -0.237715, -0.218137, -0.237715, -1.85882, 0, 0, 0)
