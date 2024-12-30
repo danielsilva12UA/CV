@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=25 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -56,7 +56,10 @@ orientation = 2
 [sub_resource type="BoxMesh" id="BoxMesh_nwxox"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxb03"]
-size = Vector3(1, 1.12256, 1)
+size = Vector3(1.09204, 1.12256, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77wdo"]
+size = Vector3(0.222015, 1.94653, 0.177979)
 
 [node name="Main" type="Node3D"]
 
@@ -161,8 +164,12 @@ visible = false
 mesh = SubResource("BoxMesh_nwxox")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioStreamPlayer/house"]
-transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -38.6025, 5.54178)
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 32.7011, -38.6028, 5.54178)
 shape = SubResource("BoxShape3D_hxb03")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AudioStreamPlayer/house"]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, -98.587, 38.057, 7.53156)
+shape = SubResource("BoxShape3D_77wdo")
 
 [connection signal="area_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_entered"]
 [connection signal="area_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_exited"]
