@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvwrt22iaji7g"
+path="res://.godot/imported/door-sliding-double-round.obj-ff14f5f49aa4906dd81e3189ac52d4b2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-sliding-double-round.obj-ff14f5f49aa4906dd81e3189ac52d4b2.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/door-sliding-double-round.obj"
+dest_files=["res://.godot/imported/door-sliding-double-round.obj-ff14f5f49aa4906dd81e3189ac52d4b2.mesh", "res://.godot/imported/door-sliding-double-round.obj-ff14f5f49aa4906dd81e3189ac52d4b2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

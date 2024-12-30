@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dq5hg0dbjf1hx"
+path="res://.godot/imported/number-7.obj-b5f44719bdb22a8fcb29b5a97cc0f3c6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-7.obj-b5f44719bdb22a8fcb29b5a97cc0f3c6.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/number-7.obj"
+dest_files=["res://.godot/imported/number-7.obj-b5f44719bdb22a8fcb29b5a97cc0f3c6.mesh", "res://.godot/imported/number-7.obj-b5f44719bdb22a8fcb29b5a97cc0f3c6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

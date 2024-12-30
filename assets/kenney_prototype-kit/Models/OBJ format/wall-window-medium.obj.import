@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c20lvmqhmxit7"
+path="res://.godot/imported/wall-window-medium.obj-a673c8d55e1264d04bbcf9430ce48942.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-window-medium.obj-a673c8d55e1264d04bbcf9430ce48942.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/wall-window-medium.obj"
+dest_files=["res://.godot/imported/wall-window-medium.obj-a673c8d55e1264d04bbcf9430ce48942.mesh", "res://.godot/imported/wall-window-medium.obj-a673c8d55e1264d04bbcf9430ce48942.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

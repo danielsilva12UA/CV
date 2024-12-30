@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mjssbgqni20r"
+path="res://.godot/imported/floor-small-square.obj-552c1ceebc78553ed4ceebe11d3460a1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-small-square.obj-552c1ceebc78553ed4ceebe11d3460a1.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/floor-small-square.obj"
+dest_files=["res://.godot/imported/floor-small-square.obj-552c1ceebc78553ed4ceebe11d3460a1.mesh", "res://.godot/imported/floor-small-square.obj-552c1ceebc78553ed4ceebe11d3460a1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

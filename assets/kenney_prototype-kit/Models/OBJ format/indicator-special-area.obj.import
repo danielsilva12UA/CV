@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1uhi08kuf4qo"
+path="res://.godot/imported/indicator-special-area.obj-d8140bf084b2d2db7daedae12d444a76.mesh"
+
+[deps]
+
+files=["res://.godot/imported/indicator-special-area.obj-d8140bf084b2d2db7daedae12d444a76.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/indicator-special-area.obj"
+dest_files=["res://.godot/imported/indicator-special-area.obj-d8140bf084b2d2db7daedae12d444a76.mesh", "res://.godot/imported/indicator-special-area.obj-d8140bf084b2d2db7daedae12d444a76.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bffx8rsrk80p1"
+path="res://.godot/imported/floor-thick.obj-c294d496ddf3ca379fc2e23839fa250f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-thick.obj-c294d496ddf3ca379fc2e23839fa250f.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/floor-thick.obj"
+dest_files=["res://.godot/imported/floor-thick.obj-c294d496ddf3ca379fc2e23839fa250f.mesh", "res://.godot/imported/floor-thick.obj-c294d496ddf3ca379fc2e23839fa250f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

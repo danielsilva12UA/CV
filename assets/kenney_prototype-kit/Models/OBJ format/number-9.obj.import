@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ek6d48x2p750"
+path="res://.godot/imported/number-9.obj-6b9111c5a5c732a7a255c59bddb4fc28.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-9.obj-6b9111c5a5c732a7a255c59bddb4fc28.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/number-9.obj"
+dest_files=["res://.godot/imported/number-9.obj-6b9111c5a5c732a7a255c59bddb4fc28.mesh", "res://.godot/imported/number-9.obj-6b9111c5a5c732a7a255c59bddb4fc28.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

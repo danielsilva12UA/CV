@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bhh8t2pgo38i0"
+path="res://.godot/imported/column-rounded-low.obj-173894d28e58ea3fd79a0171f61c594d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/column-rounded-low.obj-173894d28e58ea3fd79a0171f61c594d.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/column-rounded-low.obj"
+dest_files=["res://.godot/imported/column-rounded-low.obj-173894d28e58ea3fd79a0171f61c594d.mesh", "res://.godot/imported/column-rounded-low.obj-173894d28e58ea3fd79a0171f61c594d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

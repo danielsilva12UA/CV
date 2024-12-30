@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c88q1w84rayov"
+path="res://.godot/imported/pipe-half.obj-bd494433f260f90b1848f6ae6a014907.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe-half.obj-bd494433f260f90b1848f6ae6a014907.mesh"]
+
+source_file="res://assets/kenney_prototype-kit/Models/OBJ format/pipe-half.obj"
+dest_files=["res://.godot/imported/pipe-half.obj-bd494433f260f90b1848f6ae6a014907.mesh", "res://.godot/imported/pipe-half.obj-bd494433f260f90b1848f6ae6a014907.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
