@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dytpanx5k07td"]
+
+[ext_resource type="PackedScene" uid="uid://bhlk3jlpfm1h0" path="res://Props/chest/source/chest.glb" id="1_cx0dj"]
+[ext_resource type="Script" path="res://chest.gd" id="2_vrmcb"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="4_g73ot"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_slwol"]
+size = Vector3(0.616394, 0.505859, 0.588394)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kckpu"]
+size = Vector3(0.616394, 0.505859, 0.588394)
+
+[node name="chest" instance=ExtResource("1_cx0dj")]
+script = ExtResource("2_vrmcb")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/1/rotation = Quaternion(0.75707, 7.00948e-07, 8.12244e-07, 0.653334)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00216675, 0.24707, 0.00418854)
+shape = SubResource("BoxShape3D_slwol")
+
+[node name="Interactable" type="Area3D" parent="." index="3"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_g73ot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250848, 0)
+shape = SubResource("BoxShape3D_kckpu")
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]

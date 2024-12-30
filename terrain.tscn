@@ -5,25 +5,25 @@
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_v6a56"]
 [ext_resource type="Texture2D" uid="uid://bpu3w7xmq5bi1" path="res://terrain_textures/Grass/Grass002_2K-PNG_Color.png" id="4_uxanv"]
 [ext_resource type="Texture2D" uid="uid://c2d550kh3ofqg" path="res://terrain_textures/Sand/Ground080_2K-JPG_Color.jpg" id="5_8ad3b"]
-[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
+[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
 [ext_resource type="Texture2D" uid="uid://deucjyscpxqqj" path="res://terrain_textures/Grass/Grass002_2K-PNG_NormalDX.png" id="7_pkumn"]
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
-[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
+[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
 [ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_4dk23"]
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
-[ext_resource type="PackedScene" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
-[ext_resource type="PackedScene" path="res://strange_palm.tscn" id="16_0df4x"]
-[ext_resource type="PackedScene" path="res://strange_palm_old.tscn" id="16_75j64"]
-[ext_resource type="PackedScene" path="res://strange_palm_young.tscn" id="17_ex8om"]
+[ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
+[ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
+[ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
+[ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="18_vdcsx"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
 script = ExtResource("2_v6a56")
 mode = 0
-textures = [[ExtResource("4_uxanv"), ExtResource("5_8ad3b"), ExtResource("6_mprqo")], [ExtResource("7_pkumn"), ExtResource("8_xnlm7"), ExtResource("9_le6dk")]]
+textures = [[ExtResource("4_uxanv"), ExtResource("5_8ad3b"), ExtResource("6_mprqo"), null], [ExtResource("7_pkumn"), ExtResource("8_xnlm7"), ExtResource("9_le6dk"), null]]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_11r38"]
 frequency = 0.0125
