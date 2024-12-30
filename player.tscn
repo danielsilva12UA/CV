@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=4 uid="uid://dyg7ycckfiylj"]
+[gd_scene load_steps=48 format=4 uid="uid://dyg7ycckfiylj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ydsig"]
 [ext_resource type="Shader" path="res://underwater.gdshader" id="2_45ppr"]
 [ext_resource type="Texture2D" uid="uid://c3muj4c038bho" path="res://global_albedo.png" id="3_ryuif"]
+[ext_resource type="AudioStream" uid="uid://comwd6rdyl883" path="res://music/splash/splash2.wav" id="5_5ismn"]
 [ext_resource type="PackedScene" uid="uid://dl24nvisuglru" path="res://interaction/player_interactor.tscn" id="5_hlkqy"]
 [ext_resource type="Texture2D" uid="uid://b5opl8l5pesnk" path="res://assets/kenney_mini-characters/Models/GLB format/Textures/colormap.png" id="5_y01rv"]
 
@@ -14,6 +15,7 @@ shader = ExtResource("2_45ppr")
 shader_parameter/color = Color(0.352941, 0.537255, 0.658824, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_32br6"]
+size = Vector3(1, 2.82959, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qsbov"]
 
@@ -2744,7 +2746,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541778, 0.0225322)
 player = NodePath("../../../..")
 
 [node name="CollisionShape3D" parent="Head/Camera/Camera3D/PlayerInteractor" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.34154, -1.16825e-05, 0.441357, -1.51625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.34154, -1.16825e-05, -0.473438, -1.51625)
 shape = SubResource("BoxShape3D_32br6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera"]
@@ -2758,6 +2760,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.8
 
 [node name="Camera3rdPerson" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18642, 6.98928)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Head"]
+stream = ExtResource("5_5ismn")
+volume_db = -35.0
 
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

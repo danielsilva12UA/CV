@@ -20,6 +20,7 @@ var animation
 @onready var PlayerCamera1st = $Head/Camera1stPerson
 @onready var PlayerCamera2nd = $Head/Camera2ndPerson
 @onready var PlayerCamera3rd = $Head/Camera3rdPerson
+@onready var audio_player = $Head/AudioStreamPlayer
 
 func _ready():
 	PlayerCamera.transform = PlayerCamera1st.transform
@@ -129,12 +130,16 @@ func resize() -> void:
 
 func _on_water_hitbox_body_entered(body: Node3D) -> void:
 	if body == self:
+		audio_player.stop()
+		audio_player.play()
 		underwater = true
 		print("ENTERED WATER")
 
-
 func _on_water_hitbox_body_exited(body: Node3D) -> void:
 	if body == self:
+		audio_player.stop()
+		audio_player.seek(0.6)
+		audio_player.play()
 		underwater = false
 		print("EXITED WATER")
 

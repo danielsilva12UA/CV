@@ -11,6 +11,7 @@ extends StaticBody3D
 @onready var BoatCamera: Camera3D = $Boat/BoatCamera
 @onready var PlayerHead = $"../Player/Head"
 @onready var Sail = $Boat/Sail
+@onready var Audio_Player : AudioStreamPlayer3D = $AudioStreamPlayer
 
 static var onBoat = false
 var mouse_captured = true
@@ -28,6 +29,9 @@ const STEERING_DRAG_MULTIPLIER = 1.5  # How much drag we apply when steering sha
 const WATER_RESISTANCE_FACTOR = 0.98  # Gradual reduction of speed when not steering harshly
 const TIPPING_MULTIPLIER = 0.1  # Scale the tipping sensitivity
 const TIPPING_DAMPING = 5.0     # Damping factor for smoother tipping transition
+const SOUND_INTERVAL = 2.0
+
+var time_since_last_sound: float = 0.0  # Timer for sound intervals
 
 var target_angular_velocity: float = 0.0
 var velocity: Vector3 = Vector3.ZERO
@@ -123,6 +127,22 @@ func _physics_process(delta: float) -> void:
 		Player.global_rotation = BoatSeat.global_rotation
 		Player.animation.play("sit")
 	
+	# Calculate boat speed
+	var current_speed = velocity.length()
+
+	# Update sound every fixed interval
+	time_since_last_sound += delta
+	if time_since_last_sound >= SOUND_INTERVAL:
+		# Play the sound if it is stopped or reached an interval
+		if !Audio_Player.playing:
+			Audio_Player.play()
+		# Reset timer
+		time_since_last_sound = 0.0
+	
+	# Adjust audio volume based on speed
+	var speed_factor = current_speed / SPEED # Normalize speed to a factor
+	Audio_Player.volume_db = lerp(-40.0, 10.0, speed_factor)  # Adjust the volume based on speed (from -40 dB to 0 dB)
+
 	# Calculate sail's influence on direction
 	var sail_angle: float = -Sail.rotation.z
 	var sail_direction = Vector3(sin(sail_angle), 0, cos(sail_angle)).normalized()
@@ -135,7 +155,7 @@ func _physics_process(delta: float) -> void:
 	var movement_direction = boat_forward.lerp(sail_direction, abs(sail_angle) / MAX_SAIL_ANGLE)
 
 	# Calculate speed reduction when the sail is misaligned
-	var speed_factor = alignment_factor
+	speed_factor = alignment_factor
 
 	# Apply forward input to the boat's velocity
 	if forward_input != 0.0:
@@ -192,5 +212,3 @@ func _physics_process(delta: float) -> void:
 	if forward_input == 0.0:
 		# Apply damping to the sail angle to bring it smoothly to match the boat's heading
 		Sail.rotation.z = lerp(Sail.rotation.z, global_rotation.z, sail_angle_damping * delta)
-
-	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://dlf2k0dogi0xh"]
+[gd_scene load_steps=15 format=4 uid="uid://dlf2k0dogi0xh"]
 
 [ext_resource type="PackedScene" uid="uid://ebkglwbohpk3" path="res://interaction/Interactable.tscn" id="2_4lgso"]
 [ext_resource type="Script" path="res://playerboat.gd" id="2_uoomu"]
+[ext_resource type="AudioStream" uid="uid://b605wfqmqijxd" path="res://music/splash/wave_03_cc0-11505__transitking__wavesound.mp3" id="3_kvdyc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0oqb"]
 resource_name = "DarkWood"
@@ -216,6 +217,9 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0614929, 0.280477, 0.00689688)
 shape = SubResource("BoxShape3D_tgb6h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_kvdyc")
 
 [connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

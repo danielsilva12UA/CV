@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=24 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dv6w1o42xvbb0" path="res://pier_all.tscn" id="8_dljn8"]
 [ext_resource type="PackedScene" uid="uid://saqeevafokob" path="res://buildingB.tscn" id="9_udt76"]
 [ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://neoportal.tscn" id="10_ivc53"]
+[ext_resource type="Script" path="res://natives_island.gd" id="10_w0rrw"]
+[ext_resource type="AudioStream" uid="uid://chtbqrxdl8e5p" path="res://music/island_of_mysteries.mp3" id="11_oted2"]
+[ext_resource type="Script" path="res://songqueuer.gd" id="12_cojlx"]
+[ext_resource type="AudioStream" uid="uid://27ldsfnao1uu" path="res://music/Spooky Island.mp3" id="13_16exa"]
+[ext_resource type="AudioStream" uid="uid://d1102rd7kp0yk" path="res://music/lonely_island.mp3" id="13_q7ftt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nnbx3"]
 resource_local_to_scene = true
@@ -47,6 +52,11 @@ resource_local_to_scene = true
 flip_faces = true
 size = Vector2(5.25, 13.2)
 orientation = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwxox"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxb03"]
+size = Vector3(1, 1.12256, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -118,7 +128,47 @@ mesh = SubResource("PlaneMesh_4shxu")
 skeleton = NodePath("../BuildingB")
 other_portal = NodePath("../PortalBuildingB4")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_q7ftt")
+volume_db = -25.0
+autoplay = true
+script = ExtResource("12_cojlx")
+natives_song = ExtResource("11_oted2")
+default_song = ExtResource("13_q7ftt")
+inhouse_song = ExtResource("13_16exa")
+
+[node name="natives" type="Area3D" parent="AudioStreamPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.361, 76.3975, 312.776)
+script = ExtResource("10_w0rrw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioStreamPlayer/natives"]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -27.2, 5.54178)
+visible = false
+mesh = SubResource("BoxMesh_nwxox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioStreamPlayer/natives"]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -27.2, 5.54178)
+visible = false
+shape = SubResource("BoxShape3D_hxb03")
+
+[node name="house" type="Area3D" parent="AudioStreamPlayer"]
+transform = Transform3D(0.76404, 0, 0, 0, 0.103562, 0, 0, 0, 1.06661, -247.538, 119.759, 445.9)
+script = ExtResource("10_w0rrw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioStreamPlayer/house"]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -27.2, 5.54178)
+visible = false
+mesh = SubResource("BoxMesh_nwxox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioStreamPlayer/house"]
+transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 22.2446, -38.6025, 5.54178)
+shape = SubResource("BoxShape3D_hxb03")
+
 [connection signal="area_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_entered"]
 [connection signal="area_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_exited"]
 [connection signal="body_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_entered"]
 [connection signal="body_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_body_exited"]
+[connection signal="body_entered" from="AudioStreamPlayer/natives" to="AudioStreamPlayer/natives" method="_on_body_entered"]
+[connection signal="body_exited" from="AudioStreamPlayer/natives" to="AudioStreamPlayer/natives" method="_on_body_exited"]
+[connection signal="body_entered" from="AudioStreamPlayer/house" to="AudioStreamPlayer/house" method="_on_body_entered"]
+[connection signal="body_exited" from="AudioStreamPlayer/house" to="AudioStreamPlayer/house" method="_on_body_exited"]
