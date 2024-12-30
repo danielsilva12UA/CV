@@ -7,7 +7,7 @@ extends StaticBody3D
 @onready var Player = $"../Player"
 @onready var BoatSeat: Node3D = $Boat/PlayerPosition
 @onready var BoatExit: Node3D = $Boat/PlayerExit
-@onready var PlayerCamera = $"../Player/Head/Camera3D"
+@onready var PlayerCamera = $"../Player/Head/Camera/Camera3D"
 @onready var BoatCamera: Camera3D = $Boat/BoatCamera
 @onready var PlayerHead = $"../Player/Head"
 @onready var Sail = $Boat/Sail
