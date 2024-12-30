@@ -212,3 +212,10 @@ func _physics_process(delta: float) -> void:
 	if forward_input == 0.0:
 		# Apply damping to the sail angle to bring it smoothly to match the boat's heading
 		Sail.rotation.z = lerp(Sail.rotation.z, global_rotation.z, sail_angle_damping * delta)
+	
+	if not onBoat:
+		# Gradually reduce velocity when the player is not on the boat
+		if velocity.length() > MIN_SPEED:
+			velocity *= LINEAR_DRAG
+		else:
+			velocity = Vector3.ZERO  # Stop the boat when it's slow enough
