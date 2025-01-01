@@ -9,7 +9,7 @@ var is_playing = false
 func _on_body_entered(body: CharacterBody3D) -> void:
 	if not is_playing:  # Only change song if it's not already playing
 		is_playing = true
-		main_audio_player.bgm_player("natives_song")  # Play the "natives_song" when entered
+		main_audio_player.bgm_player("inhouse_song")  # Play the "natives_song" when entered
 
 # This function is triggered when a body exits the area
 func _on_body_exited(body: CharacterBody3D) -> void:

@@ -21,10 +21,12 @@ mesh = SubResource("BoxMesh_nwxox")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, 32.7011, -38.6028, 5.54178)
+visible = false
 shape = SubResource("BoxShape3D_hxb03")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(210.467, 0, 0, 0, -186.074, 0, 0, 0, 141.74, -98.587, 38.057, 7.53156)
+visible = false
 shape = SubResource("BoxShape3D_77wdo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
