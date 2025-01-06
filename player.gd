@@ -63,10 +63,15 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
-		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() * SPEED
+		var direction = ($Head.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y))
+		direction = Vector3(direction.x, 0, direction.z).normalized() * SPEED
 		if direction:
 			velocity.x = direction.x
 			velocity.z = direction.z
+			if currentCamera==1:
+				var temp = $Head.global_rotation
+				look_at(global_position + direction)
+				$Head.global_rotation = temp
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -91,7 +96,11 @@ func _input(event):
 			rotation_angle.y -= event.relative.x / MOUSE_SENSITIVITY
 			rotation_angle.x -= event.relative.y / MOUSE_SENSITIVITY
 			# Handle rotations.
-			global_rotation.y += rotation_angle.y
+			if currentCamera == 0:
+				global_rotation.y += rotation_angle.y
+				$Head.global_rotation.y = global_rotation.y
+			else:
+				$Head.global_rotation.y += rotation_angle.y
 			if $Head.global_rotation.x + rotation_angle.x >= deg_to_rad(90):
 				$Head.global_rotation.x = deg_to_rad(90)
 			elif $Head.global_rotation.x + rotation_angle.x <= deg_to_rad(-90):
@@ -100,7 +109,6 @@ func _input(event):
 				$Head.global_rotation.x += rotation_angle.x
 			global_rotation.z = 0
 			$Head.global_rotation.z = 0
-			$Head.global_rotation.y = global_rotation.y
 			
 		
 		if event.is_action_pressed("change_view"):
@@ -112,6 +120,7 @@ func _input(event):
 					get_tree().call_group("portals", "set_fov", 90)
 					currentCamera = 1
 				elif currentCamera == 1:
+					$Head.global_rotation.y = global_rotation.y
 					PlayerCameraArm.spring_length = 0
 					PlayerCamera3D.set_cull_mask_value(2, false)
 					PlayerCamera3D.set_fov(75)
