@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=51 format=4 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -13,14 +13,15 @@
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
-[ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
-[ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
-[ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
-[ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
+[ext_resource type="PackedScene" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
+[ext_resource type="PackedScene" path="res://strange_palm.tscn" id="16_0df4x"]
+[ext_resource type="PackedScene" path="res://strange_palm_old.tscn" id="16_75j64"]
+[ext_resource type="PackedScene" path="res://strange_palm_young.tscn" id="17_ex8om"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="18_vdcsx"]
 [ext_resource type="Script" path="res://old_timers.gd" id="19_0eoom"]
 [ext_resource type="PackedScene" uid="uid://d2qv1eoaiyk7y" path="res://old_timers_running.tscn" id="20_1p4md"]
 [ext_resource type="Texture2D" uid="uid://cnvhgtsnbt84p" path="res://assets/kenney_prototype-kit/Models/FBX format/Textures/colormap.png" id="21_emv6p"]
+[ext_resource type="PackedScene" uid="uid://ebkglwbohpk3" path="res://interaction/Interactable.tscn" id="22_gtucv"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
@@ -135,7 +136,6 @@ point_count = 9
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m72q8"]
 resource_name = "colormap"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("21_emv6p")
 emission_enabled = true
 
@@ -177,7 +177,6 @@ data = PackedVector3Array(0.1, 0, -0.1, 0.1, 0.5, 0.1, 0.1, 0.5, -0.1, 0.1, 0.5,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eup8w"]
 resource_name = "colormap"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("21_emv6p")
 emission_enabled = true
 
@@ -252,16 +251,16 @@ shadow_mesh = SubResource("ArrayMesh_0ycgc")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w7skc"]
 data = PackedVector3Array(0.1, 0, -0.15, -0.1, 0.05, -0.15, -0.1, 0, -0.15, -0.1, 0.05, -0.15, 0.1, 0, -0.15, 0.1, 0.05, -0.15, -0.1, 0.05, 0.15, 0.1, 0, 0.15, -0.1, 0, 0.15, 0.1, 0, 0.15, -0.1, 0.05, 0.15, 0.1, 0.05, 0.15, -0.15, 0.05, 0.1, -0.1, 0, 0.15, -0.15, 0, 0.1, -0.1, 0, 0.15, -0.15, 0.05, 0.1, -0.1, 0.05, 0.15, 0.15, 0.05, 0.1, 0.1, 0.05, -0.15, 0.15, 0.05, -0.1, 0.1, 0.05, -0.15, 0.15, 0.05, 0.1, 0.1, 0.05, 0, 0.1, 0.05, 0.15, 0.1, 0.05, 0, 0.15, 0.05, 0.1, 0.1, 0.05, -0.15, 0.1, 0.05, 0, 0.0707, 0.05, -0.0707, 0.1, 0.05, 0, 0.1, 0.05, 0.15, 0.0707, 0.05, 0.0707, 0.1, 0.05, -0.15, 0.0707, 0.05, -0.0707, -0.1, 0.05, -0.15, 0.0707, 0.05, 0.0707, 0.1, 0.05, 0.15, -0.1, 0.05, 0.15, -0.1, 0.05, -0.15, 0.0707, 0.05, -0.0707, 0, 0.05, -0.1, 0.0707, 0.05, 0.0707, -0.1, 0.05, 0.15, 0, 0.05, 0.1, -0.1, 0.05, -0.15, 0, 0.05, -0.1, -0.0707, 0.05, -0.0707, 0, 0.05, 0.1, -0.1, 0.05, 0.15, -0.0707, 0.05, 0.0707, -0.1, 0.05, -0.15, -0.0707, 0.05, -0.0707, -0.1, 0.05, 0, -0.0707, 0.05, 0.0707, -0.1, 0.05, 0.15, -0.1, 0.05, 0, -0.1, 0.05, 0, -0.1, 0.05, 0.15, -0.1, 0.05, -0.15, -0.1, 0.05, -0.15, -0.1, 0.05, 0.15, -0.15, 0.05, -0.1, -0.15, 0.05, -0.1, -0.1, 0.05, 0.15, -0.15, 0.05, 0.1, 0.15, 0, -0.1, 0.15, 0.05, 0.1, 0.15, 0.05, -0.1, 0.15, 0.05, 0.1, 0.15, 0, -0.1, 0.15, 0, 0.1, 0.1, 0, -0.15, 0.15, 0.05, -0.1, 0.1, 0.05, -0.15, 0.15, 0.05, -0.1, 0.1, 0, -0.15, 0.15, 0, -0.1, -0.15, 0.05, -0.1, -0.15, 0, 0.1, -0.15, 0, -0.1, -0.15, 0, 0.1, -0.15, 0.05, -0.1, -0.15, 0.05, 0.1, -0.1, 0.05, -0.15, -0.15, 0, -0.1, -0.1, 0, -0.15, -0.15, 0, -0.1, -0.1, 0.05, -0.15, -0.15, 0.05, -0.1, 0.15, 0, 0.1, 0.1, 0.05, 0.15, 0.15, 0.05, 0.1, 0.1, 0.05, 0.15, 0.15, 0, 0.1, 0.1, 0, 0.15, -0.15, 0, 0.1, -0.1, 0, -0.15, -0.15, 0, -0.1, -0.15, 0, 0.1, -0.1, 0, 0, -0.1, 0, -0.15, -0.1, 0, 0.15, -0.1, 0, 0, -0.15, 0, 0.1, -0.0707, 0, -0.0707, -0.1, 0, -0.15, -0.1, 0, 0, 0, 0, -0.1, -0.1, 0, -0.15, -0.0707, 0, -0.0707, 0.0707, 0, -0.0707, -0.1, 0, -0.15, 0, 0, -0.1, -0.1, 0, 0.15, -0.0707, 0, 0.0707, -0.1, 0, 0, -0.1, 0, 0.15, 0, 0, 0.1, -0.0707, 0, 0.0707, -0.1, 0, 0.15, 0.0707, 0, 0.0707, 0, 0, 0.1, 0.0707, 0, -0.0707, 0.1, 0, -0.15, -0.1, 0, -0.15, 0.1, 0, 0.15, 0.0707, 0, 0.0707, -0.1, 0, 0.15, 0.1, 0, 0, 0.1, 0, -0.15, 0.0707, 0, -0.0707, 0.0707, 0, 0.0707, 0.1, 0, 0.15, 0.1, 0, 0, 0.1, 0, 0.15, 0.1, 0, -0.15, 0.1, 0, 0, 0.1, 0, 0.15, 0.15, 0, -0.1, 0.1, 0, -0.15, 0.15, 0, -0.1, 0.1, 0, 0.15, 0.15, 0, 0.1, 0, 0.05, 0.1, -0.0707, 0, 0.0707, 0, 0, 0.1, -0.0707, 0, 0.0707, 0, 0.05, 0.1, -0.0707, 0.05, 0.0707, 0.0707, 0.05, 0.0707, 0, 0, 0.1, 0.0707, 0, 0.0707, 0, 0, 0.1, 0.0707, 0.05, 0.0707, 0, 0.05, 0.1, 0.1, 0.05, 0, 0.0707, 0, 0.0707, 0.1, 0, 0, 0.0707, 0, 0.0707, 0.1, 0.05, 0, 0.0707, 0.05, 0.0707, 0.0707, 0.05, -0.0707, 0.1, 0, 0, 0.0707, 0, -0.0707, 0.1, 0, 0, 0.0707, 0.05, -0.0707, 0.1, 0.05, 0, 0, 0, -0.1, 0.0707, 0.05, -0.0707, 0.0707, 0, -0.0707, 0.0707, 0.05, -0.0707, 0, 0, -0.1, 0, 0.05, -0.1, -0.0707, 0, -0.0707, 0, 0.05, -0.1, 0, 0, -0.1, 0, 0.05, -0.1, -0.0707, 0, -0.0707, -0.0707, 0.05, -0.0707, -0.0707, 0, -0.0707, -0.1, 0.05, 0, -0.0707, 0.05, -0.0707, -0.1, 0.05, 0, -0.0707, 0, -0.0707, -0.1, 0, 0, -0.1, 0, 0, -0.0707, 0.05, 0.0707, -0.1, 0.05, 0, -0.0707, 0.05, 0.0707, -0.1, 0, 0, -0.0707, 0, 0.0707)
 
-[sub_resource type="Animation" id="Animation_tme8x"]
-resource_name = "toggle-on"
-length = 0.2
+[sub_resource type="Animation" id="Animation_n43u1"]
+resource_name = "toggle"
+length = 0.5
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
 tracks/0/path = NodePath("button-floor-round-small/button")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.04, 1, 0, -0.00064, 0, 0.0533333, 1, 0, -0.00202272, 0, 0.0666667, 1, 0, -0.00493827, 0, 0.08, 1, 0, -0.01024, 0, 0.0933333, 1, 0, -0.0189709, 0, 0.106667, 1, 0, -0.0310291, 0, 0.12, 1, 0, -0.03976, 0, 0.133333, 1, 0, -0.0450617, 0, 0.146667, 1, 0, -0.0479773, 0, 0.16, 1, 0, -0.04936, 0, 0.2, 1, 0, -0.05, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.05, 1, 0, -0.00064, 0, 0.0666667, 1, 0, -0.00202272, 0, 0.0833333, 1, 0, -0.00493827, 0, 0.1, 1, 0, -0.01024, 0, 0.116667, 1, 0, -0.0189709, 0, 0.133333, 1, 0, -0.0310291, 0, 0.15, 1, 0, -0.03976, 0, 0.166667, 1, 0, -0.0450617, 0, 0.183333, 1, 0, -0.0479773, 0, 0.2, 1, 0, -0.04936, 0, 0.3, 1, 0, -0.04936, 0, 0.316667, 1, 0, -0.0479773, 0, 0.333333, 1, 0, -0.0450617, 0, 0.35, 1, 0, -0.03976, 0, 0.366667, 1, 0, -0.0310291, 0, 0.383333, 1, 0, -0.0189709, 0, 0.4, 1, 0, -0.01024, 0, 0.416667, 1, 0, -0.00493827, 0, 0.433333, 1, 0, -0.00202272, 0, 0.45, 1, 0, -0.000639999, 0, 0.5, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_n8ukg"]
 resource_name = "toggle-off"
@@ -274,16 +273,16 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.05, 0, 0.04, 1, 0, -0.04936, 0, 0.0533333, 1, 0, -0.0479773, 0, 0.0666667, 1, 0, -0.0450617, 0, 0.08, 1, 0, -0.03976, 0, 0.0933333, 1, 0, -0.0310291, 0, 0.106667, 1, 0, -0.0189709, 0, 0.12, 1, 0, -0.01024, 0, 0.133333, 1, 0, -0.00493827, 0, 0.146667, 1, 0, -0.00202272, 0, 0.16, 1, 0, -0.000639999, 0, 0.2, 1, 0, 0, 0)
 
-[sub_resource type="Animation" id="Animation_n43u1"]
-resource_name = "toggle"
-length = 0.5
+[sub_resource type="Animation" id="Animation_tme8x"]
+resource_name = "toggle-on"
+length = 0.2
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
 tracks/0/path = NodePath("button-floor-round-small/button")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.05, 1, 0, -0.00064, 0, 0.0666667, 1, 0, -0.00202272, 0, 0.0833333, 1, 0, -0.00493827, 0, 0.1, 1, 0, -0.01024, 0, 0.116667, 1, 0, -0.0189709, 0, 0.133333, 1, 0, -0.0310291, 0, 0.15, 1, 0, -0.03976, 0, 0.166667, 1, 0, -0.0450617, 0, 0.183333, 1, 0, -0.0479773, 0, 0.2, 1, 0, -0.04936, 0, 0.3, 1, 0, -0.04936, 0, 0.316667, 1, 0, -0.0479773, 0, 0.333333, 1, 0, -0.0450617, 0, 0.35, 1, 0, -0.03976, 0, 0.366667, 1, 0, -0.0310291, 0, 0.383333, 1, 0, -0.0189709, 0, 0.4, 1, 0, -0.01024, 0, 0.416667, 1, 0, -0.00493827, 0, 0.433333, 1, 0, -0.00202272, 0, 0.45, 1, 0, -0.000639999, 0, 0.5, 1, 0, 0, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.04, 1, 0, -0.00064, 0, 0.0533333, 1, 0, -0.00202272, 0, 0.0666667, 1, 0, -0.00493827, 0, 0.08, 1, 0, -0.01024, 0, 0.0933333, 1, 0, -0.0189709, 0, 0.106667, 1, 0, -0.0310291, 0, 0.12, 1, 0, -0.03976, 0, 0.133333, 1, 0, -0.0450617, 0, 0.146667, 1, 0, -0.0479773, 0, 0.16, 1, 0, -0.04936, 0, 0.2, 1, 0, -0.05, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bple"]
 _data = {
@@ -413,10 +412,10 @@ curve = SubResource("Curve3D_5lpg0")
 script = ExtResource("19_0eoom")
 
 [node name="PathFollow3D" parent="Path3D" instance=ExtResource("20_1p4md")]
-transform = Transform3D(-1.29049, -0.0505287, -0.838179, 0, 1.53685, -0.092647, 0.839697, -0.0776553, -1.28816, -5.91162, -2.14718, 3.24603)
+transform = Transform3D(-1.29049, -0.0505287, -0.838179, 0, 1.53685, -0.092647, 0.839696, -0.0776553, -1.28816, -5.91162, -2.14718, 3.24603)
 
 [node name="button" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.754, 65.0197, 332.033)
+transform = Transform3D(2.50325, 0, 0, 0, 2.50325, 0, 0, 0, 2.50325, 164.754, 63.7781, 332.033)
 
 [node name="column-low" type="StaticBody3D" parent="button"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -446,3 +445,6 @@ shape = SubResource("ConcavePolygonShape3D_w7skc")
 libraries = {
 "": SubResource("AnimationLibrary_2bple")
 }
+
+[node name="Interactable" parent="button/button-floor-round-small" instance=ExtResource("22_gtucv")]
+transform = Transform3D(0.4, 0, 0, 0, 0.302915, 0, 0, 0, 0.423275, 0, 0, 0)
