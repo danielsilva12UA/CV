@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=53 format=4 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://old_timers.gd" id="19_0eoom"]
 [ext_resource type="PackedScene" uid="uid://d2qv1eoaiyk7y" path="res://old_timers_running.tscn" id="20_1p4md"]
 [ext_resource type="Texture2D" uid="uid://cnvhgtsnbt84p" path="res://assets/kenney_prototype-kit/Models/FBX format/Textures/colormap.png" id="21_emv6p"]
+[ext_resource type="Script" path="res://button.gd" id="21_m5by5"]
 [ext_resource type="PackedScene" uid="uid://ebkglwbohpk3" path="res://interaction/Interactable.tscn" id="22_gtucv"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
@@ -291,6 +292,9 @@ _data = {
 "toggle-on": SubResource("Animation_tme8x")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqr4w"]
+size = Vector3(1, 0.505371, 1)
+
 [node name="terrain_world" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33459, 13.5026, -15.1219)
 
@@ -416,6 +420,7 @@ transform = Transform3D(-1.29049, -0.0505287, -0.838179, 0, 1.53685, -0.092647, 
 
 [node name="button" type="Node3D" parent="."]
 transform = Transform3D(2.50325, 0, 0, 0, 2.50325, 0, 0, 0, 2.50325, 164.754, 63.7781, 332.033)
+script = ExtResource("21_m5by5")
 
 [node name="column-low" type="StaticBody3D" parent="button"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -446,5 +451,15 @@ libraries = {
 "": SubResource("AnimationLibrary_2bple")
 }
 
-[node name="Interactable" parent="button/button-floor-round-small" instance=ExtResource("22_gtucv")]
-transform = Transform3D(0.4, 0, 0, 0, 0.302915, 0, 0, 0, 0.423275, 0, 0, 0)
+[node name="Interactable" parent="button" instance=ExtResource("22_gtucv")]
+transform = Transform3D(0.4, 0, 0, 0, 0.302915, 0, 0, 0, 0.423275, 0, 1, 0)
+
+[node name="CollisionShape3D" parent="button/Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.247314, 0)
+shape = SubResource("BoxShape3D_xqr4w")
+
+[connection signal="focused" from="button/Interactable" to="button" method="_on_interactable_focused"]
+[connection signal="interacted" from="button/Interactable" to="button" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="button/Interactable" to="button" method="_on_interactable_unfocused"]
+
+[editable path="button/Interactable"]
