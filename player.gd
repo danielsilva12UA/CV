@@ -101,12 +101,11 @@ func _input(event):
 				$Head.global_rotation.y = global_rotation.y
 			else:
 				$Head.global_rotation.y += rotation_angle.y
-			if $Head.global_rotation.x + rotation_angle.x >= deg_to_rad(90):
-				$Head.global_rotation.x = deg_to_rad(90)
-			elif $Head.global_rotation.x + rotation_angle.x <= deg_to_rad(-90):
-				$Head.global_rotation.x = deg_to_rad(-90)
-			else:
-				$Head.global_rotation.x += rotation_angle.x
+			$Head.global_rotation.x += rotation_angle.x
+			if $Head.global_rotation.x >= deg_to_rad(80):
+				$Head.global_rotation.x = deg_to_rad(80)
+			elif $Head.global_rotation.x <= deg_to_rad(-60):
+				$Head.global_rotation.x = deg_to_rad(-60)
 			global_rotation.z = 0
 			$Head.global_rotation.z = 0
 			
