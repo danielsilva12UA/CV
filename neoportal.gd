@@ -19,6 +19,8 @@ var hitboxArea: Area3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("portals")
+	
 	# Get existing nodes
 	portal_entry = self as MeshInstance3D
 	portal_exit = other_portal
@@ -122,11 +124,18 @@ func _ready() -> void:
 	hitboxArea.global_position += portal_entry.basis.z*thickness/2
 	var hitboxCollision: CollisionShape3D = CollisionShape3D.new()
 	hitboxCollision.shape = BoxShape3D.new()
-	hitboxCollision.shape.size = Vector3(portal_entry.get_mesh().size.x, portal_entry.get_mesh().size.y, 2)
+	hitboxCollision.shape.size = Vector3(portal_entry.get_mesh().size.x, portal_entry.get_mesh().size.y, thickness)
 	hitboxArea.add_child(hitboxCollision)
 	hitboxArea.body_entered.connect(_on_entry_body_entered)
 	hitboxArea.body_exited.connect(_on_entry_body_exited)
 	portal_travellers = {}
+	var collisionForCamera = StaticBody3D.new()
+	portal_entry.add_child(collisionForCamera)
+	collisionForCamera.global_transform = portal_entry.global_transform
+	collisionForCamera.global_position += portal_entry.basis.z*thickness/2
+	collisionForCamera.add_child(hitboxCollision.duplicate())
+	collisionForCamera.set_collision_layer_value(1, false)
+	collisionForCamera.set_collision_layer_value(8, true)
 
 
 var h_flag = false
@@ -179,6 +188,10 @@ func side_of_portal(body: Node3D) -> float:
 
 func resize() -> void:
 	portal_subviewport.size = get_viewport().size
+
+
+func set_fov(value):
+	portal_camera.set_fov(value)
 
 
 func _on_entry_body_entered(body: Node3D) -> void:

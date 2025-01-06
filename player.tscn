@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dyg7ycckfiylj"]
+[gd_scene load_steps=49 format=4 uid="uid://dyg7ycckfiylj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ydsig"]
 [ext_resource type="Shader" path="res://underwater.gdshader" id="2_45ppr"]
@@ -10,12 +10,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_n68wo"]
 size = Vector3(2.13049, 6.30257, 1.93025)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_32br6"]
+size = Vector3(1, 2.77539, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g3se0"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5r6c7"]
 shader = ExtResource("2_45ppr")
 shader_parameter/color = Color(0.352941, 0.537255, 0.658824, 0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_32br6"]
-size = Vector3(1, 2.77539, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qsbov"]
 
@@ -2728,38 +2730,34 @@ shape = SubResource("BoxShape3D_n68wo")
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25344, 0)
 
-[node name="Camera" type="Area3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130778, -0.0225322)
+[node name="PlayerInteractor" parent="Head" node_paths=PackedStringArray("player") instance=ExtResource("5_hlkqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.411, 0)
+player = NodePath("../..")
 
-[node name="Camera3D" type="Camera3D" parent="Head/Camera"]
+[node name="CollisionShape3D" parent="Head/PlayerInteractor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.34154, -1.16825e-05, -0.473438, -1.51625)
+shape = SubResource("BoxShape3D_32br6")
+
+[node name="CameraArm" type="SpringArm3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0)
+collision_mask = 129
+shape = SubResource("SphereShape3D_g3se0")
+
+[node name="Camera" type="Area3D" parent="Head/CameraArm"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head/CameraArm/Camera"]
 cull_mask = 1048573
 near = 0.001
 
-[node name="WaterVision" type="Sprite2D" parent="Head/Camera/Camera3D"]
+[node name="WaterVision" type="Sprite2D" parent="Head/CameraArm/Camera/Camera3D"]
 visible = false
 material = SubResource("ShaderMaterial_5r6c7")
 texture = ExtResource("3_ryuif")
 centered = false
 
-[node name="PlayerInteractor" parent="Head/Camera/Camera3D" node_paths=PackedStringArray("player") instance=ExtResource("5_hlkqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541778, 0.0225322)
-player = NodePath("../../../..")
-
-[node name="CollisionShape3D" parent="Head/Camera/Camera3D/PlayerInteractor" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.34154, -1.16825e-05, -0.473438, -1.51625)
-shape = SubResource("BoxShape3D_32br6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/CameraArm/Camera"]
 shape = SubResource("BoxShape3D_qsbov")
-
-[node name="Camera1stPerson" type="Node3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130778, -0.0225322)
-
-[node name="Camera2ndPerson" type="Node3D" parent="Head"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.89797, -6.90987)
-
-[node name="Camera3rdPerson" type="Node3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18642, 6.98928)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Head"]
 stream = ExtResource("5_5ismn")
@@ -2839,4 +2837,4 @@ libraries = {
 "": SubResource("AnimationLibrary_lqpkp")
 }
 
-[editable path="Head/Camera/Camera3D/PlayerInteractor"]
+[editable path="Head/PlayerInteractor"]

@@ -7,7 +7,7 @@ extends StaticBody3D
 @onready var Player = $"../Player"
 @onready var BoatSeat: Node3D = $Boat/PlayerPosition
 @onready var BoatExit: Node3D = $Boat/PlayerExit
-@onready var PlayerCamera = $"../Player/Head/Camera/Camera3D"
+@onready var PlayerCamera = get_viewport().get_camera_3d()
 @onready var BoatCamera: Camera3D = $Boat/BoatCamera
 @onready var PlayerHead = $"../Player/Head"
 @onready var Sail = $Boat/Sail
@@ -57,9 +57,12 @@ func move_player_out_of_boat() -> void:
 
 func adjust_camera_to_boat() -> void:
 	BoatCamera.current = true
+	get_tree().call_group("portals", "set_fov", BoatCamera.get_fov())
+	
 
 func adjust_camera_to_player() -> void:
 	PlayerCamera.current = true
+	get_tree().call_group("portals", "set_fov", PlayerCamera.get_fov())
 
 func _on_interactable_focused() -> void:
 	add_highlight()

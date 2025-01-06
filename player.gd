@@ -15,18 +15,15 @@ var underwater = false
 
 var animation
 
-@onready var PlayerCamera = $Head/Camera
-@onready var PlayerCamera3D = $Head/Camera/Camera3D
-@onready var PlayerCamera1st = $Head/Camera1stPerson
-@onready var PlayerCamera2nd = $Head/Camera2ndPerson
-@onready var PlayerCamera3rd = $Head/Camera3rdPerson
+@onready var PlayerCameraArm = $Head/CameraArm
+@onready var PlayerCamera = $Head/CameraArm/Camera
+@onready var PlayerCamera3D = $Head/CameraArm/Camera/Camera3D
 @onready var audio_player = $Head/AudioStreamPlayer
 
 func _ready():
-	PlayerCamera.transform = PlayerCamera1st.transform
 	animation = $Body/"character-male-d2"/AnimationPlayer
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$Head/Camera/Camera3D/WaterVision.visible = false
+	$Head/CameraArm/Camera/Camera3D/WaterVision.visible = false
 	resize()
 	get_tree().get_root().size_changed.connect(resize)
 	get_world_3d().environment.volumetric_fog_density = 0.02
@@ -66,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
-		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() * SPEED
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() * SPEED
 		if direction:
 			velocity.x = direction.x
 			velocity.z = direction.z
@@ -101,31 +98,30 @@ func _input(event):
 				$Head.global_rotation.x = deg_to_rad(-90)
 			else:
 				$Head.global_rotation.x += rotation_angle.x
+			global_rotation.z = 0
 			$Head.global_rotation.z = 0
 			$Head.global_rotation.y = global_rotation.y
+			
 		
 		if event.is_action_pressed("change_view"):
 			if playerPhysics:
 				if currentCamera == 0:
-					PlayerCamera.transform = PlayerCamera3rd.transform
+					PlayerCameraArm.spring_length = 10
 					PlayerCamera3D.set_cull_mask_value(2, true)
 					PlayerCamera3D.set_fov(90)
+					get_tree().call_group("portals", "set_fov", 90)
 					currentCamera = 1
 				elif currentCamera == 1:
-					PlayerCamera.transform = PlayerCamera2nd.transform
-					PlayerCamera3D.set_cull_mask_value(2, true)
-					PlayerCamera3D.set_fov(90)
-					currentCamera = 2
-				elif currentCamera == 2:
-					PlayerCamera.transform = PlayerCamera1st.transform
+					PlayerCameraArm.spring_length = 0
 					PlayerCamera3D.set_cull_mask_value(2, false)
 					PlayerCamera3D.set_fov(75)
+					get_tree().call_group("portals", "set_fov", 75)
 					currentCamera = 0
 			
 	
 func resize() -> void:
-	$Head/Camera/Camera3D/WaterVision.scale.x = get_viewport().size.x / 1025.0
-	$Head/Camera/Camera3D/WaterVision.scale.y = get_viewport().size.y / 1025.0
+	$Head/CameraArm/Camera/Camera3D/WaterVision.scale.x = get_viewport().size.x / 1025.0
+	$Head/CameraArm/Camera/Camera3D/WaterVision.scale.y = get_viewport().size.y / 1025.0
 
 
 func _on_water_hitbox_body_entered(body: Node3D) -> void:
@@ -145,12 +141,12 @@ func _on_water_hitbox_body_exited(body: Node3D) -> void:
 
 
 func _on_water_hitbox_area_entered(area: Area3D) -> void:
-	if area == $Head/Camera:
-		$Head/Camera/Camera3D/WaterVision.visible = true
+	if area == $Head/CameraArm/Camera:
+		$Head/CameraArm/Camera/Camera3D/WaterVision.visible = true
 		get_world_3d().environment.volumetric_fog_enabled = true
 
 
 func _on_water_hitbox_area_exited(area: Area3D) -> void:
-	if area == $Head/Camera:
-		$Head/Camera/Camera3D/WaterVision.visible = false
+	if area == $Head/CameraArm/Camera:
+		$Head/CameraArm/Camera/Camera3D/WaterVision.visible = false
 		get_world_3d().environment.volumetric_fog_enabled = false
