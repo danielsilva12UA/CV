@@ -7,6 +7,8 @@ extends Node3D
 @onready var moon: Sprite3D = $"../../Moon"
 @onready var light: DirectionalLight3D = $"../../DirectionalLight3D"
 @onready var main_audio: AudioStreamPlayer = $"../../AudioStreamPlayer"
+@onready var SailShip: Node3D = $"../../SailShip"
+@onready var GhostShip: PathFollow3D = $"../../GhostShipPath/PathFollow3D"
 
 var pressed = false
 var button_position: Vector3 = Vector3.ZERO
@@ -29,6 +31,8 @@ func _on_interactable_interacted() -> void:
 		main_audio.blood_moon = true
 		main_audio.bgm_player("button_pressed")
 		pressed = true
+		SailShip.visible = false
+		GhostShip.make_visible()
 		trigger_blood_moon_event()
 
 func trigger_blood_moon_event() -> void:
@@ -56,6 +60,9 @@ func trigger_blood_moon_event() -> void:
 
 func on_blood_moon_complete() -> void:
 	var tween = create_tween()
+	
+	GhostShip.start_moving()
+	
 	
 	# Gradually change the light to red (for the blood moon effect)
 	tween.tween_property(light, "light_color", Color("red"), 5.0)

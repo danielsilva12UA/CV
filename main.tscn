@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=39 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -25,6 +25,8 @@
 [ext_resource type="Script" path="res://moon.gd" id="18_e6083"]
 [ext_resource type="Texture2D" uid="uid://c3cubkw58jht3" path="res://assets/house.png" id="22_3nwfq"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="23_nngsi"]
+[ext_resource type="Script" path="res://ghostshippath.gd" id="26_5yq5r"]
+[ext_resource type="PackedScene" uid="uid://jr28cgjdgtwl" path="res://sail_ship.tscn" id="27_rfe3e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nnbx3"]
 resource_local_to_scene = true
@@ -76,6 +78,14 @@ resource_local_to_scene = true
 flip_faces = true
 size = Vector2(5.25, 13.2)
 orientation = 2
+
+[sub_resource type="Curve3D" id="Curve3D_ryv8p"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.23703, 0.0895281, -0.126343, 0, 0, 0, 0, 0, 0, 54.6168, 31.9097, 129.178, 0, 0, 0, 0, 0, 0, -41.6611, 6.54634, 134.807, 0, 0, 0, 0, 0, 0, -208.083, 35.2608, 155.215, 0, 0, 0, 0, 0, 0, -243.208, 74.003, 78.3932, 0, 0, 0, 0, 0, 0, -256.721, 134.481, 54.7224, 0, 0, 0, 0, 0, 0, -394.616, 108.716, 69.2869, 0, 0, 0, 0, 0, 0, -394.616, 108.716, 69.2869, 0, 0, 0, 0, 0, 0, -568.3, 137.694, 91.6903, 0, 0, 0, 0, 0, 0, -555.702, 166.023, 4.40244, 0, 0, 0, 0, 0, 0, -430.39, 144.536, -57.4113, 0, 0, 0, 0, 0, 0, -496.136, 141.444, -120.47, 0, 0, 0, 0, 0, 0, -564.669, 58.7048, -128.008, 0, 0, 0, 0, 0, 0, -609.308, 28.9187, -220.786, 0, 0, 0, 0, 0, 0, -573.827, 48.2065, -217.095, 0, 0, 0, 0, 0, 0, -503.539, 27.6735, -243.174, 0, 0, 0, 0, 0, 0, -612.316, 1.49038, -336.538, 0, 0, 0, 0, 0, 0, -552.972, -46.7842, -492.846, 0, 0, 0, 0, 0, 0, -468.578, 15.9462, -583.115, 0, 0, 0, 0, 0, 0, -384.708, 36.3956, -441.187, 0, 0, 0, 0, 0, 0, -384.708, 36.3956, -441.187, 0, 0, 0, 0, 0, 0, -329.767, 1.41185, -457.406, 0, 0, 0, 0, 0, 0, -117.435, 37.566, -610.427, 0, 0, 0, 0, 0, 0, 47.7972, 31.6562, -795.134, 0, 0, 0, 0, 0, 0, 378.313, -18.2879, -863.776, 0, 0, 0, 0, 0, 0, 429.769, 4.50915, -726.942, 0, 0, 0, 0, 0, 0, 489.514, 25.9831, -672.211, 0, 0, 0, 0, 0, 0, 489.514, 25.9831, -672.211, 0, 0, 0, 0, 0, 0, 489.514, 25.9831, -672.211, 0, 0, 0, 0, 0, 0, 408.493, -4.13752, -533.642, 0, 0, 0, 0, 0, 0, 392.902, 27.3531, -476.645, 0, 0, 0, 0, 0, 0, 323.682, 17.3589, -462.893, 0, 0, 0, 0, 0, 0, 216.459, -46.7763, -298.93, 0, 0, 0, 0, 0, 0, 300.99, 42.0952, -30.0504, 0, 0, 0, 0, 0, 0, 602.293, 82.0659, 193.624, 0, 0, 0, 0, 0, 0, 501.344, 97.95, 456.473, 0, 0, 0, 0, 0, 0, -0.23703, 0.0895281, -0.126343),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 37
 
 [node name="Main" type="Node3D"]
 
@@ -186,8 +196,21 @@ script = ExtResource("18_e6083")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 texture = ExtResource("22_3nwfq")
 
-[node name="Sail ship" parent="." instance=ExtResource("23_nngsi")]
-transform = Transform3D(10.3165, -8.73882, 11.6682, 9.4801, 14.8808, 2.76297, -11.0743, 4.59775, 13.2349, 232.77, 1.64, 303.91)
+[node name="SailShip" parent="." instance=ExtResource("23_nngsi")]
+transform = Transform3D(10.3165, -8.73882, 11.6682, 9.4801, 14.8808, 2.76297, -11.0743, 4.59775, 13.2349, 243.424, 7.95941, 276.198)
+
+[node name="GhostShipPath" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243.424, 7.95941, 276.198)
+curve = SubResource("Curve3D_ryv8p")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="GhostShipPath"]
+transform = Transform3D(-0.92058, -0.0862868, -0.380882, 0, 0.975278, -0.220946, 0.390532, -0.203399, -0.897833, -0.23703, 0.0895281, -0.126343)
+visible = false
+rotation_mode = 4
+script = ExtResource("26_5yq5r")
+
+[node name="GhostShip" parent="GhostShipPath/PathFollow3D" instance=ExtResource("27_rfe3e")]
+transform = Transform3D(-13.8222, 9.84046, -5.57286, 10.6081, 14.3319, -1.00414, 3.91893, -4.08743, -16.9375, -0.168854, -0.133461, -0.18396)
 
 [connection signal="area_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_entered"]
 [connection signal="area_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_exited"]
