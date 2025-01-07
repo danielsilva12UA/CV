@@ -26,8 +26,9 @@ func _on_interactable_focused() -> void:
 func _on_interactable_interacted() -> void:
 	if not pressed:
 		animationplayer.play("toggle-on")
-		pressed = true
 		main_audio.blood_moon = true
+		main_audio.bgm_player("button_pressed")
+		pressed = true
 		trigger_blood_moon_event()
 
 func trigger_blood_moon_event() -> void:

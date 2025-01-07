@@ -13,7 +13,7 @@ var blood_moon = false
 
 # Function to handle the music transition with fade in/out
 func bgm_player(song: String):
-	if song == "natives_song" and stream != natives_song:
+	if song == "natives_song" and stream != natives_song or song == "button_pressed":
 		fade_music_out()  # Fade out current song
 		stream = natives_song2 if blood_moon else natives_song
 		fade_music_in()   # Fade in the new song

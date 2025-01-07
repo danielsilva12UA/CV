@@ -87,7 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 58.7699, 0)
 shape = SubResource("WorldBoundaryShape3D_4xfyt")
 
 [node name="Player" parent="." instance=ExtResource("1_vi72f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.089, 76.2369, 312.688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8867, 75.7219, 87.1767)
 
 [node name="BoatWSail2" parent="." instance=ExtResource("7_215h5")]
 transform = Transform3D(-19.183, 0, -1.67703e-06, 0, 19.183, 0, 1.67703e-06, 0, -19.183, 9.83347, 72.7421, -143.52)
