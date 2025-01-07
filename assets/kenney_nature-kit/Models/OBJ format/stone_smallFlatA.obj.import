@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvodcs1t2rt6q"
+path="res://.godot/imported/stone_smallFlatA.obj-8d1f3da5970c8a2c1dd21e2e218094e3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_smallFlatA.obj-8d1f3da5970c8a2c1dd21e2e218094e3.mesh"]
+
+source_file="res://assets/kenney_nature-kit/Models/OBJ format/stone_smallFlatA.obj"
+dest_files=["res://.godot/imported/stone_smallFlatA.obj-8d1f3da5970c8a2c1dd21e2e218094e3.mesh", "res://.godot/imported/stone_smallFlatA.obj-8d1f3da5970c8a2c1dd21e2e218094e3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

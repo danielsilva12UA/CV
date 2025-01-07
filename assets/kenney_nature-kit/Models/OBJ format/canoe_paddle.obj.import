@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctem86dlnfia"
+path="res://.godot/imported/canoe_paddle.obj-4ae830461aecf31cc6b9d7fecd1de2ee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/canoe_paddle.obj-4ae830461aecf31cc6b9d7fecd1de2ee.mesh"]
+
+source_file="res://assets/kenney_nature-kit/Models/OBJ format/canoe_paddle.obj"
+dest_files=["res://.godot/imported/canoe_paddle.obj-4ae830461aecf31cc6b9d7fecd1de2ee.mesh", "res://.godot/imported/canoe_paddle.obj-4ae830461aecf31cc6b9d7fecd1de2ee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

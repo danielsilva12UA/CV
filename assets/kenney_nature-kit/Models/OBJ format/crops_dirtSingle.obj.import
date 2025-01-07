@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqi40e1qw2lpc"
+path="res://.godot/imported/crops_dirtSingle.obj-f978ab7915fe62a8646e8f08178bdcab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crops_dirtSingle.obj-f978ab7915fe62a8646e8f08178bdcab.mesh"]
+
+source_file="res://assets/kenney_nature-kit/Models/OBJ format/crops_dirtSingle.obj"
+dest_files=["res://.godot/imported/crops_dirtSingle.obj-f978ab7915fe62a8646e8f08178bdcab.mesh", "res://.godot/imported/crops_dirtSingle.obj-f978ab7915fe62a8646e8f08178bdcab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

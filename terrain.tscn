@@ -1,28 +1,45 @@
-[gd_scene load_steps=53 format=4 uid="uid://bi1pdh4ukdqwl"]
+[gd_scene load_steps=70 format=4 uid="uid://bi1pdh4ukdqwl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_3jfls"]
 [ext_resource type="Resource" path="res://terrian_island/data.hterrain" id="2_j76c7"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_v6a56"]
 [ext_resource type="Texture2D" uid="uid://bpu3w7xmq5bi1" path="res://terrain_textures/Grass/Grass002_2K-PNG_Color.png" id="4_uxanv"]
 [ext_resource type="Texture2D" uid="uid://c2d550kh3ofqg" path="res://terrain_textures/Sand/Ground080_2K-JPG_Color.jpg" id="5_8ad3b"]
-[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
+[ext_resource type="Texture2D" uid="uid://bfl0iy5xojtv1" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_Color.jpg" id="6_mprqo"]
 [ext_resource type="Texture2D" uid="uid://deucjyscpxqqj" path="res://terrain_textures/Grass/Grass002_2K-PNG_NormalDX.png" id="7_pkumn"]
 [ext_resource type="Texture2D" uid="uid://bg8h6bvv5chn8" path="res://terrain_textures/Sand/Ground080_2K-JPG_NormalDX.jpg" id="8_xnlm7"]
-[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
+[ext_resource type="Texture2D" uid="uid://cq0rx0dgj20xf" path="res://terrain_textures/Rocks/rock/Rock020_2K-JPG_NormalDX.jpg" id="9_le6dk"]
 [ext_resource type="Shader" path="res://shaders/waterdepth.gdshader" id="10_4dk23"]
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
-[ext_resource type="PackedScene" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
-[ext_resource type="PackedScene" path="res://strange_palm.tscn" id="16_0df4x"]
-[ext_resource type="PackedScene" path="res://strange_palm_old.tscn" id="16_75j64"]
-[ext_resource type="PackedScene" path="res://strange_palm_young.tscn" id="17_ex8om"]
+[ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
+[ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
+[ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
+[ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="18_vdcsx"]
 [ext_resource type="Script" path="res://old_timers.gd" id="19_0eoom"]
 [ext_resource type="PackedScene" uid="uid://d2qv1eoaiyk7y" path="res://old_timers_running.tscn" id="20_1p4md"]
 [ext_resource type="Texture2D" uid="uid://cnvhgtsnbt84p" path="res://assets/kenney_prototype-kit/Models/FBX format/Textures/colormap.png" id="21_emv6p"]
 [ext_resource type="Script" path="res://button.gd" id="21_m5by5"]
 [ext_resource type="PackedScene" uid="uid://ebkglwbohpk3" path="res://interaction/Interactable.tscn" id="22_gtucv"]
+[ext_resource type="PackedScene" uid="uid://ddv1a1vl1om4u" path="res://plant_foliage_01(2_side_leafs).tscn" id="24_17ltt"]
+[ext_resource type="PackedScene" uid="uid://dxt2xwyq8lqla" path="res://plant_foliage_02(2_side_leafs).tscn" id="25_bjjtn"]
+[ext_resource type="PackedScene" uid="uid://dcfx8avhy7fot" path="res://plant_stranger_tree_hero_01.tscn" id="26_5kekl"]
+[ext_resource type="PackedScene" uid="uid://cuhuj0l5y104f" path="res://plant_strange_foliage(2_side_leafs).tscn" id="27_qxb4y"]
+[ext_resource type="PackedScene" uid="uid://8y3ukps2ssm6" path="res://plant_strange_tree(2_side_leafs).tscn" id="28_bucad"]
+[ext_resource type="PackedScene" uid="uid://bu1p0lbkjx7wh" path="res://plant_strange_tree_baby(2_side_leafs).tscn" id="29_3d5l2"]
+[ext_resource type="PackedScene" uid="uid://bcfdxlt6sg0e1" path="res://plant_strange_tree_bush_foliage(2_side_leafs).tscn" id="30_by226"]
+[ext_resource type="PackedScene" uid="uid://clf8y6wv2vv8p" path="res://plant_young_strange_tree(2_side_leafs).tscn" id="31_im233"]
+[ext_resource type="PackedScene" uid="uid://cfgpl2ur7bjo1" path="res://plant_strange_tree_bush_foliage(2_side_leafs)_medium.tscn" id="32_lpkm3"]
+[ext_resource type="PackedScene" uid="uid://bkjcgbd22d7x5" path="res://plant_foliage_02(2_side_leafs)_large.tscn" id="33_t23ch"]
+[ext_resource type="PackedScene" uid="uid://dbjfxgr6sco7c" path="res://plant_stranger_tree_hero_01_medium.tscn" id="34_rhlyu"]
+[ext_resource type="PackedScene" uid="uid://b86ykjq03tus2" path="res://plant_stranger_tree_hero_01_large.tscn" id="35_toe0q"]
+[ext_resource type="PackedScene" uid="uid://b3f66kdxy36m1" path="res://plant_foliage_01(2_side_leafs)_large.tscn" id="36_0gx0t"]
+[ext_resource type="PackedScene" uid="uid://d33qpqtfk7ery" path="res://plant_strange_foliage(2_side_leafs)_medium.tscn" id="37_na1lg"]
+[ext_resource type="PackedScene" uid="uid://ddlyuut2ip2r2" path="res://plant_foliage_01(2_side_leafs)_medium.tscn" id="38_7uiln"]
+[ext_resource type="PackedScene" uid="uid://4wwlmugm4suy" path="res://plant_foliage_02(2_side_leafs)_medium.tscn" id="39_asc0l"]
+[ext_resource type="PackedScene" uid="uid://cpk8c3a3t5of8" path="res://plant_strange_tree(2_side_leafs)_medium.tscn" id="40_55bdg"]
 
 [sub_resource type="Resource" id="Resource_ij4qg"]
 resource_local_to_scene = true
@@ -458,8 +475,504 @@ transform = Transform3D(0.4, 0, 0, 0, 0.302915, 0, 0, 0, 0.423275, 0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.247314, 0)
 shape = SubResource("BoxShape3D_xqr4w")
 
+[node name="Foliage01(2SideLeafs)" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5377, 61.9501, 105.687)
+
+[node name="Foliage02(2SideLeafs)" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3171, 61.95, 106.552)
+
+[node name="StrangerTreeHero01" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.582, 62.0518, 93.9524)
+
+[node name="StrangeFoliage(2SideLeafs)3" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.0246, 61.9271, 71.8272)
+
+[node name="StrangeFoliage(2SideLeafs)2" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6083, 64.3152, 99.2855)
+
+[node name="StrangeFoliage(2SideLeafs)" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.038, 63.8875, 100.569)
+
+[node name="StrangeTree(2SideLeafs)" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.883, 61.95, 79.5525)
+
+[node name="StrangeTreeBaby(2SideLeafs)" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.698, 61.95, 107.428)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5539, 62.3787, 101.753)
+
+[node name="YoungStrangeTree(2SideLeafs)" parent="." instance=ExtResource("31_im233")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 101.827, 61.95, 2.07053)
+
+[node name="StrangeFoliage(2SideLeafs)4" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.1472, 62.0235, 65.2575)
+
+[node name="StrangeFoliage(2SideLeafs)5" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.8423, 62, 69.2726)
+
+[node name="StrangeFoliage(2SideLeafs)6" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.3213, 62.1647, 85.3313)
+
+[node name="StrangeFoliage(2SideLeafs)7" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 89.894, 61.9811, 48.2757)
+
+[node name="StrangerTreeHero02" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1068, 62.1143, 97.5432)
+
+[node name="StrangeTreeBaby(2SideLeafs)2" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.7906, 62, 13.8494)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)2" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.17, 62, 35.7534)
+
+[node name="StrangeTree(2SideLeafs)2" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 86.3387, 62.2598, -20.2656)
+
+[node name="StrangeFoliage(2SideLeafs)8" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9148, 62.0001, -80.8842)
+
+[node name="StrangerTreeHero03" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.2698, 61.9998, -77.4521)
+
+[node name="StrangeTree(2SideLeafs)3" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.7033, 73.5173, -67.8775)
+
+[node name="StrangeTreeBaby(2SideLeafs)3" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.8827, 61.5267, -88.0537)
+
+[node name="Foliage02(2SideLeafs)2" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.9524, 64.6324, -89.0248)
+
+[node name="Foliage01(2SideLeafs)2" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.836, 64.0861, -76.0963)
+
+[node name="StrangerTreeHero04" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.427, 62.2297, -26.3957)
+
+[node name="StrangeFoliage(2SideLeafs)9" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.753, 65.197, 24.1224)
+
+[node name="StrangeFoliage(2SideLeafs)10" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.238, 66.0411, 28.1338)
+
+[node name="StrangeFoliage(2SideLeafs)11" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.254, 63.557, 21.0391)
+
+[node name="StrangeTreeBaby(2SideLeafs)4" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.95, 65.8397, 25.2238)
+
+[node name="StrangerTreeHero05" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.371, 64.4099, 51.7756)
+
+[node name="Foliage01(2SideLeafs)3" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.421, 67.2319, 43.4413)
+
+[node name="Foliage01(2SideLeafs)4" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.659, 63.8993, 53.414)
+
+[node name="Foliage01(2SideLeafs)5" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.813, 65.0798, 48.6324)
+
+[node name="StrangerTreeHero06" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.483, 62.0814, 85.3785)
+
+[node name="StrangeFoliage(2SideLeafs)12" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.905, 65.5453, 80.9163)
+
+[node name="StrangeFoliage(2SideLeafs)13" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.023, 62, 91.7975)
+
+[node name="StrangeFoliage(2SideLeafs)14" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.173, 64.635, 102.717)
+
+[node name="StrangeFoliage(2SideLeafs)15" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.128, 62.0009, 90.2453)
+
+[node name="StrangeFoliage(2SideLeafs)16" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.085, 65.8501, 81.6662)
+
+[node name="StrangeFoliage(2SideLeafs)17" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.672, 65.6079, 79.4078)
+
+[node name="StrangerTreeHero07" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.918, 61.9918, 89.1824)
+
+[node name="StrangerTreeHero08" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7307, 62.224, 139.023)
+
+[node name="StrangeTree(2SideLeafs)4" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.881, 62.6177, 127.469)
+
+[node name="StrangeTreeBaby(2SideLeafs)5" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.8694, 63.0155, -102.404)
+
+[node name="Foliage01(2SideLeafs)6" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.4092, 64.8368, -99.1795)
+
+[node name="CollisionShape3D" parent="Foliage01(2SideLeafs)6/StaticBody3D" index="0"]
+disabled = true
+
+[node name="Foliage02(2SideLeafs)3" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.6109, 65.0047, -94.8406)
+
+[node name="Foliage01(2SideLeafs)7" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.1032, 63.638, -102.086)
+
+[node name="CollisionShape3D" parent="Foliage01(2SideLeafs)7/StaticBody3D" index="0"]
+disabled = true
+
+[node name="Foliage01(2SideLeafs)8" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(-0.208236, 0, 0.978079, 0, 1, 0, -0.978079, 0, -0.208236, -91.9101, 64.488, -100.126)
+
+[node name="CollisionShape3D" parent="Foliage01(2SideLeafs)8/StaticBody3D" index="0"]
+disabled = true
+
+[node name="StrangeTree(2SideLeafs)5" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.683, 60.8548, -62.6802)
+
+[node name="StrangeTreeBaby(2SideLeafs)6" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.371, 65.462, -64.8632)
+
+[node name="StrangeTreeBaby(2SideLeafs)7" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.409, 64.4726, -68.2151)
+
+[node name="Foliage02(2SideLeafs)4" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.081, 62.0937, -46.0079)
+
+[node name="StrangeFoliage(2SideLeafs)18" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.948, 62.426, -52.5884)
+
+[node name="StrangeFoliage(2SideLeafs)19" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.42, 62.4812, -49.669)
+
+[node name="StrangeFoliage(2SideLeafs)20" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.843, 61.8653, -42.1576)
+
+[node name="StrangeFoliage(2SideLeafs)21" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.812, 61.2448, -34.5055)
+
+[node name="Foliage02(2SideLeafs)5" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.886, 61.5672, -23.0265)
+
+[node name="YoungStrangeTree(2SideLeafs)2" parent="." instance=ExtResource("31_im233")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.765, 61.546, -10.4961)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)3" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.983, 64.7621, 4.90595)
+
+[node name="StrangeTreeBaby(2SideLeafs)8" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.163, 62.3907, -161.23)
+
+[node name="StrangeTree(2SideLeafs)6" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.921, 61.4282, -171.895)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)4" parent="." instance=ExtResource("32_lpkm3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 180.561, 61.3119, -183.19)
+
+[node name="Foliage02(2SideLeafs)6" parent="." instance=ExtResource("33_t23ch")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 192.18, 62.1462, -164.963)
+
+[node name="StrangerTreeHero09" parent="." instance=ExtResource("34_rhlyu")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 102.83, 75.1707, -52.7121)
+
+[node name="StrangerTreeHero10" parent="." instance=ExtResource("35_toe0q")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 102.149, 62, 8.14023)
+
+[node name="StrangeTree(2SideLeafs)7" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.4367, 62, 57.4229)
+
+[node name="Foliage01(2SideLeafs)9" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.772, 62, 50.1896)
+
+[node name="Foliage01(2SideLeafs)10" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.7734, 62, 28.6573)
+
+[node name="Foliage01(2SideLeafs)11" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.7781, 62.981, -8.5843)
+
+[node name="Foliage01(2SideLeafs)12" parent="." instance=ExtResource("36_0gx0t")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 109.367, 63.0866, -7.96553)
+
+[node name="StrangeFoliage(2SideLeafs)22" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 63.2326, 62, -72.4064)
+
+[node name="StrangeFoliage(2SideLeafs)23" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7905, 62.0003, -70.5433)
+
+[node name="StrangeFoliage(2SideLeafs)24" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2578, 62.0075, -74.5567)
+
+[node name="StrangeFoliage(2SideLeafs)25" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.6097, 62.006, -68.2654)
+
+[node name="StrangeFoliage(2SideLeafs)26" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.0806, 62.0225, 91.0423)
+
+[node name="StrangeFoliage(2SideLeafs)27" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3808, 61.9988, 88.5059)
+
+[node name="StrangeFoliage(2SideLeafs)28" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 87.2436, 62, 55.2467)
+
+[node name="StrangeTree(2SideLeafs)8" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.213, 62, 42.3433)
+
+[node name="StrangeTreeBaby(2SideLeafs)9" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.705, 62.9363, 320.089)
+
+[node name="StrangeTreeBaby(2SideLeafs)10" parent="." instance=ExtResource("29_3d5l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.484, 62.4039, 318.749)
+
+[node name="StrangeFoliage(2SideLeafs)29" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.2613, 64.2512, 138.173)
+
+[node name="StrangeFoliage(2SideLeafs)30" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -73.0852, 61.4852, 127.896)
+
+[node name="StrangerTreeHero11" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1183, 63.5014, 140.454)
+
+[node name="Foliage01(2SideLeafs)13" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.622, 61.9928, 14.9839)
+
+[node name="Foliage01(2SideLeafs)14" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.498, 64.5979, 46.7458)
+
+[node name="Foliage01(2SideLeafs)15" parent="." instance=ExtResource("36_0gx0t")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -135.496, 62.3195, 56.7749)
+
+[node name="Foliage01(2SideLeafs)16" parent="." instance=ExtResource("38_7uiln")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -130.41, 62.8021, 66.3881)
+
+[node name="Foliage02(2SideLeafs)7" parent="." instance=ExtResource("39_asc0l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -103.427, 65.1652, 93.7991)
+
+[node name="Foliage02(2SideLeafs)8" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.916, 64.7935, 83.6556)
+
+[node name="Foliage02(2SideLeafs)9" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.146, 65.4266, 88.703)
+
+[node name="Foliage02(2SideLeafs)10" parent="." instance=ExtResource("25_bjjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.8562, 64.8668, 133.364)
+
+[node name="StrangeFoliage(2SideLeafs)31" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.067, 75.3846, -57.7715)
+
+[node name="StrangeFoliage(2SideLeafs)32" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.153, 75.4211, -60.3689)
+
+[node name="StrangeTree(2SideLeafs)9" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.226, 75.2369, -55.7561)
+
+[node name="StrangerTreeHero12" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.391, 74.1367, -32.5011)
+
+[node name="StrangerTreeHero13" parent="." instance=ExtResource("35_toe0q")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 156.814, 66.34, 42.5692)
+
+[node name="Foliage01(2SideLeafs)17" parent="." instance=ExtResource("38_7uiln")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -21.4973, 62.5502, 109.655)
+
+[node name="Foliage01(2SideLeafs)18" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2162, 62.8159, 105.825)
+
+[node name="Foliage01(2SideLeafs)19" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.955, 63.721, 102.105)
+
+[node name="Foliage01(2SideLeafs)20" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4751, 64.3746, 98.3771)
+
+[node name="Foliage01(2SideLeafs)21" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3195, 63.6648, 87.5675)
+
+[node name="Foliage01(2SideLeafs)22" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.0181, 62.5434, 83.5651)
+
+[node name="Foliage01(2SideLeafs)23" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.827, 61.903, 77.5077)
+
+[node name="Foliage02(2SideLeafs)11" parent="." instance=ExtResource("39_asc0l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -66.6262, 62.9857, 71.0138)
+
+[node name="StrangerTreeHero14" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.197, 64.644, 33.8219)
+
+[node name="StrangeTree(2SideLeafs)10" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.0517, 63.2902, -31.5447)
+
+[node name="StrangeTree(2SideLeafs)11" parent="." instance=ExtResource("40_55bdg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -73.0053, 66.9364, -83.2445)
+
+[node name="StrangeFoliage(2SideLeafs)33" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.8568, 65.5278, -82.2515)
+
+[node name="StrangeFoliage(2SideLeafs)34" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.2832, 65.5329, -85.3451)
+
+[node name="StrangeFoliage(2SideLeafs)35" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.8135, 65.2422, -87.3117)
+
+[node name="StrangeFoliage(2SideLeafs)36" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.0097, 66.1234, -80.6814)
+
+[node name="StrangeFoliage(2SideLeafs)37" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.5781, 66.3747, -84.8357)
+
+[node name="StrangeFoliage(2SideLeafs)38" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -72.4992, 63.6781, -102.431)
+
+[node name="StrangeFoliage(2SideLeafs)39" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -114.611, 62.3001, -72.086)
+
+[node name="StrangerTreeHero15" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.962, 64.3396, 341.868)
+
+[node name="StrangerTreeHero16" parent="." instance=ExtResource("26_5kekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.2, 213.046, 476.812)
+
+[node name="StrangeFoliage(2SideLeafs)40" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -226.415, 214.425, 477.782)
+
+[node name="StrangeFoliage(2SideLeafs)41" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225.926, 213.515, 473.428)
+
+[node name="StrangeFoliage(2SideLeafs)42" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -222.437, 214.483, 475.09)
+
+[node name="StrangeFoliage(2SideLeafs)43" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226.491, 212.356, 467.761)
+
+[node name="StrangeFoliage(2SideLeafs)44" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.028, 213.791, 470.642)
+
+[node name="StrangeFoliage(2SideLeafs)45" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.54, 212.858, 463.931)
+
+[node name="StrangeFoliage(2SideLeafs)46" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206.013, 212.416, 456.082)
+
+[node name="StrangeFoliage(2SideLeafs)47" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204.363, 212.175, 469.022)
+
+[node name="StrangeTree(2SideLeafs)12" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -244.533, 215.721, 481.361)
+
+[node name="Foliage01(2SideLeafs)24" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -209.629, 212.271, 451.543)
+
+[node name="Foliage01(2SideLeafs)25" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.408, 213.428, 454.115)
+
+[node name="Foliage01(2SideLeafs)26" parent="." instance=ExtResource("24_17ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -209.365, 213.636, 457.633)
+
+[node name="StrangerTreeHero17" parent="." instance=ExtResource("35_toe0q")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -230.851, 212.68, 465.377)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)5" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.021, 62, 12.8419)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)6" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.208, 62, 9.65545)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)7" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.625, 62, 11.6699)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)8" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.773, 62.4692, -29.7176)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)9" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.15, 62.0878, -20.845)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)10" parent="." instance=ExtResource("32_lpkm3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 116.687, 62.8017, -36.1013)
+
+[node name="YoungStrangeTree(2SideLeafs)3" parent="." instance=ExtResource("31_im233")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.813, 62.8302, -73.1527)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)11" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.471, 68.3553, -81.8571)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)12" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.9825, 68.4976, -86.0778)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)13" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.1282, 67.5062, -87.5113)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)14" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8242, 71.9353, -69.1656)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)15" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2812, 62.3335, 104.003)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)16" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2569, 63.3748, 91.2596)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)17" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1304, 63.3244, 86.1605)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)18" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5558, 62.3642, 80.9154)
+
+[node name="StrangeTreeBushFoliage(2SideLeafs)19" parent="." instance=ExtResource("30_by226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.6106, 62.5746, 74.8698)
+
+[node name="StrangeTree(2SideLeafs)13" parent="." instance=ExtResource("28_bucad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -806.527, 70.7778, -844.924)
+
+[node name="StrangeFoliage(2SideLeafs)48" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -828.173, 73.8509, -838.636)
+
+[node name="StrangeFoliage(2SideLeafs)49" parent="." instance=ExtResource("37_na1lg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -854.08, 73.2033, -817.43)
+
+[node name="StrangeFoliage(2SideLeafs)50" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -832.084, 74.194, -838.195)
+
+[node name="StrangeFoliage(2SideLeafs)51" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -837.233, 74.4737, -832.242)
+
+[node name="StrangeFoliage(2SideLeafs)52" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -845.146, 74.3267, -831.471)
+
+[node name="StrangeFoliage(2SideLeafs)53" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -844.8, 74.0651, -836.097)
+
+[node name="StrangeFoliage(2SideLeafs)54" parent="." instance=ExtResource("27_qxb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -807.114, 70.4678, -852.223)
+
+[node name="StrangerTreeHero18" parent="." instance=ExtResource("35_toe0q")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -852.015, 73.0918, -837.068)
+
+[node name="Foliage01(2SideLeafs)27" parent="." instance=ExtResource("38_7uiln")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -816.858, 71.951, -826.598)
+
+[node name="Foliage02(2SideLeafs)12" parent="." instance=ExtResource("33_t23ch")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -837.659, 73.5389, -823.931)
+
+[node name="Foliage02(2SideLeafs)13" parent="." instance=ExtResource("39_asc0l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -846.766, 72.0666, -811.189)
+
 [connection signal="focused" from="button/Interactable" to="button" method="_on_interactable_focused"]
 [connection signal="interacted" from="button/Interactable" to="button" method="_on_interactable_interacted"]
 [connection signal="unfocused" from="button/Interactable" to="button" method="_on_interactable_unfocused"]
 
 [editable path="button/Interactable"]
+[editable path="StrangeFoliage(2SideLeafs)2"]
+[editable path="StrangeFoliage(2SideLeafs)"]
+[editable path="StrangeFoliage(2SideLeafs)4"]
+[editable path="StrangeFoliage(2SideLeafs)5"]
+[editable path="Foliage01(2SideLeafs)6"]
+[editable path="Foliage01(2SideLeafs)7"]
+[editable path="Foliage01(2SideLeafs)8"]
+[editable path="StrangeTreeBaby(2SideLeafs)6"]
+[editable path="StrangeTreeBaby(2SideLeafs)7"]
+[editable path="StrangeFoliage(2SideLeafs)18"]
+[editable path="StrangeFoliage(2SideLeafs)19"]
+[editable path="StrangeFoliage(2SideLeafs)22"]
+[editable path="StrangeFoliage(2SideLeafs)24"]
+[editable path="StrangeTreeBaby(2SideLeafs)9"]
+[editable path="StrangeTreeBaby(2SideLeafs)10"]
+[editable path="StrangeTreeBushFoliage(2SideLeafs)5"]

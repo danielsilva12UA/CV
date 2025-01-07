@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs60cj2c7anl1"
+path="res://.godot/imported/log_stack.obj-0c3d541ce21ffa13fcfafe35e7d5f295.mesh"
+
+[deps]
+
+files=["res://.godot/imported/log_stack.obj-0c3d541ce21ffa13fcfafe35e7d5f295.mesh"]
+
+source_file="res://assets/kenney_nature-kit/Models/OBJ format/log_stack.obj"
+dest_files=["res://.godot/imported/log_stack.obj-0c3d541ce21ffa13fcfafe35e7d5f295.mesh", "res://.godot/imported/log_stack.obj-0c3d541ce21ffa13fcfafe35e7d5f295.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
