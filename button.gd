@@ -54,6 +54,8 @@ func trigger_blood_moon_event() -> void:
 			var scale = oldtimer_transform.basis.get_scale()
 			var target_basis = Basis().looking_at(direction_to_button, Vector3.UP).scaled(scale)
 			tween.tween_property(oldtimer, "transform:basis", target_basis, 2.0)
+	
+	$"../../Follower".set_visible(true)
 
 	# Update the environment after the tween finishes
 	tween.finished.connect(self.on_blood_moon_complete)

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b5opl8l5pesnk" path="res://assets/kenney_mini-characters/Models/GLB format/Textures/colormap.png" id="5_y01rv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n68wo"]
-size = Vector3(2.13049, 6.30257, 1.93025)
+size = Vector3(2.13, 3.5, 1.93)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_32br6"]
 size = Vector3(1, 2.77539, 1)
@@ -2724,7 +2724,7 @@ _data = {
 script = ExtResource("1_ydsig")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.531488, 0, 0, 0, 1, -0.0441284, 1.73813, 0.0317606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0441284, 1.73813, 0.0317606)
 shape = SubResource("BoxShape3D_n68wo")
 
 [node name="Head" type="Node3D" parent="."]
@@ -2747,7 +2747,7 @@ shape = SubResource("SphereShape3D_g3se0")
 transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head/CameraArm/Camera"]
-cull_mask = 1048573
+cull_mask = 1048569
 near = 0.001
 
 [node name="WaterVision" type="Sprite2D" parent="Head/CameraArm/Camera/Camera3D"]
