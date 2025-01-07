@@ -1,9 +1,5 @@
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [gd_scene load_steps=39 format=3 uid="uid://xmawkpmxk0tx"]
-=======
-[gd_scene load_steps=78 format=4 uid="uid://xmawkpmxk0tx"]
->>>>>>> Stashed changes
 =======
 [gd_scene load_steps=78 format=4 uid="uid://xmawkpmxk0tx"]
 >>>>>>> Stashed changes
@@ -34,12 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://c3cubkw58jht3" path="res://assets/house.png" id="22_3nwfq"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="23_nngsi"]
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://ghostshippath.gd" id="26_5yq5r"]
 [ext_resource type="PackedScene" uid="uid://jr28cgjdgtwl" path="res://sail_ship.tscn" id="27_rfe3e"]
-=======
-[ext_resource type="Texture2D" uid="uid://b5opl8l5pesnk" path="res://assets/kenney_mini-characters/Models/GLB format/Textures/colormap.png" id="26_g8wph"]
->>>>>>> Stashed changes
 =======
 [ext_resource type="Texture2D" uid="uid://b5opl8l5pesnk" path="res://assets/kenney_mini-characters/Models/GLB format/Textures/colormap.png" id="26_g8wph"]
 >>>>>>> Stashed changes
@@ -96,7 +88,6 @@ size = Vector2(5.25, 13.2)
 orientation = 2
 
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [sub_resource type="Curve3D" id="Curve3D_ryv8p"]
 bake_interval = 50.0
 _data = {
@@ -105,8 +96,6 @@ _data = {
 }
 point_count = 37
 =======
-=======
->>>>>>> Stashed changes
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ik2eg"]
 resource_name = "colormap"
 cull_mode = 2
@@ -2873,9 +2862,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8md1s")
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 
 [node name="Main" type="Node3D"]
@@ -3011,94 +2997,6 @@ script = ExtResource("26_5yq5r")
 
 [node name="GhostShip" parent="GhostShipPath/PathFollow3D" instance=ExtResource("27_rfe3e")]
 transform = Transform3D(-13.8222, 9.84046, -5.57286, 10.6081, 14.3319, -1.00414, 3.91893, -4.08743, -16.9375, -0.168854, -0.133461, -0.18396)
-
-[node name="Follower" type="Node3D" parent="."]
-transform = Transform3D(-2.92211e-07, 0, -6.685, 0, 6.685, 0, 6.685, 0, -2.92211e-07, -232.213, 115.531, 448.506)
-visible = false
-
-[node name="character-male-d2" type="Node3D" parent="Follower"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299177, -0.299179)
-
-[node name="character-male-d" type="Node3D" parent="Follower/character-male-d2"]
-
-[node name="Skeleton3D" type="Skeleton3D" parent="Follower/character-male-d2/character-male-d"]
-bones/0/name = "root"
-bones/0/parent = -1
-bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-bones/0/enabled = true
-bones/0/position = Vector3(0, 0, 0)
-bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/0/scale = Vector3(1, 1, 1)
-bones/1/name = "leg-left"
-bones/1/parent = 0
-bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083571, 0.17625, -0.02875)
-bones/1/enabled = true
-bones/1/position = Vector3(0.083571, 0.17625, -0.02875)
-bones/1/rotation = Quaternion(0, 0, 0, 1)
-bones/1/scale = Vector3(1, 1, 1)
-bones/2/name = "leg-right"
-bones/2/parent = 0
-bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082296, 0.17625, -0.02875)
-bones/2/enabled = true
-bones/2/position = Vector3(-0.082296, 0.17625, -0.02875)
-bones/2/rotation = Quaternion(0, 0, 0, 1)
-bones/2/scale = Vector3(1, 1, 1)
-bones/3/name = "torso"
-bones/3/parent = 0
-bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44382e-15, 0.17625, -0.02875)
-bones/3/enabled = true
-bones/3/position = Vector3(-1.44382e-15, 0.17625, -0.02875)
-bones/3/rotation = Quaternion(0, 0, 0, 1)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/name = "arm-left"
-bones/4/parent = 3
-bones/4/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0998968, 0.1115, 0.0115)
-bones/4/enabled = true
-bones/4/position = Vector3(0.0998968, 0.1115, 0.0115)
-bones/4/rotation = Quaternion(0, 0, 0, 1)
-bones/4/scale = Vector3(1, 1, 1)
-bones/5/name = "arm-right"
-bones/5/parent = 3
-bones/5/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0998968, 0.1115, 0.0115)
-bones/5/enabled = true
-bones/5/position = Vector3(-0.0998968, 0.1115, 0.0115)
-bones/5/rotation = Quaternion(0, 0, 0, 1)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/name = "head"
-bones/6/parent = 3
-bones/6/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81969e-09, 0.167, 0.0263888)
-bones/6/enabled = true
-bones/6/position = Vector3(1.81969e-09, 0.167, 0.0263888)
-bones/6/rotation = Quaternion(0, 0, 0, 1)
-bones/6/scale = Vector3(1, 1, 1)
-
-[node name="body-mesh" type="MeshInstance3D" parent="Follower/character-male-d2/character-male-d/Skeleton3D"]
-layers = 4
-mesh = SubResource("ArrayMesh_fb2hx")
-skin = SubResource("Skin_tfyoo")
-
-[node name="head-mesh" type="MeshInstance3D" parent="Follower/character-male-d2/character-male-d/Skeleton3D"]
-transform = Transform3D(-1, 0, -1.15041e-07, 0, 1, 0, 1.15041e-07, 0, -1, 0, 0, 0)
-layers = 4
-mesh = SubResource("ArrayMesh_uvf17")
-skin = SubResource("Skin_tfyoo")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Follower/character-male-d2"]
-libraries = {
-"": SubResource("AnimationLibrary_lqpkp")
-}
-
-[node name="wallWood2" type="MeshInstance3D" parent="Follower"]
-transform = Transform3D(-4.37114e-08, 0, -0.15, 0, 1, 0, 1, 0, -6.55671e-09, 0, 0, 0)
-layers = 4
-mesh = SubResource("ArrayMesh_0oxy2")
-skeleton = NodePath("")
-
-[node name="wallWood3" type="MeshInstance3D" parent="Follower"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.15, 0, 1, 0, -4.37114e-08, 0, 0.598354, 0)
-layers = 4
-mesh = SubResource("ArrayMesh_0oxy2")
-skeleton = NodePath("")
 
 [node name="Follower" type="Node3D" parent="."]
 transform = Transform3D(-2.92211e-07, 0, -6.685, 0, 6.685, 0, 6.685, 0, -2.92211e-07, -232.213, 115.531, 448.506)
