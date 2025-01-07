@@ -65,3 +65,4 @@ mesh = SubResource("ArrayMesh_uqy6r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(5.96046e-06, -100, 1.13747e-05, 0, 5.96046e-06, 127.224, -100, -8.9407e-06, 0, -1.19209e-07, -2.38419e-07, 3.72529e-09)
 shape = SubResource("ConcavePolygonShape3D_vog24")
+disabled = true
