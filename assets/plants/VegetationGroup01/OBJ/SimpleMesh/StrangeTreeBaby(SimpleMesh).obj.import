@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d30466ohbatgl"
+path="res://.godot/imported/StrangeTreeBaby(SimpleMesh).obj-df873d7c16309464a2a6e3e00b0b37cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StrangeTreeBaby(SimpleMesh).obj-df873d7c16309464a2a6e3e00b0b37cb.mesh"]
+
+source_file="res://assets/plants/VegetationGroup01/OBJ/SimpleMesh/StrangeTreeBaby(SimpleMesh).obj"
+dest_files=["res://.godot/imported/StrangeTreeBaby(SimpleMesh).obj-df873d7c16309464a2a6e3e00b0b37cb.mesh", "res://.godot/imported/StrangeTreeBaby(SimpleMesh).obj-df873d7c16309464a2a6e3e00b0b37cb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

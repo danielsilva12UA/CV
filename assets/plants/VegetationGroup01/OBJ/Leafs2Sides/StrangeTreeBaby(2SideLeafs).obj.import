@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kgw2msrfs62o"
+path="res://.godot/imported/StrangeTreeBaby(2SideLeafs).obj-a8710786ec717c898a649d64f849a02f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StrangeTreeBaby(2SideLeafs).obj-a8710786ec717c898a649d64f849a02f.mesh"]
+
+source_file="res://assets/plants/VegetationGroup01/OBJ/Leafs2Sides/StrangeTreeBaby(2SideLeafs).obj"
+dest_files=["res://.godot/imported/StrangeTreeBaby(2SideLeafs).obj-a8710786ec717c898a649d64f849a02f.mesh", "res://.godot/imported/StrangeTreeBaby(2SideLeafs).obj-a8710786ec717c898a649d64f849a02f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

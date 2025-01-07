@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpsc54j2bgta1"
+path="res://.godot/imported/VegetationGroupFoliage01(SimpleMesh).obj-7d33d078f85ac33b80c8d16ece924e69.mesh"
+
+[deps]
+
+files=["res://.godot/imported/VegetationGroupFoliage01(SimpleMesh).obj-7d33d078f85ac33b80c8d16ece924e69.mesh"]
+
+source_file="res://assets/plants/VegetationGroup01/OBJ/SimpleMesh/VegetationGroupFoliage01(SimpleMesh).obj"
+dest_files=["res://.godot/imported/VegetationGroupFoliage01(SimpleMesh).obj-7d33d078f85ac33b80c8d16ece924e69.mesh", "res://.godot/imported/VegetationGroupFoliage01(SimpleMesh).obj-7d33d078f85ac33b80c8d16ece924e69.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
