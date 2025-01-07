@@ -3074,7 +3074,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243.424, 7.95941, 276.198)
 curve = SubResource("Curve3D_ryv8p")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GhostShipPath"]
-transform = Transform3D(-0.92058, -0.0862864, -0.380881, 0, 0.975278, -0.220945, 0.390531, -0.203399, -0.897833, -0.23703, 0.0895281, -0.126343)
+transform = Transform3D(-0.92058, -0.0862865, -0.380881, 0, 0.975278, -0.220945, 0.390531, -0.203399, -0.897833, -0.23703, 0.0895281, -0.126343)
 visible = false
 rotation_mode = 4
 script = ExtResource("26_5yq5r")
