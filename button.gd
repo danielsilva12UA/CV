@@ -32,6 +32,7 @@ func _on_interactable_interacted() -> void:
 		main_audio.bgm_player("button_pressed")
 		pressed = true
 		SailShip.visible = false
+		SailShip.queue_free()
 		GhostShip.make_visible()
 		trigger_blood_moon_event()
 
