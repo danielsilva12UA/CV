@@ -879,6 +879,16 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wallWoodDoorwaySquare3"]
 shape = SubResource("ConcavePolygonShape3D_liht4")
 
+[node name="wallWoodDoorwaySquare4" type="StaticBody3D" parent="."]
+transform = Transform3D(2.83122e-07, 0, -1, 0, 1, 0, 1, 0, 2.83122e-07, -4.10396, 0, 0)
+
+[node name="wallWoodDoorwaySquare" type="MeshInstance3D" parent="wallWoodDoorwaySquare4"]
+mesh = SubResource("ArrayMesh_wk03o")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallWoodDoorwaySquare4"]
+shape = SubResource("ConcavePolygonShape3D_liht4")
+
 [node name="planks2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 

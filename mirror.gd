@@ -28,10 +28,7 @@ func _ready() -> void:
 	mirror_camera.use_oblique_frustum = true
 	mirror_camera.set_oblique_normal(-global_transform.basis.z)
 	mirror_camera.set_oblique_position(global_position)
-	var world_3d: World3D = player_camera.get_world_3d()
-	if world_3d:
-		mirror_camera.environment = world_3d.environment.duplicate()
-		mirror_camera.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
+	update_environment()
 	
 	# Setup dummy
 	dummy_camera = Node3D.new()
@@ -60,6 +57,13 @@ func adjust_camera() -> void:
 
 func set_fov(value):
 	mirror_camera.set_fov(value)
+
+
+func update_environment():
+	var world_3d: World3D = player_camera.get_world_3d()
+	if world_3d:
+		mirror_camera.environment = world_3d.environment.duplicate()
+		mirror_camera.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
 
 
 func resize() -> void:

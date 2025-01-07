@@ -127,6 +127,10 @@ transform = Transform3D(0.13759, 0, -5.99842, 0, 6, 0, 5.99842, 0, 0.13759, 6.65
 [node name="BuildingB" parent="." instance=ExtResource("9_udt76")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -166.773, 108.889, 463.777)
 
+[node name="Follower" type="Node3D" parent="."]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -230.778, 116.389, 448.777)
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -248.778, 116.389, 448.777)
 
@@ -204,7 +208,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243.424, 7.95941, 276.198)
 curve = SubResource("Curve3D_ryv8p")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GhostShipPath"]
-transform = Transform3D(-0.92058, -0.0862868, -0.380882, 0, 0.975278, -0.220946, 0.390532, -0.203399, -0.897833, -0.23703, 0.0895281, -0.126343)
+transform = Transform3D(-0.92058, -0.0862865, -0.380881, 0, 0.975278, -0.220946, 0.390531, -0.203399, -0.897833, -0.23703, 0.0895281, -0.126343)
 visible = false
 rotation_mode = 4
 script = ExtResource("26_5yq5r")
