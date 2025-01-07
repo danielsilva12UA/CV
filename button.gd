@@ -7,6 +7,7 @@ extends Node3D
 @onready var oldtimers : Node3D = $"../Path3D/PathFollow3D"
 @onready var button_position : Vector3 = button_mesh.global_transform.origin
 @onready var oldtimers_parent : Path3D = $"../Path3D"
+@onready var moon: Sprite3D = $"../../Moon"
 
 var pressed = false
 
@@ -36,6 +37,9 @@ func _on_interactable_interacted() -> void:
 				var scale = transform.basis.get_scale()  # Get the original scale
 				transform.basis = Basis().looking_at(direction_to_button, Vector3.UP).scaled(scale)  # Reapply the scale
 				oldtimer.transform = transform
+		
+		get_world_3d().environment.sky = null
+		moon.visible = true
 
 func _on_interactable_unfocused() -> void:
 	remove_highlight()

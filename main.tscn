@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=26 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://e4km4bms5oo5" path="res://natives.tscn" id="14_i6q7u"]
 [ext_resource type="PackedScene" uid="uid://bnspxh81x3ies" path="res://house_sounds.tscn" id="15_kx7k0"]
 [ext_resource type="Script" path="res://house_sounds.gd" id="16_myuqc"]
+[ext_resource type="Texture2D" uid="uid://cqxqwljmi5npj" path="res://assets/moon.png" id="17_qotlu"]
+[ext_resource type="Script" path="res://moon.gd" id="18_e6083"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nnbx3"]
 resource_local_to_scene = true
@@ -138,6 +140,13 @@ inhouse_song = ExtResource("13_16exa")
 
 [node name="house" parent="AudioStreamPlayer" instance=ExtResource("15_kx7k0")]
 script = ExtResource("16_myuqc")
+
+[node name="Moon" type="Sprite3D" parent="."]
+transform = Transform3D(308.14, 0, 0, 0, -1.34692e-05, -308.14, 0, 308.14, -1.34692e-05, 182, 2129.08, -84)
+visible = false
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("17_qotlu")
+script = ExtResource("18_e6083")
 
 [connection signal="area_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_entered"]
 [connection signal="area_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_exited"]
