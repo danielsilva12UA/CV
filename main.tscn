@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=35 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://w37yo1214idk" path="res://piranhas.tscn" id="7_pjyht"]
 [ext_resource type="PackedScene" uid="uid://dv6w1o42xvbb0" path="res://pier_all.tscn" id="8_dljn8"]
 [ext_resource type="PackedScene" uid="uid://saqeevafokob" path="res://buildingB.tscn" id="9_udt76"]
+[ext_resource type="PackedScene" uid="uid://dxavntt82we8v" path="res://mirror.tscn" id="10_i0oe4"]
 [ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://neoportal.tscn" id="10_ivc53"]
+[ext_resource type="Shader" path="res://shaders/portal.gdshader" id="11_2qiuo"]
 [ext_resource type="AudioStream" uid="uid://chtbqrxdl8e5p" path="res://music/island_of_mysteries.mp3" id="11_oted2"]
 [ext_resource type="Script" path="res://songqueuer.gd" id="12_cojlx"]
 [ext_resource type="AudioStream" uid="uid://27ldsfnao1uu" path="res://music/Spooky Island.mp3" id="13_16exa"]
@@ -30,6 +32,19 @@ size = Vector2(6, 10.5)
 orientation = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4xfyt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubtgq"]
+render_priority = 0
+shader = ExtResource("11_2qiuo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pn1df"]
+material = SubResource("ShaderMaterial_ubtgq")
+flip_faces = true
+size = Vector2(13, 13)
+orientation = 2
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_keas2"]
+data = PackedVector3Array(-6.5, -6.5, 0, 6.5, -6.5, 0, 6.5, 6.5, 0, -6.5, 6.5, 0, -6.5, -6.5, 0, 6.5, 6.5, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vurnv"]
 resource_local_to_scene = true
@@ -100,6 +115,18 @@ transform = Transform3D(0.13759, 0, -5.99842, 0, 6, 0, 5.99842, 0, 0.13759, 6.65
 
 [node name="BuildingB" parent="." instance=ExtResource("9_udt76")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -166.773, 108.889, 463.777)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -248.778, 116.389, 448.777)
+
+[node name="Mirror" parent="StaticBody3D" instance=ExtResource("10_i0oe4")]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_pn1df")
+skeleton = NodePath("../../BuildingB")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_keas2")
 
 [node name="PortalBuildingB" parent="." node_paths=PackedStringArray("other_portal") instance=ExtResource("10_ivc53")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -159.273, 114.889, 448.777)

@@ -10,6 +10,8 @@ var dummy_camera: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("portals")
+	
 	# Setup viewport
 	mirror_subviewport = SubViewport.new()
 	add_child(mirror_subviewport)
@@ -54,6 +56,11 @@ func adjust_camera() -> void:
 	dummy_camera.set_global_transform(player_camera.global_transform)
 	scale.z *= -1
 	mirror_camera.set_global_transform(dummy_camera.global_transform)
+
+
+func set_fov(value):
+	mirror_camera.set_fov(value)
+
 
 func resize() -> void:
 	mirror_subviewport.size = get_viewport().size
