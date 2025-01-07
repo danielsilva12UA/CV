@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=31 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cqxqwljmi5npj" path="res://assets/moon.png" id="17_qotlu"]
 [ext_resource type="Script" path="res://moon.gd" id="18_e6083"]
 [ext_resource type="Texture2D" uid="uid://c3cubkw58jht3" path="res://assets/house.png" id="22_3nwfq"]
+[ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="23_nngsi"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nnbx3"]
 resource_local_to_scene = true
@@ -157,6 +158,9 @@ script = ExtResource("18_e6083")
 [node name="House" type="Sprite3D" parent="Moon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 texture = ExtResource("22_3nwfq")
+
+[node name="Sail ship" parent="." instance=ExtResource("23_nngsi")]
+transform = Transform3D(10.3165, -8.73882, 11.6682, 9.4801, 14.8808, 2.76297, -11.0743, 4.59775, 13.2349, 232.77, 1.64, 303.91)
 
 [connection signal="area_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_entered"]
 [connection signal="area_exited" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_exited"]
