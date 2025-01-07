@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chsgh38e7mhwa"
+path="res://.godot/imported/sign.obj-0af23f939c3c4da3747c4be8a7fad121.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sign.obj-0af23f939c3c4da3747c4be8a7fad121.mesh"]
+
+source_file="res://assets/kenney_nature-kit/Models/OBJ format/sign.obj"
+dest_files=["res://.godot/imported/sign.obj-0af23f939c3c4da3747c4be8a7fad121.mesh", "res://.godot/imported/sign.obj-0af23f939c3c4da3747c4be8a7fad121.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

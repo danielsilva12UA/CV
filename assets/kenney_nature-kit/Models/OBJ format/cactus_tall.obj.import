@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dscfxk2qfha31"
+path="res://.godot/imported/cactus_tall.obj-3885bcecdd1a1cdcb14c59d7190c2386.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cactus_tall.obj-3885bcecdd1a1cdcb14c59d7190c2386.mesh"]
+
+source_file="res://assets/kenney_nature-kit/Models/OBJ format/cactus_tall.obj"
+dest_files=["res://.godot/imported/cactus_tall.obj-3885bcecdd1a1cdcb14c59d7190c2386.mesh", "res://.godot/imported/cactus_tall.obj-3885bcecdd1a1cdcb14c59d7190c2386.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
