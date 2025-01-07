@@ -155,6 +155,7 @@ texture = ExtResource("17_qotlu")
 script = ExtResource("18_e6083")
 
 [node name="House" type="Sprite3D" parent="Moon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 texture = ExtResource("22_3nwfq")
 
 [connection signal="area_entered" from="terrain_world/waterHitbox" to="Player" method="_on_water_hitbox_area_entered"]
