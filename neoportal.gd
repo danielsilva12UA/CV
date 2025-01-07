@@ -43,10 +43,7 @@ func _ready() -> void:
 	portal_camera.use_oblique_frustum = true
 	portal_camera.set_oblique_normal(-portal_exit.global_transform.basis.z)
 	portal_camera.set_oblique_position(portal_exit.global_position)
-	var world_3d: World3D = player_camera.get_world_3d()
-	if world_3d:
-		portal_camera.environment = world_3d.environment.duplicate()
-		portal_camera.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
+	update_environment()
 	
 	# Setup dummies
 	dummy_camera_entry = Node3D.new()
@@ -192,6 +189,13 @@ func resize() -> void:
 
 func set_fov(value):
 	portal_camera.set_fov(value)
+
+
+func update_environment():
+	var world_3d: World3D = player_camera.get_world_3d()
+	if world_3d:
+		portal_camera.environment = world_3d.environment.duplicate()
+		portal_camera.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
 
 
 func _on_entry_body_entered(body: Node3D) -> void:

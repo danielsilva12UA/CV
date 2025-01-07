@@ -8,6 +8,7 @@ extends Node3D
 @onready var button_position : Vector3 = button_mesh.global_transform.origin
 @onready var oldtimers_parent : Path3D = $"../Path3D"
 @onready var moon: Sprite3D = $"../../Moon"
+@onready var light: DirectionalLight3D = $"../../DirectionalLight3D"
 
 var pressed = false
 
@@ -40,6 +41,9 @@ func _on_interactable_interacted() -> void:
 		
 		get_world_3d().environment.sky = null
 		moon.visible = true
+		light.light_color = Color("red")
+		get_tree().call_group("portals", "update_environment")
+		
 
 func _on_interactable_unfocused() -> void:
 	remove_highlight()
