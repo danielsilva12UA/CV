@@ -4,21 +4,26 @@ extends AudioStreamPlayer
 @export var default_song: AudioStream
 @export var inhouse_song: AudioStream
 
+@export var natives_song2: AudioStream
+@export var default_song2: AudioStream
+@export var inhouse_song2: AudioStream
+
 var fade_duration: float = 1.0  # Duration of the fade effect in seconds
+var blood_moon = false
 
 # Function to handle the music transition with fade in/out
 func bgm_player(song: String):
 	if song == "natives_song" and stream != natives_song:
 		fade_music_out()  # Fade out current song
-		stream = natives_song
+		stream = natives_song2 if blood_moon else natives_song
 		fade_music_in()   # Fade in the new song
 	elif song == "inhouse_song" and stream != inhouse_song:
 		fade_music_out()
-		stream = inhouse_song
+		stream = inhouse_song2 if blood_moon else inhouse_song
 		fade_music_in()
 	elif song != "natives_song" and song != "inhouse_song" and stream != default_song:
 		fade_music_out()
-		stream = default_song
+		stream = default_song2 if blood_moon else inhouse_song
 		fade_music_in()
 
 # Function to fade out the current music gradually

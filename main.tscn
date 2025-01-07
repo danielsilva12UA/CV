@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://xmawkpmxk0tx"]
+[gd_scene load_steps=29 format=3 uid="uid://xmawkpmxk0tx"]
 
 [ext_resource type="Environment" uid="uid://b87lsnn21u14c" path="res://environment.tres" id="1_di4jb"]
 [ext_resource type="PackedScene" uid="uid://d27jhc8wi1njk" path="res://building.tscn" id="1_kjq6a"]
@@ -14,7 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://27ldsfnao1uu" path="res://music/Spooky Island.mp3" id="13_16exa"]
 [ext_resource type="AudioStream" uid="uid://d1102rd7kp0yk" path="res://music/lonely_island.mp3" id="13_q7ftt"]
 [ext_resource type="PackedScene" uid="uid://e4km4bms5oo5" path="res://natives.tscn" id="14_i6q7u"]
+[ext_resource type="AudioStream" uid="uid://b1xivwuilcnl6" path="res://music/haloween.mp3" id="14_lu4t0"]
 [ext_resource type="PackedScene" uid="uid://bnspxh81x3ies" path="res://house_sounds.tscn" id="15_kx7k0"]
+[ext_resource type="AudioStream" uid="uid://c5qtpkm865yb" path="res://music/suspense.wav" id="15_l5rua"]
+[ext_resource type="AudioStream" uid="uid://b41kmmjotv5of" path="res://music/Iwan Gabovitch - Dark Ambience Loop.mp3" id="16_d7x0b"]
 [ext_resource type="Script" path="res://house_sounds.gd" id="16_myuqc"]
 [ext_resource type="Texture2D" uid="uid://cqxqwljmi5npj" path="res://assets/moon.png" id="17_qotlu"]
 [ext_resource type="Script" path="res://moon.gd" id="18_e6083"]
@@ -135,6 +138,9 @@ script = ExtResource("12_cojlx")
 natives_song = ExtResource("11_oted2")
 default_song = ExtResource("13_q7ftt")
 inhouse_song = ExtResource("13_16exa")
+natives_song2 = ExtResource("14_lu4t0")
+default_song2 = ExtResource("15_l5rua")
+inhouse_song2 = ExtResource("16_d7x0b")
 
 [node name="natives" parent="AudioStreamPlayer" instance=ExtResource("14_i6q7u")]
 
@@ -143,8 +149,7 @@ script = ExtResource("16_myuqc")
 
 [node name="Moon" type="Sprite3D" parent="."]
 transform = Transform3D(308.14, 0, 0, 0, -1.34692e-05, -308.14, 0, 308.14, -1.34692e-05, 182, 2129.08, -84)
-visible = false
-modulate = Color(1, 0, 0, 1)
+modulate = Color(1, 0, 0, 0)
 texture = ExtResource("17_qotlu")
 script = ExtResource("18_e6083")
 

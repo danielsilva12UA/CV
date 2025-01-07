@@ -13,10 +13,10 @@
 [ext_resource type="Shader" path="res://shaders/belowwater.gdshader" id="10_no4v5"]
 [ext_resource type="PackedScene" uid="uid://cfvm1en5qw0v5" path="res://hut.tscn" id="11_5c6fk"]
 [ext_resource type="PackedScene" uid="uid://b8i67nrlf38op" path="res://bridge.tscn" id="12_qntvv"]
-[ext_resource type="PackedScene" uid="uid://gdo1x30ehvkt" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
-[ext_resource type="PackedScene" uid="uid://dxcknj8a1vug0" path="res://strange_palm.tscn" id="16_0df4x"]
-[ext_resource type="PackedScene" uid="uid://dudtmp3x0r5dy" path="res://strange_palm_old.tscn" id="16_75j64"]
-[ext_resource type="PackedScene" uid="uid://cejev5ayl5yv4" path="res://strange_palm_young.tscn" id="17_ex8om"]
+[ext_resource type="PackedScene" path="res://strange_palm_curved.tscn" id="15_rx3ql"]
+[ext_resource type="PackedScene" path="res://strange_palm.tscn" id="16_0df4x"]
+[ext_resource type="PackedScene" path="res://strange_palm_old.tscn" id="16_75j64"]
+[ext_resource type="PackedScene" path="res://strange_palm_young.tscn" id="17_ex8om"]
 [ext_resource type="PackedScene" uid="uid://bvstsupcw0fcy" path="res://hut/sail_ship.tscn" id="18_vdcsx"]
 [ext_resource type="Script" path="res://old_timers.gd" id="19_0eoom"]
 [ext_resource type="PackedScene" uid="uid://d2qv1eoaiyk7y" path="res://old_timers_running.tscn" id="20_1p4md"]
@@ -419,7 +419,7 @@ script = ExtResource("19_0eoom")
 transform = Transform3D(-1.29049, -0.0505287, -0.838179, 0, 1.53685, -0.092647, 0.839696, -0.0776553, -1.28816, -5.91162, -2.14718, 3.24603)
 
 [node name="button" type="Node3D" parent="."]
-transform = Transform3D(2.50325, 0, 0, 0, 2.50325, 0, 0, 0, 2.50325, 164.754, 63.7781, 332.033)
+transform = Transform3D(8.30413, 0, 0, 0, 8.30413, 0, 0, 0, 8.30413, 164.754, 57.036, 332.033)
 script = ExtResource("21_m5by5")
 
 [node name="column-low" type="StaticBody3D" parent="button"]

@@ -4,9 +4,9 @@ extends PathFollow3D
 
 # Amplitude and frequency for sine wave offsets
 var vertical_amplitude = 0.01
-var horizontal_amplitude = 0.01
+var horizontal_amplitude = 0.2
 var vertical_frequency = 0.125
-var horizontal_frequency = 0.25
+var horizontal_frequency = 0.5
 
 func _process(delta: float) -> void:
 	# Update progress along the path
