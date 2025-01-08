@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://saqeevafokob" path="res://buildingB.tscn" id="9_udt76"]
 [ext_resource type="Texture2D" uid="uid://b5opl8l5pesnk" path="res://assets/kenney_mini-characters/Models/GLB format/Textures/colormap.png" id="10_3bhhh"]
 [ext_resource type="PackedScene" uid="uid://dxavntt82we8v" path="res://mirror.tscn" id="10_i0oe4"]
-[ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://neoportal.tscn" id="10_ivc53"]
+[ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://portal.tscn" id="10_ivc53"]
 [ext_resource type="Shader" path="res://shaders/portal.gdshader" id="11_2qiuo"]
 [ext_resource type="AudioStream" uid="uid://chtbqrxdl8e5p" path="res://music/island_of_mysteries.mp3" id="11_oted2"]
 [ext_resource type="Script" path="res://songqueuer.gd" id="12_cojlx"]

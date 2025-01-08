@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyej4a711fov2"]
 
 [ext_resource type="PackedScene" uid="uid://bj5ppfmcxxrca" path="res://board.tscn" id="1_5b4c4"]
-[ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://neoportal.tscn" id="2_jybpw"]
+[ext_resource type="PackedScene" uid="uid://cjm3rl1jrrf5c" path="res://portal.tscn" id="2_jybpw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s2xtg"]
 resource_local_to_scene = true
