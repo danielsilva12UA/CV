@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://dyg7ycckfiylj"]
+[gd_scene load_steps=49 format=4 uid="uid://dyg7ycckfiylj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ydsig"]
 [ext_resource type="Shader" path="res://underwater.gdshader" id="2_45ppr"]
@@ -14,8 +14,6 @@ size = Vector3(2.13, 3.5, 1.93)
 size = Vector3(1, 2.77539, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g3se0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_h8aov"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5r6c7"]
 shader = ExtResource("2_45ppr")
@@ -2763,7 +2761,13 @@ Move the mouse to rotate the camera
 Press F2 to change between first-person and third-person perspective
 When driving the boat, use W to move the boat forwards and S to move it backwards
 When driving the boat, use the mouse to control the direction of the movement"
-label_settings = SubResource("LabelSettings_h8aov")
+
+[node name="fps" type="Label" parent="Head/CameraArm/Camera/Camera3D"]
+visible = false
+z_index = 1
+offset_right = 653.0
+offset_bottom = 179.0
+text = "FPS: 0"
 
 [node name="WaterVision" type="Sprite2D" parent="Head/CameraArm/Camera/Camera3D"]
 material = SubResource("ShaderMaterial_5r6c7")

@@ -32,6 +32,14 @@ func _process(delta: float) -> void:
 	# Display instructions.
 	if Input.is_action_just_pressed("help"):
 		$Head/CameraArm/Camera/Camera3D/Help.visible = !$Head/CameraArm/Camera/Camera3D/Help.visible
+		$Head/CameraArm/Camera/Camera3D/fps.visible = false
+	
+	# Display FPS.
+	if Input.is_action_just_pressed("fps"):
+		$Head/CameraArm/Camera/Camera3D/fps.visible = !$Head/CameraArm/Camera/Camera3D/fps.visible
+		$Head/CameraArm/Camera/Camera3D/Help.visible = false
+	
+	$Head/CameraArm/Camera/Camera3D/fps.text = "FPS: " + str(1/delta)
 
 func _physics_process(delta: float) -> void:
 	if playerPhysics:
