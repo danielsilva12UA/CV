@@ -28,6 +28,11 @@ func _ready():
 	get_tree().get_root().size_changed.connect(resize)
 	get_world_3d().environment.volumetric_fog_density = 0.02
 
+func _process(delta: float) -> void:
+	# Display instructions.
+	if Input.is_action_just_pressed("help"):
+		$Head/CameraArm/Camera/Camera3D/Help.visible = !$Head/CameraArm/Camera/Camera3D/Help.visible
+
 func _physics_process(delta: float) -> void:
 	if playerPhysics:
 		global_rotation.x = 0
