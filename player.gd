@@ -33,10 +33,6 @@ func _physics_process(delta: float) -> void:
 		global_rotation.x = 0
 		global_rotation.z = 0
 		
-		# Restart world.
-		if Input.is_action_just_pressed("restart"):
-			get_tree().reload_current_scene()
-		
 		# Capture mouse.
 		if Input.is_action_just_pressed("mouse_capture"):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
